@@ -1,5 +1,10 @@
+@font-face {
+    font-family: lemon milk;
+    src: url(./Fonts/LEMONMILK-Regular.otf);
+}
+
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'lemon milk';
     margin: 0;
     padding: 0;
     position: relative;
@@ -36,7 +41,7 @@ body::before {
 
 /* Barra de navegacion */
 .navbar {
-    background-color: #2d2d2d;
+    background-color: #1f1f1f;
     padding: 10px 10px;
     max-width: 100%;
     margin: 0 auto;
@@ -85,10 +90,11 @@ body::before {
 /* Estilos para los botones */
 .btn-reservaciones, .btn-membresia {
     position: fixed;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-family: 'lemon milk';
+    white-space: nowrap;
+    font-size: 130%;
     bottom: 115px;
-    width: 200px;
+    width: 20%;
     padding: 20px;
     margin: 10px;
     border: none;

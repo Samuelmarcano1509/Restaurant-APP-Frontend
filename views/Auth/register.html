@@ -8,7 +8,7 @@
     <script src="./js/bootstrap.min.js"></script> 
     <style>
       .RForm_cont{
-        margin-top: 16%;
+        margin-top: 12.25%;
         margin-left: 8%;
       }
       #campos{
@@ -26,46 +26,54 @@
     </style> 
 </head>
 <body class="">
-  <form class="container">
+  <form id="formulario" class="container">
     <div class="RForm_cont">
-
       <h1>Formulario de Registro</h1>
       <div class="card bg-light rounded-3 col-md-5 card-body " id="Contenedor">
-
         <div id="campos">
-
           <div class="form-group">
               <label for="nombre">Nombres:</label>
-              <input type="text" class="form-control"  id="nombre" placeholder="Ingrese sus nombres">
+              <input type="text" class="form-control" name="nombre" placeholder="Ingrese sus nombres">
             </div>
           <div class="form-group">
-              <label for="nombre">Apellidos:</label>
-              <input type="text" class="form-control"  id="apellido" placeholder="Ingrese sus apellidos">
+              <label for="apellido">Apellidos:</label>
+              <input type="text" class="form-control"  name="apellido"  placeholder="Ingrese sus apellidos">
           <div class="form-group">
-              <label for="nombre">Fecha de nacimiento:</label>
-              <input type="date" class="form-control"  id="fechanacimiento" placeholder="Ingrese su fecha de nacimiento">
-          </div>
+              <label for="fecha">Fecha de nacimiento:</label>
+              <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="su fecha de nacimiento">
+              <script>
+                const fechaInput = document.getElementById('fecha');
+                fechaInput.addEventListener('change', () => {
+                  const fechaSeleccionada = fechaInput.value;
+                  const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                  fechaInput.value = fechaFormateada;
+                });
+              </script>
+            </div>
           <div class="form-group">
-              <label for="nombre">Cedula:</label>
-              <input type="text" class="form-control"  id="cedula" placeholder="Ingrese su cedula">
+              <label for="cedula">Cedula:</label>
+              <input type="text" class="form-control" name="cedula" placeholder="Ingrese su cedula">
           </div>
           <div class="form-group">
               <label for="correo">Correo electrónico:</label>
-              <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo electrónico">
+              <input type="email" class="form-control" name="correo" placeholder="Ingrese su correo electrónico">
           </div>
           <div class="form-group">
               <label for="telefono">Número de Teléfono:</label>
-            <input type="tel" class="form-control" id="telefono" placeholder="Ingrese su número de Teléfono">
+            <input type="tel" class="form-control" name="telefono" placeholder="Ingrese su número de Teléfono">
+          </div>
+          <div class="form-group">
+            <label for="usuario">Nombre de Usuario:</label>
+            <input type="text" class="form-control"  name="usuario" placeholder="Ingrese su nombre de usuario">
           </div>
           <div class="form-group">
             <label for="contraseña">Contraseña:</label>
-            <input type="password" class="form-control" id="contraseña" placeholder="Ingrese su contraseña">
+            <input type="password" class="form-control" name="contraseña" placeholder="Ingrese su contraseña">
           </div>
 
           <br>
-          <button type="submit" class="btn btn-primary ">Registrarse</button>
+          <button type="submit" class="btn btn-primary">Registrarse</button>
           <br>
-
         </div>
         
       </div>
@@ -73,10 +81,11 @@
 
     </div>
  
-</form>
-<div id="Logo-restaurante" class="float-end img-fluid" >
-  <img src="./img/neo-high-resolution-logo-black-transparent-1(2).png" alt="Logo">
-</div>
+  </form>
+  <div id="Logo-restaurante" class="float-end img-fluid" >
+    <img src="./img/neo-high-resolution-logo-black-transparent-1(2).png" alt="Logo">
+  </div>
+  <script src="./Scripts/register.js"></script>
 </body>
 
 </html>

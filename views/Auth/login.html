@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <script src="./js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.min.css">
+    <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script> 
     <style>
       .LForm_cont{
         margin-top: 25%;
@@ -45,11 +45,11 @@
           </div>
           <br>
           <div class="text-center">
-            <button type="submit" class="btn btn-primary ">Iniciar Sesión</button>
+            <button type="button" class="btn btn-primary " onclick="login()">Iniciar Sesión</button>
           </div>
           <hr>
           <div class="text-center">
-            <button type="button" class="btn btn-secondary" onclick="location.href='/NeoRestaurante/views/Auth/register.html'">> Crear una cuenta nueva</button>
+            <button type="button" class="btn btn-secondary" onclick="location.href='/NeoRestaurante/views/Auth/register'">> Crear una cuenta nueva</button>
           </div>
           
         </div>
@@ -61,8 +61,10 @@
  
 </form>
 <div id="Logo-restaurante" class="float-end img-fluid" >
-  <img src="./img/neo-high-resolution-logo-black-transparent-1(2).png" alt="Logo">
+  <img src="/NeoRestaurante/public/img/neo-high-resolution-logo-black-transparent-1(2).png" alt="Logo">
 </div>
+
+<script src="/NeoRestaurante/public/Scripts/auth.js"></script>
 </body>
 
 </html>

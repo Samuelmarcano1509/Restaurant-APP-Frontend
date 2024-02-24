@@ -3,68 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.min.css">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script> 
     <style>
+      @font-face {
+    font-family: lemon milk;
+    src: url(/NeoRestaurante/public/Fonts/LEMONMILK-Regular.otf);
+      }
+       body {
+        font-family: 'lemon milk';
+        background-color: rgb(201, 201, 201);
+
+        background-image: url('/NeoRestaurante/Public/img/OIG2.jpg');
+        background-size: cover; 
+        background-position: center; 
+      }
       .LForm_cont{
-        margin-top: 25%;
+        margin-top: 15%;
         margin-left: 8%;
       }
       #campos{
         margin-top: 0.8%;
         margin-bottom: 2% ;
-      }
-      #Logo-restaurante{
-        position: absolute;
-        top: 12.10%;
-        right: 0%;
+        margin-left: 15%;
+        margin-right:15%;  }
+
+         #Navbar{
         
+        margin-left: 0%;
+        margin-right: 0%;
+        position: sticky;
+        top: 0;
+        left: 0%;
+        z-index: 100;
+
       }
-     
-      
+      #navbarNav{
+        
+        margin-left: 30%;
+        padding-left: 9%;
+        font-size: 80%;
+      }
     </style> 
 </head>
-<body class="">
-  <form class="container" id="formulario">
-    <div class="LForm_cont">
-
-      <h1>¡Bienvenido!</h1>
-      <div class="card bg-light rounded-3 col-md-5 card-body " id="Contenedor">
-
-        <div id="campos">
-
-          <div class="form-group">
-              <label for="nombre">Usuario:</label>
-              <input type="text" class="form-control"  name="usuario" placeholder="Ingrese sus nombre de usuario">
-            </div>
-       
-          <div class="form-group">
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" class="form-control" name="contraseña" placeholder="Ingrese su contraseña">
-          </div>
-          <br>
-          <div class="text-center">
-            <button type="button" class="btn btn-primary " onclick="login()">Iniciar Sesión</button>
-          </div>
-          <hr>
-          <div class="text-center">
-            <button type="button" class="btn btn-secondary" onclick="location.href='/NeoRestaurante/views/Auth/register'">> Crear una cuenta nueva</button>
-          </div>
-          
+<body>
+  <div id="Navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid" id="Nav-bar">
+            <a class="navbar-brand" href="../../index.html" style="margin-left: 5%;">
+                <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="Logo" width="80" height="80" class="d-inline-block">
+                <span class="ms-2 fs-6 fw-bold text-uppercase" style="margin-top: 5px;">Neo Restaurant</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link "  href="#" >Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Localización</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./login.html">Iniciar Sesión</a>
+                    </li>
+                </ul>
+            </div> 
         </div>
-        
-      </div>
-      
-
-    </div>
- 
-</form>
-<div id="Logo-restaurante" class="float-end img-fluid" >
-  <img src="/NeoRestaurante/public/img/neo-high-resolution-logo-black-transparent-1(2).png" alt="Logo">
+    </nav>
 </div>
 
-<script src="/NeoRestaurante/public/Scripts/auth.js"></script>
-</body>
+ <form class="container col-md-5" id="formulario">
+    <div class="row justify-content-center">
+        <div class="col-md-8 mx-auto">
+            <div class="card bg-light rounded-3 card-body mt-4" id="Contenedor">
+            <h1 class="text-center mb-4" style="font-size: 2rem;">¡BIENVENIDO!</h1>
+            <div id="campos">
+                <div class="form-group">
+                    <label for="nombre" style="font-size:80%;">Usuario:</label>
+                    <input type="text" class="form-control" name="usuario"  placeholder="Ingrese su nombre de usuario"style="font-size: 80%;">
+                </div>
+                <div class="form-group">
+                    <label for="contraseña" style="font-size:80%;">Contraseña:</label>
+                    <input type="password" class="form-control" name="contraseña" placeholder="Ingrese su contraseña" style="font-size: 80%;">
+                </div>
+                <br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg" style="background-color:#353535; width: 100%; border-radius: 0; color:white; font-size: 80%;">Iniciar Sesión</button>
+                </div>
+                <div class="my-3">
+                    <div class="text-center">
+                        <p class="link-text" onclick="location.href='./register.html'" style="cursor: pointer; font-size: 60%;">Crear una cuenta nueva</p>
+                        <p class="link-text" onclick="location.href='../../index.html'" style="cursor: pointer; font-size: 60%;">Volver al inicio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 
 </html>

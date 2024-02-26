@@ -18,7 +18,9 @@ const authRegister = async()=> {
                         phone_number: data.get('telefono'),
                         username: data.get('usuario'),
                         password: data.get('contraseña'),
+                        gender:data.get('genero'),
                     }
+                    console.log(inf)
                     const response = await fetch('http://127.0.0.1:8000/api/register', {
                         method: 'POST',
                         headers: {
@@ -33,6 +35,7 @@ const authRegister = async()=> {
                             console.log(data)
                             const statusCode = response.status;
                             console.log(statusCode);
+                            location.href = "/NeoRestaurante/views/profile";
                         }
                 } catch (error){ 
                     console.log(error)
@@ -92,7 +95,7 @@ function authValidation (){
                         })
                         if (response.ok) {
                             localStorage.removeItem('token');
-                            location.href = "/NeoRestaurante/index";
+                            location.href = "/NeoRestaurante/";
                         }
                 } catch (error){ 
                     console.log(error)

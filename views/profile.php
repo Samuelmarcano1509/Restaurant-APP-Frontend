@@ -9,7 +9,6 @@
     <h1>bienvenido</h1>
     <button onclick="closeSesion()" >Cerrar sesion</button>
     <script src="/NeoRestaurante/public/Scripts/auth.js">
-
     </script>
 </body>
 </html>

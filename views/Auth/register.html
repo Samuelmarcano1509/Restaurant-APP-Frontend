@@ -6,121 +6,164 @@
     <title>Registro de Usuario</title>
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.min.css">
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script> 
+    <script>
+        const dropdownElement = document.getElementById('dropdownMenuButton');
+        const dropdown = new bootstrap.Dropdown(dropdownElement);
+    </script>
     <style>
-        @font-face {
-            font-family: lemon milk;
-            src: url(/NeoRestaurante/public/Fonts/LEMONMILK-Regular.otf);
-        }
-       body {
-           font-family: 'lemon milk';
-           background-color: rgb(201, 201, 201);
-           background-image: url('/NeoRestaurante/public/img/OIG2.jpg');
-           background-size: cover;
-           background-position: center;
+         @font-face {
+            font-family: montserrat;
+            src: url(/NeoRestaurante/public/Fonts/Montserrat/static/Montserrat-Regular.ttf);
+            }
+        body{
+           font-family: 'montserrat';
+           background-image: url('/NeoRestaurante/public/img/fondito-raro.svg');
+           background-size: 110%;
+           background-position: top;
        }
     
-      .RForm_cont{
-        margin-top: 15%;
-        margin-left: 8%
-        
-      }
+    
       #campos{
         margin-top: 0.8%;
         margin-bottom: 2% ;
         margin-left: 15%;
         margin-right:15%; 
       }
-      #Navbar{
-        
-        margin-left: 0%;
-        margin-right: 0%;
-        position: sticky;
-        top: 0;
-        left: 0%;
-        z-index: 100;
-
-      }
       #navbarNav{
-        
-        margin-left: 35%;
-        padding-left: 9%;
-        font-size: 80%;
+        padding-left: 25%;
+        font-size: 95%;
       }
       
+      #item{
+        margin-left: 3%;
+        padding-left: 5%;
+      }
+      .dropdown {
+    display: inline-block;
+    }
+
+    .btn-primary {
+    background-color: white;
+    border-color: gray;
+    }
+
+    .dropdown-menu {
+    min-width: 100px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-item {
+    color: #333;
+    padding: 10px 15px;
+    }
+
+    .dropdown-item:hover {
+    background-color: #f5f5f5;
+    }
       
     </style> 
 </head>
 <body class="">
   <body>
-  <div id="Navbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid" id="Nav-bar">
-            <a class="navbar-brand" href="../../index.html" style="margin-left: 5%;">
-                <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="Logo" width="80" height="80" class="d-inline-block">
-                <span class="ms-2 fs-6 fw-bold text-uppercase" style="margin-top: 5px;">Neo Restaurant</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" >
+      <div class="container-fluid" id="Nav-bar">
+              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%;"  href="#" >
+                <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="Logo" width="85" height="85" class="d-inline-block align-top">
+                <span class="ms-2 fs-6 fw-bold text-uppercase">Neo Restaurant</span>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link "  href="#" >Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Localización</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./login.html">Iniciar Sesión</a>
-                    </li>
-                </ul>
-            </div> 
-        </div>
-    </nav>
-</div>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item" id="item">
+                      <a class="nav-link active" aria-current="page" href="#" >Menu</a>
+                  </li>
+                  <li class="nav-item" id="item">
+                      <a class="nav-link" href="#">Localización</a>
+                  </li>
+                  <li class="nav-item" id="item">
+                      <a class="nav-link" href="#">Nosotros</a>
+                  </li>
+                  <li class="nav-item" id="item">
+                      <a class="nav-link" href="#">Contacto</a>
+                  </li>
+                  <li class="nav-item" id="item"  style="white-space: nowrap;">
+                    <a class="nav-link" href="./views/Auth/login.html">Iniciar Sesión</a>
+                </li>
+               </ul>
+              </div> 
+      </div>
+  </nav>
+  </div>
 <div class="RForm_cont d-flex flex-column align-items-center mt-5">
-    <div class="card bg-light rounded-3 col-md-8 col-lg-6 card-body mx-3">
-        <h1 class="text-center mb-4">Registro de Usuario</h1>
+    <div class="card bg-light rounded-3 col-md-8 col-lg-6 card-body mx-3 shadow-lg p-3 bg-body rounded" style="border-color: #DEDEDE;">
+        <h1 class="text-center mb-2"><b>Registro de Usuario</b></h1>
         <form id="formulario">
             <div id="campos">
-                <div class="form-group col-12">
-                    <label for="nombre">Nombres:</label>
-                    <input type="text" class="form-control" name="nombre" placeholder="Ingrese sus nombres">
-                </div>
-                <div class="form-group col-12">
-                    <label for="apellido">Apellidos:</label>
-                    <input type="text" class="form-control"  name="apellido"  placeholder="Ingrese sus apellidos">
-                </div>
-                <div class="form-group col-12">
-                    <label for="fecha">Fecha de nacimiento:</label>
-                    <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="su fecha de nacimiento">
-                    <script>
-                        const fechaInput = document.getElementById('fecha');
-                        fechaInput.addEventListener('change', () => {
-                            const fechaSeleccionada = fechaInput.value;
-                            const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
-                            fechaInput.value = fechaFormateada;
-                        });
-                    </script>
-                </div>
-          <div class="form-group">
-              <label for="cedula">Cedula:</label>
-              <input type="text" class="form-control" name="cedula" placeholder="Ingrese su cedula">
-          </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="nombre">Nombres:</label>
+                        <input type="text" class="form-control" name="nombre" placeholder="Ingrese sus nombres">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="apellido">Apellidos:</label>
+                        <input type="text" class="form-control"  name="apellido"  placeholder="Ingrese sus apellidos">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="fecha">Fecha de nacimiento:</label>
+                        <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="su fecha de nacimiento">
+                        <script>
+                            const fechaInput = document.getElementById('fecha');
+                            fechaInput.addEventListener('change', () => {
+                                const fechaSeleccionada = fechaInput.value;
+                                const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                                fechaInput.value = fechaFormateada;
+                            });
+                        </script>
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="cedula">Cedula:</label>
+                            <input type="text" class="form-control" name="cedula" placeholder="Ingrese su cedula">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="telefono">Número de Teléfono:</label>
+                        <input type="tel" class="form-control" name="telefono" placeholder="N° Teléfono">
+                    </div>
+                    <div class="dropdown col-md-6" id="selector" style="margin-top: 4.5%; ">
+                        <button class="btn btn-light bg-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                          Género
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Masculino</a></li>
+                          <li><a class="dropdown-item" href="#">Femenino</a></li>
+                          <!--Mientras tanto lo estoy haciendo asi, despues hacemos la llamada a la base de datos para el combobox-->
+                          <li><a class="dropdown-item" href="#">No especificado</a></li>
+                        </ul>
+                      </div>
+                      <script>
+                        const dropdownButton = document.getElementById('dropdownMenuButton');
+                        const dropdownMenu = document.querySelector('.dropdown-menu');
+                        const dropdownItems = document.querySelectorAll('.dropdown-item');
+                  
+                        dropdownButton.addEventListener('click', () => {
+                         dropdownMenu.classList.toggle('show');
+                         dropdownItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                      dropdownMenu.classList.remove('show');
+                    });
+                  });
+                  });
+                  
+                      </script>
+            </div>      
+               
           <div class="form-group">
               <label for="correo">Correo electrónico:</label>
               <input type="email" class="form-control" name="correo" placeholder="Ingrese su correo electrónico">
           </div>
-          <div class="form-group">
-              <label for="telefono">Número de Teléfono:</label>
-            <input type="tel" class="form-control" name="telefono" placeholder="Ingrese su número de Teléfono">
-          </div>
+          
            <div class="form-group col-12">
                     <label for="usuario">Nombre de Usuario:</label>
                     <input type="text" class="form-control"  name="usuario" placeholder="Ingrese su nombre de usuario">
@@ -130,8 +173,8 @@
                     <input type="password" class="form-control" name="contraseña" placeholder="Ingrese su contraseña">
                 </div>
                  <br>
-                <div class="form-group col-12 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-lg" style="background-color:#353535; width: 100%; border-radius: 0; color:white; font-size: 80%;">Registrarse</button>
+                <div class="form-group col-md-9 d-flex justify-content-center" style="margin-left: 12.5%;">
+                    <button type="submit" class="btn btn-lg" style="background-color:#301f14; width: 100%; border-radius: 0; color:white; font-size: 80%;"><b>Registrarse</b></button>
                 </div>
             </div>
         </form>
@@ -141,4 +184,5 @@
   </form>
   <script src="./Scripts/register.js"></script>
 </body>
+
 </html>

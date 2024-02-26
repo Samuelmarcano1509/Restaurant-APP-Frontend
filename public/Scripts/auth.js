@@ -71,7 +71,7 @@ const authLogin = async()=> {
 
 function authValidation (){
     if(localStorage.getItem('token')){
-       
+        
     }else{
         location.href = "/NeoRestaurante/views/Auth/login";
     }

@@ -5,131 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neo Restaurant</title>
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
-    <script src="/NeoRestaurante/public/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="public/Glider.js-master/glider.min.css">
+    
     <style>
-      @font-face {
-    font-family: lemon milk;
-    src: url(/NeoRestaurante/public/Fonts/LEMONMILK-Regular.otf);
-      }
-      body{
-        font-family: 'lemon milk';
-        background-color: rgb(201, 201, 201);
-      }
+       @font-face {
+      font-family: montserrat;
+      src: url(/NeoRestaurante/public/Fonts/Montserrat/static/Montserrat-Regular.ttf);
+    }
+
+    body {
+      font-family: 'montserrat';
+      background-image: url(/NeoRestaurante/public/img/fondoteraro.jpg);
+      background-color: rgb(217, 213, 213);
+      background-size: cover;
+      background-position: center;
+      margin: 0; 
+    }
+
+    #Navbar {
+      width: 100%; 
+      margin: 0; 
+      padding: 0; 
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background-color: #fff; 
+    }
+
+    #navbarNav { 
+      justify-content: space-between; 
+      align-items: center; 
+      padding-left: 28%; 
+    }
+
+    #item {
+      padding-left: 5%;
+    }
+
+
+    #modal {
+      margin-top: 8%;
+      margin-right: 50%;
+      size: unset;
+    }
+
+    #message {
+      padding-top: 5%;
+      padding-bottom: 5%;
+      padding-left: 8%;
+      padding-right: 18%;
+    }
+
+    .slider-contenido {
+      margin-top: 8%;
+      margin-left: 10%;
+      margin-right: 10%;
+      overflow: hidden;
+    }
+
+    .left,
+    .right {
+      background: none;
+      display: block;
+      width: 30px;
+      height: 30px;
+      border: none;
+      cursor: pointer;
+      background-color: none;
+      color: #ffffff;
+      opacity: 20%;
+    }
+
+    .left {
+      position: absolute;
+      top: 85%;
+      left: 30px;
+      transform: translateY(-50%);
+    }
+
+    .right {
+      position: absolute;
+      top: 85%;
+      right: 30px;
+      transform: translateY(-50%);
+    }
+
+    .left:hover,
+    .right:hover {
+      opacity: 100%;
+    }
+    .slider-elemento{
+      font-size: 120%;
+    }
+
+    .slider-indicadores .glider-dot{
+      display: block;
+      width: 30px;
+      height: 4px;
+      background: #646464;
+      opacity: 50%;
+      border-radius: 0;
+    }
+    .slider-indicadores .glider-dot:hover{
+      opacity: 100%;
+    }
    
-      #Navbar{
-        margin-left: 0%;
-        margin-right: 0%;
-        position: sticky;
-        top: 0;
-        left: 0%;
-        z-index: 100;
-
-      }
-      #navbarNav{
-        padding-left: 9%;
-        font-size: 95%;
-      }
-
-      #carouselExampleCaptions{
-        width: 60;
-        margin-top: 4%;
-        margin-bottom: 2%;
-        margin-left: 11%;
-        margin-right: 11%;
-      }
-      #btn{
-        padding: 2%;
-        margin: 3%;
-        width: auto;
-        font-size: 85%;
-        white-space:nowrap;
-        min-width: 25%;
-      }
     </style>
 </head>
 <body>
   <div id="Navbar">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
-              <div class="navbar-brand" href="#" style="margin-left: 10%;">
-                  <img src="/NeoRestaurante/public/img/neo-high-resolution-logo-black-transparent-1.png" alt="Logo" width="80" height="80" class="d-inline-block align-top">
+              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%;"  href="#" >
+                <img src="./public/img/neo-favicon-white.svg" alt="Logo" width="85" height="85" class="d-inline-block align-top">
+                <span class="ms-2 fs-6 fw-bold text-uppercase">Neo Restaurant</span>
               </div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                  <li class="nav-item">
+                  <li class="nav-item" id="item">
                       <a class="nav-link active" aria-current="page" href="#" >Menu</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" id="item">
                       <a class="nav-link" href="#">Localización</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" id="item">
                       <a class="nav-link" href="#">Nosotros</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" id="item">
                       <a class="nav-link" href="#">Contacto</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./views/Auth/login">Iniciar Sesión</a>
+                  <li class="nav-item" id="item"  style="white-space: nowrap;">
+                    <a class="nav-link" href="./views/Auth/login.html">Iniciar Sesión</a>
                 </li>
                </ul>
               </div> 
       </div>
   </nav>
   </div>
+
+  <div class="row" id="modal">
+    <div class="col-md-11 mx-auto row-8" id="cont"> 
+        <div class="card bg-white rounded-5 card-body  shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
+          <div id="message">
+            <h1 class="" style="font-size: 230%; padding-bottom: 3%;"><b>Neo Membresía</b></h1>
+        <p style="font-size: 110%; padding-bottom: 3%; ">
+          Obtén una membresía única de por vida <br>que te otorgara atención preferencial,<br>
+          acceso a áreas únicas y<br> otros beneficios
+        </p>
+        <div class="text-center col-md-6">
+          <button type="button" class="btn btn-lg rounded-4" style="margin-left: 0%;background-color:#301f14; width: 110%; border-radius: 0; color:white; font-size: 105%; ; "><b>Obtener membresía</b></button>
+      </div>
+          </div>
+    </div>
+</div>
+</div>
+
+<!--Ejemplo de como se veria el slider-->
+<div class="slider">
+  <div class="slider-contenedor">
+    <button aria-label="prueba" class="left">
+      <img src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/svgs/solid/chevron-left.svg" alt="">
+    </button>
+
+      <div class="slider-contenido">
+        <div class="slider-elemento">
+          <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
+          <p><b>Platillo 1</b></p>
+        </div>
+        <div class="slider-elemento">
+          <img src="/NeoRestaurante/public/img/platillo2.jpg" alt="">
+          <p><b>Platillo 2</b></p>
+        </div>
+        <div class="slider-elemento">
+          <img src="/NeoRestaurante/public/img/platillo3.jpg" alt="">
+          <p><b>Platillo 3</b></p>
+        </div>
+        <div class="slider-elemento">
+          <img src="/NeoRestaurante/public/img/platillo4.jpg" alt="">
+          <p><b>Platillo 4</b></p>
+        </div>
+        <div class="slider-elemento">
+          <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
+          <p>prueba</p>
+        </div>
+        <div class="slider-elemento">
+          <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
+          <p>prueba</p>
+        </div>
+        <div class="slider-elemento">
+          <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
+          <p>prueba</p>
+          </div>
+        </div>
+        
+        <button aria-label="prueba" class="right">
+          <img src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/svgs/solid/chevron-right.svg" alt="">
+        </button>
+      </div>
+
+    
+
+  </div>
+   
+  <div role="tablist" class="slider-indicadores"></div>
+</div>
   
 
-    <!--slider-->
-    <div id="carouselExampleCaptions" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="/NeoRestaurante/public/img/vinitos1.png" class="d-block w-100" >
-          <div class="carousel-caption  d-md-block" style="background-color: rgb(0,0,0,0.5);">
-            <h5>Intenso y apasionado:</h5>
-            <p> Un vino para disfrutar con los cinco sentidos.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="/NeoRestaurante/public/img/vinitos2.png" class="d-block w-100" >
-          <div class="carousel-caption  d-md-block" style="background-color: rgb(0,0,0,0.5);">
-            <h5>Vinos frutales</h5>
-            <p>Dejate envolver por sus aromas a frutos y especias.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="/NeoRestaurante/public/img/ovidio-2-1_1.png" class="d-block w-100" >
-          <div class="carousel-caption  d-md-block" style="background-color: rgb(0,0,0,0.5);" >
-            <h5>Celebra los momentos especiales:</h5>
-            <p>Brinda con un vino excepcional.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-   
-    <!-- Botones -->
-    <div class="d-flex justify-content-center align-items-center">
-      <button type="button"  class="btn rounded btn-light" id="btn">Reservaciones</button>
-      <button  type="button" class="btn rounded btn-light" id="btn">Obtener Membresía</button>
-    </div>
-   
-    
-    
-      <script src="/NeoRestaurante/Scripts/register.js"></script>
 
+   
+ 
+<script src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/js/fontawesome.js"></script>  
+<script src="/NeoRestaurante/public/Glider.js-master/glider.min.js"></script>   
+<script src="/NeoRestaurante/public/js/bootstrap.js"></script>
+<script src="/NeoRestaurante/public/Scripts/register.js"></script>
+<script src="/NeoRestaurante/public/Scripts/slider.js"></script>
 </body>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 </html>

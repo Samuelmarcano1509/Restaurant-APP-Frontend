@@ -73,32 +73,13 @@
   </nav>
   </div>
 
- <!--Contenedor para el login-->
-  <form class="container col-md-6" id="formulario" >
+      <!-- Proximamente -->
+      <form class="container col-md-9" id="formulario" >
     <div class="row justify-content-center">
         <div class="col-md-9 mx-auto row-8" id="cont"> 
-            <div class="card bg-light rounded-3 card-body  shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
-            <h1 class="text-center mb-4" style="font-size: 210%;"><b>¡BIENVENIDO!</b></h1>
-            <div id="campos">
-                    <div class="form-group col-md-8" style="margin-left: 16.5%;">
-                        <label for="nombre">Usuario:</label>
-                        <input type="text" class="form-control" name="usuario"  placeholder="Ingrese su nombre de usuario"style="font-size: 80%;">
-                    </div>
-                    <div class="form-group col-md-8"  style="margin-left: 16.5%;">
-                        <label for="contraseña">Contraseña:</label>
-                        <input type="password" class="form-control" name="contraseña" placeholder="Ingrese su contraseña" style="font-size: 80%;">
-                    </div>
-                    <br>
-                    <div class="form-group col-md-9 d-flex justify-content-center" style="margin-left: 12.5%;">
-                        <button type="button" onclick="login()" class="btn btn-lg" style="background-color:#301f14; width: 87.5%; border-radius: 0; color:white; font-size: 80%;"><b>Iniciar Sesión</b></button>
-                    </div>
-                <div class="my-3">
-                    <div class="text-center">
-                        <p class="link-text" onclick="location.href='./register'" style="cursor: pointer; font-size: 60%;">Crear una cuenta nueva</p>
-                        <p class="link-text" onclick="location.href='../../index'" style="cursor: pointer; font-size: 60%;">Volver al inicio</p>
-                    </div>
-                </div>
-            </div>
+            <div class="card bg-light rounded-3 card-body shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
+        <h1 class="text-center mb-8" style="font-size:500%"> ¡PROXIMAMENTE! </h1>
+        </div>
         </div>
     </div>
     </div>

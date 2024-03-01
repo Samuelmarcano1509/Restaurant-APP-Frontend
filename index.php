@@ -128,16 +128,16 @@
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                   <li class="nav-item" id="item">
-                      <a class="nav-link" aria-current="page" href="#" >Menu</a>
+                      <a class="nav-link" aria-current="page" href="./views/menu" >Menu</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Localización</a>
+                      <a class="nav-link" href="./views/localization">Localización</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Nosotros</a>
+                      <a class="nav-link" href="./views/we">Nosotros</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Contacto</a>
+                      <a class="nav-link" href="./views/contactus">Contacto</a>
                   </li>
                   <li class="nav-item" id="item"  style="white-space: nowrap;">
                     <a class="nav-link" href="./views/Auth/login">Iniciar Sesión</a>
@@ -158,7 +158,7 @@
           acceso a áreas únicas y<br> otros beneficios
         </p>
         <div class="text-center col-md-6">
-          <button type="button" class="btn btn-lg rounded-4" style="margin-left: 0%;background-color:#301f14; width: 110%; border-radius: 0; color:white; font-size: 105%; ; "><b>Obtener membresía</b></button>
+          <button type="button" class="btn btn-lg rounded-4" onclick="location.href='./views/membership.php'" style="margin-left: 0%;background-color:#301f14; width: 110%; border-radius: 0; color:white; font-size: 105%; ; "><b>Obtener membresía</b></button>
       </div>
           </div>
     </div>

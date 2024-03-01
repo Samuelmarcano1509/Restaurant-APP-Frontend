@@ -43,7 +43,7 @@
   <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
-              <div class="navbar-brand d-flex"  style="align-items: center; cursor: pointer; margin-left: 3%;"  onclick="location.href='../../'"  >
+              <div class="navbar-brand d-flex"  style="align-items: center; cursor: pointer; margin-left: 3%;"  onclick="location.href='../'"  >
                 <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="Logo" width="85" height="85" class="d-inline-block align-top">
                 <span class="ms-2 fs-6 fw-bold text-uppercase">Neo Restaurant</span>
               </div>
@@ -52,23 +52,23 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                    <li class="nav-item" id="item">
-                      <a class="nav-link" aria-current="page" href="../menu" >Menu</a>
-                    </li>
-                    <li class="nav-item" id="item">
-                      <a class="nav-link" href="../localization">Localización</a>
-                    </li>
-                    <li class="nav-item" id="item">
-                      <a class="nav-link" href="../we">Nosotros</a>
-                    </li>
-                    <li class="nav-item" id="item">
-                      <a class="nav-link" href="../contactus">Contacto</a>
-                    </li>
-                    <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link" href="#login"><b>Iniciar Sesión</b></a>
-                    </li>
-                </ul>
-                </div> 
+              <li class="nav-item" id="item">
+                      <a class="nav-link" aria-current="page" href="#menu" >Menu</a>
+                  </li>
+                  <li class="nav-item" id="item">
+                      <a class="nav-link" href="./localization">Localización</a>
+                  </li>
+                  <li class="nav-item" id="item">
+                      <a class="nav-link" href="./we">Nosotros</a>
+                  </li>
+                  <li class="nav-item" id="item">
+                      <a class="nav-link" href="./contactus">Contacto</a>
+                  </li>
+                  <li class="nav-item" id="item"  style="white-space: nowrap;">
+                    <a class="nav-link" href="./Auth/login">Iniciar Sesión</a>
+                </li>
+               </ul>
+              </div> 
       </div>
   </nav>
   </div>

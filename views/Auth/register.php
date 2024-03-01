@@ -77,21 +77,21 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                  <li class="nav-item" id="item">
-                      <a class="nav-link" aria-current="page" href="#" >Menu</a>
-                  </li>
-                  <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Localización</a>
-                  </li>
-                  <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Nosotros</a>
-                  </li>
-                  <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Contacto</a>
-                  </li>
-                  <li class="nav-item" id="item"  style="white-space: nowrap;">
+              <li class="nav-item" id="item">
+                      <a class="nav-link" aria-current="page" href="../menu" >Menu</a>
+                    </li>
+                    <li class="nav-item" id="item">
+                      <a class="nav-link" href="../localization">Localización</a>
+                    </li>
+                    <li class="nav-item" id="item">
+                      <a class="nav-link" href="../we">Nosotros</a>
+                    </li>
+                    <li class="nav-item" id="item">
+                      <a class="nav-link" href="../contactus">Contacto</a>
+                    </li>
+                    <li class="nav-item" id="item"  style="white-space: nowrap;">
                     <a class="nav-link" href="./login">Iniciar Sesión</a>
-                </li>
+                    </li>
               </ul>
               </div> 
               <div class="my-3">

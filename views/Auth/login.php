@@ -19,8 +19,12 @@
       }
       
         #navbarNav{
-        padding-left: 30%;
+          padding-left: 24%;
         font-size: 95%;
+        
+      }
+      #navbar{
+        width: 100%;
       }
       
       #item{
@@ -31,9 +35,14 @@
 
       #cont{
       margin-top: 20%;
-      
-      
-      
+      }
+
+      .nav-link.active{
+        font-weight: bold;
+        opacity: 60%;
+        background-color: #301f14;
+        background-position: center;
+        border-radius: 12%;
       }
     
     </style> 
@@ -65,7 +74,7 @@
                       <a class="nav-link" href="../contactus">Contacto</a>
                     </li>
                     <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link" href="#login"><b>Iniciar Sesión</b></a>
+                    <a class="nav-link active" href="#login" style="color: white;"><b>Iniciar Sesión</b></a>
                     </li>
                 </ul>
                 </div> 

@@ -30,8 +30,12 @@
         margin-right:15%; 
       }
       #navbarNav{
-        padding-left: 30%;
+          padding-left: 24%;
         font-size: 95%;
+        
+      }
+      #navbar{
+        width: 100%;
       }
       
       #item{
@@ -60,6 +64,12 @@
     .dropdown-item:hover {
     background-color: #f5f5f5;
     }
+    .nav-link.active{
+        font-weight: bold;
+        opacity: 60%;
+        background-color: #301f14;
+        border-radius: 12%;
+      }
       
     </style> 
 </head>
@@ -90,7 +100,7 @@
                       <a class="nav-link" href="../contactus">Contacto</a>
                     </li>
                     <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link" href="./login">Iniciar Sesión</a>
+                    <a class="nav-link active" href="./login" style="color: white;">Iniciar Sesión</a>
                     </li>
               </ul>
               </div> 
@@ -175,7 +185,7 @@
                 </div>
                  <br>
                 <div class="form-group col-md-9 d-flex justify-content-center" style="margin-left: 12.5%;">
-                    <button type="button" onclick="register()"class="btn btn-lg" style="background-color:#301f14; width: 100%; border-radius: 0; color:white; font-size: 80%;"><b>Registrarse</b></button>
+                    <button type="button" onclick="register()"class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#modal_msg" style="background-color:#301f14; width: 100%; border-radius: 0; color:white; font-size: 80%;"><b>Registrarse</b></button>
                 </div>
                 <div class="text-center">
                         <p class="link-text" onclick="location.href='../../'" style="cursor: pointer; font-size: 60%; padding-top:20px">Volver al inicio</p>
@@ -184,7 +194,28 @@
         </form>
     </div>
 </div>
-  <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal_msg" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Información</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>esta es una prueba</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 
 </html>

@@ -11,16 +11,20 @@
             font-family: montserrat;
             src: url(/NeoRestaurante/public/Fonts/Montserrat/static/Montserrat-Regular.ttf);
             }
+      
         body{
         font-family: 'montserrat';
         background-image: url('/NeoRestaurante/public/img/fondito-raro.svg');
         background-size: 110%;
         background-position: top;
-      }
-      
+        }
         #navbarNav{
-        padding-left: 30%;
+          padding-left: 24%;
         font-size: 95%;
+        
+      }
+      #navbar{
+        width: 100%;
       }
       
       #item{
@@ -30,8 +34,7 @@
       }
 
       #cont{
-      margin-top: 20%;
-      
+     
       
       
       }
@@ -74,15 +77,15 @@
   </div>
 
       <!-- Proximamente -->
-      <form class="container col-md-9" id="formulario" >
+    <form class="container col-md-9" id="formulario" style= "margin-top:20%";>
     <div class="row justify-content-center">
-        <div class="col-md-9 mx-auto row-8" id="cont"> 
+      <div class="col-md-10 mx-auto row-8" id="cont"> 
             <div class="card bg-light rounded-3 card-body shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
-        <h1 class="text-center mb-8" style="font-size:500%"> ¡PROXIMAMENTE! </h1>
-        </div>
-        </div>
+            <h1 class="text-center mb-8" style="font-size:500%"> ¡PROXIMAMENTE! </h1>
+            </div>
+      </div>
     </div>
-    </div>
+    
 </form>
 <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
 </body>

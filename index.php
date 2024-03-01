@@ -23,6 +23,7 @@
     }
 
     #Navbar {
+
       width: 100%; 
       margin: 0; 
       padding: 0; 
@@ -34,8 +35,12 @@
     }
 
     #navbarNav{
-        padding-left: 30%;
+          padding-left: 24%;
         font-size: 95%;
+        
+      }
+      #navbar{
+        width: 100%;
       }
       
       #item{
@@ -64,6 +69,9 @@
       margin-right: 10%;
       overflow: hidden;
     }
+    .slider-elemento{
+      padding-left: 0.5%
+    }
 
     .left,
     .right {
@@ -80,14 +88,14 @@
 
     .left {
       position: absolute;
-      top: 85%;
+      top: 74%;
       left: 30px;
       padding-top: 10%;
     }
 
     .right {
       position: absolute;
-      top: 85%;
+      top: 74%;
       right: 30px;
       padding-top: 10%;
     }
@@ -110,6 +118,8 @@
     }
     .slider-indicadores .glider-dot:hover{
       opacity: 100%;
+      background-color: #301f14;
+      opacity: 65%;
     }
    
     </style>
@@ -165,14 +175,14 @@
 </div>
 </div>
 
-<!--Ejemplo de como se veria el slider-->
+<!--el slider-->
 
 <div class="slider" style="background-color:  rgb(0, 0, 0)">
   <div class="slider-contenedor ">
     <button aria-label="prueba" class="left">
       <img src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/svgs/solid/chevron-left.svg" alt=""> 
     </button>
-      <div class="slider-contenido" style="padding-top: 2%;">
+      <div class="slider-contenido" style="padding-top: 3%;">
         <div class="slider-elemento">
           <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
           <p style="color: #dedede; text-align: center;"><b>Platillo 1</b></p>

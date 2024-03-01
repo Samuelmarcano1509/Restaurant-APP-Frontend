@@ -18,9 +18,13 @@
         background-position: top;
       }
       
-        #navbarNav{
-        padding-left: 30%;
+      #navbarNav{
+          padding-left: 24%;
         font-size: 95%;
+        
+      }
+      #navbar{
+        width: 100%;
       }
       
       #item{
@@ -31,9 +35,13 @@
 
       #cont{
       margin-top: 20%;
-      
-      
-      
+
+      }
+      .nav-link.active{
+        font-weight: bold;
+        opacity: 60%;
+        background-color: #301f14;
+        border-radius: 12%;
       }
     
     </style> 
@@ -62,7 +70,7 @@
                       <a class="nav-link" href="./we">Nosotros</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link" href="#contactus">Contacto</a>
+                      <a class="nav-link active" href="#contactus" style="color:white; ">Contacto</a>
                   </li>
                   <li class="nav-item" id="item"  style="white-space: nowrap;">
                     <a class="nav-link" href="./Auth/login">Iniciar Sesión</a>
@@ -71,12 +79,14 @@
               </div> 
       </div>
   </nav>
+  
+
   </div>
 
       <!-- Proximamente -->
       <form class="container col-md-9" id="formulario" >
     <div class="row justify-content-center">
-        <div class="col-md-9 mx-auto row-8" id="cont"> 
+        <div class="col-md-10 mx-auto row-8" id="cont"> 
             <div class="card bg-light rounded-3 card-body shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
         <h1 class="text-center mb-8" style="font-size:500%"> ¡PROXIMAMENTE! </h1>
         </div>

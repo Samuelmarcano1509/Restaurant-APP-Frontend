@@ -221,7 +221,7 @@
           </p>
       </div>
       <div class="modal-footer">
-        <button id='redirect'type="button" class="btn btn-danger">Cerrar</button>
+        <button id='redirect'type="button" class="btn btn-danger" data-bs-dismiss=modal>Cerrar</button>
       </div>
     </div>
   </div>

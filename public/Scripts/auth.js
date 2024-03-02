@@ -33,24 +33,22 @@ const authRegister = async()=> {
                         document.getElementById('spinner-hide').style.display='none'
                         document.getElementById('response').textContent=datas.title
                     }
-                        if (response.ok) {
-                            const data = await response.json();
-                            document.getElementById('response').textContent=data.title
+                        if (response.status===201) {
+                            document.getElementById('response').textContent=datas.title
                             document.getElementById('button-close').style.display='none'
-                            document.getElementById('button-close').style.display='none'
+                            document.getElementById('spinner-hide').style.display='none'
                             document.getElementById('redirect').textContent='continuar'
                             document.getElementById('redirect').addEventListener('click',() => {
                                 window.location.href = '/NeoRestaurante/views/profile';
                             })
-                            localStorage.setItem('token', data.token);
+                            localStorage.setItem('token', datas.token);
                             const statusCode = response.status;
-
                         }
                 } catch (error){
-                    console.log('aqui')
                     document.getElementById('response').textContent='esto es un catch'
                     // document.getElementById('spinner').style.display='none'
                     console.log(error)
+    
                 
         }
    }

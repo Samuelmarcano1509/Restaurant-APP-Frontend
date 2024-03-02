@@ -70,7 +70,14 @@
         background-color: #301f14;
         border-radius: 12%;
       }
-      
+         .modal-body{
+             justify-content: center;
+             align-items: center; /* Added to center vertically */
+             display: flex;
+         }
+      .spinner-hide{
+          display: flex;
+      }
     </style> 
 </head>
 <body class="">
@@ -203,19 +210,26 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Información</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button id="button-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <p>esta es una prueba</p>
+      <div class="modal-body" >
+          <div id="spinner-hide" class="spinner-hide">
+              <div id="spinner" class="spinner-border" role="status">
+              </div>
+          </div>
+          <p id="response">
+          </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <button id='redirect'type="button" class="btn btn-danger">Cerrar</button>
       </div>
     </div>
   </div>
 </div>
 
+<script src="/NeoRestaurante/public/Scripts/auth.js">
 
+</script>
 </body>
 
 </html>

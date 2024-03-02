@@ -20,7 +20,7 @@ const authRegister = async()=> {
                         password: data.get('contraseña'),
                         gender:data.get('genero'),
                     }
-                    console.log(inf)
+                    document.getElementById('spinner-hide').style.display='flex'
                     const response = await fetch('http://127.0.0.1:8000/api/register', {
                         method: 'POST',
                         headers: {
@@ -28,16 +28,28 @@ const authRegister = async()=> {
                         },
                         body: JSON.stringify(inf),
                         })
-                        console.log(response)
+                    const datas = await response.json();
+                    if (response.status===400){
+                        document.getElementById('spinner-hide').style.display='none'
+                        document.getElementById('response').textContent=datas.title
+                    }
                         if (response.ok) {
                             const data = await response.json();
+                            document.getElementById('response').textContent=data.title
+                            document.getElementById('button-close').style.display='none'
+                            document.getElementById('button-close').style.display='none'
+                            document.getElementById('redirect').textContent='continuar'
+                            document.getElementById('redirect').addEventListener('click',() => {
+                                window.location.href = '/NeoRestaurante/views/profile';
+                            })
                             localStorage.setItem('token', data.token);
-                            console.log(data)
                             const statusCode = response.status;
-                            console.log(statusCode);
-                            location.href = "/NeoRestaurante/views/profile";
+
                         }
-                } catch (error){ 
+                } catch (error){
+                    console.log('aqui')
+                    document.getElementById('response').textContent='esto es un catch'
+                    // document.getElementById('spinner').style.display='none'
                     console.log(error)
                 
         }

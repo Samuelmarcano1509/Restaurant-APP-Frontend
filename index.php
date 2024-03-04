@@ -124,11 +124,11 @@
    
     </style>
 </head>
-<body>
+<body >
   <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
-              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%; cursor:pointer" onclick="location.href="./"  >
+              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%; cursor:pointer" onclick="location.href='../'"  >
                 <img src="./public/img/neo-favicon-white.svg" alt="Logo" width="85" height="85" class="d-inline-block align-top">
                 <span class="ms-2 fs-6 fw-bold text-uppercase">Neo Restaurant</span>
               </div>
@@ -150,7 +150,7 @@
                       <a class="nav-link" href="./views/contactus">Contacto</a>
                   </li>
                   <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link" href="./views/Auth/login">Iniciar Sesión</a>
+                    <a id="titleusers" class="nav-link" href="./views/Auth/login">Iniciar Sesión</a>
                 </li>
                </ul>
               </div> 
@@ -233,5 +233,6 @@
 <script src="/NeoRestaurante/public/js/bootstrap.js"></script>
 <script src="/NeoRestaurante/public/Scripts/register.js"></script>
 <script src="/NeoRestaurante/public/Scripts/slider.js"></script>
+
 </body>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 </html>

@@ -72,7 +72,7 @@
       }
          .modal-body{
              justify-content: center;
-             align-items: center; /* Added to center vertically */
+             align-items: center; 
              display: flex;
          }
       .spinner-hide{
@@ -81,7 +81,6 @@
     </style> 
 </head>
 <body class="">
-  <body>
   <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
@@ -217,8 +216,7 @@
               <div id="spinner" class="spinner-border" role="status">
               </div>
           </div>
-          <p id="response">
-          </p>
+          <p id="response"></p>
       </div>
       <div class="modal-footer">
         <button id='redirect'type="button" class="btn btn-danger" data-bs-dismiss=modal>Cerrar</button>
@@ -227,9 +225,8 @@
   </div>
 </div>
 
-<script src="/NeoRestaurante/public/Scripts/auth.js">
-
-</script>
+<script src="/NeoRestaurante/public/Scripts/validation.js"></script>
+<script src="/NeoRestaurante/public/Scripts/auth.js"></script>
 </body>
 
 </html>

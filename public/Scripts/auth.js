@@ -45,7 +45,7 @@ const authRegister = async()=> {
                             const statusCode = response.status;
                         }
                 } catch (error){
-                    document.getElementById('response').textContent='esto es un catch'
+                    document.getElementById('response').textContent='Ha ocurrido un error inesperado'
                     // document.getElementById('spinner').style.display='none'
                     console.log(error)
     
@@ -54,6 +54,7 @@ const authRegister = async()=> {
    }
 
 const authLogin = async()=> {
+    
     var formulario = document.getElementById('formulario')
                 try{
                     var data = new FormData(formulario);
@@ -68,17 +69,26 @@ const authLogin = async()=> {
                         },
                         body: JSON.stringify(inf),
                         })
-                        if (response.ok) {
-                            const data = await response.json();
-                            localStorage.setItem('token', data.token);
-                            console.log(data)
+                        const datas = await response.json();
+                        if (response.status===404){
+                        document.getElementById('spinner-hide').style.display='none'
+                        document.getElementById('response').textContent=datas.title
+                        }
+                        if (response.status===200) {
+                            document.getElementById('response').textContent=datas.title
+                            document.getElementById('button-close').style.display='none'
+                            document.getElementById('spinner-hide').style.display='none'
+                            document.getElementById('redirect').textContent='continuar'
+                            document.getElementById('redirect').addEventListener('click',() => {
+                                window.location.href = '/NeoRestaurante/views/profile';
+                            })
+                            localStorage.setItem('token', datas.token);
                             const statusCode = response.status;
-                            console.log(statusCode);
-                            location.href = "/NeoRestaurante/views/profile";
                         }
                 } catch (error){ 
+                    document.getElementById('response').textContent='Ha ocurrido un error'
                     console.log(error)
-                    console.log('error')
+                   
         }
 }
 
@@ -93,6 +103,10 @@ function authValidation (){
    function closeSesion (){
     authClose();
    }
+   document.getElementById('casocerrado').addEventListener("click", function(e){
+    e.preventDefault()
+    console.log('aqui')
+   })
    
    
    const authClose = async()=> {

@@ -99,7 +99,7 @@
                     </div>
                     <br>
                     <div class="form-group col-md-9 d-flex justify-content-center" style="margin-left: 12.5%;">
-                        <button type="button" onclick="login()" class="btn btn-lg" style="background-color:#301f14; width: 87.5%; border-radius: 0; color:white; font-size: 80%;"><b>Iniciar Sesión</b></button>
+                        <button type="button" onclick="login()" class="btn btn-lg"data-bs-toggle="modal" data-bs-target="#modal_msg" style="background-color:#301f14; width: 87.5%; border-radius: 0; color:white; font-size: 80%;"><b>Iniciar Sesión</b></button>
                     </div>
                 <div class="my-3">
                     <div class="text-center">
@@ -112,6 +112,31 @@
     </div>
     </div>
 </form>
+<!-- Modal -->
+<div class="modal fade" id="modal_msg" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Información</h1>
+        <button id="button-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+          <div id="spinner-hide" class="spinner-hide">
+              <div id="spinner" class="spinner-border" role="status">
+              </div>
+          </div>
+          <p id="response"></p>
+      </div>
+      <div class="modal-footer">
+        <button id='redirect'type="button" class="btn btn-danger" data-bs-dismiss=modal>Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/NeoRestaurante/public/Scripts/validation.js"></script>
 <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+
+
 </body>
 </html>

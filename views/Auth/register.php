@@ -35,6 +35,10 @@
         
       }
       #navbar{
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 100;
         width: 100%;
       }
       
@@ -176,11 +180,9 @@
                         <i class="form-validation-icon fa-regular fa-circle-question"></i>
                         </div>
                     </div>
-                    <div class="dropdown col-md-6" id="selector" style="margin-top: 4.5%; ">
+                    <div class="dropdown col-md-6" id="selector">
+                    <label for="genero">Género</label>
                     <select class="btn btn-light bg-white" name="genero"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                        <button class=" dropdown-menu aria-labelledby="dropdownMenuButton" type="button"style="width: 100%; text-align: left; border-color: #DEDEDE;" >
-                          Género
-                        </button>
                             <option><a>No especificado</a></option>
                             <option><a>Masculino</a></option>
                             <option><a>Femenino</a></option>

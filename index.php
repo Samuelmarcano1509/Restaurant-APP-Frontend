@@ -231,7 +231,6 @@
 <script src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/js/fontawesome.js"></script>  
 <script src="/NeoRestaurante/public/Glider.js-master/glider.min.js"></script>   
 <script src="/NeoRestaurante/public/js/bootstrap.js"></script>
-<script src="/NeoRestaurante/public/Scripts/register.js"></script>
 <script src="/NeoRestaurante/public/Scripts/slider.js"></script>
 
 </body>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

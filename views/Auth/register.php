@@ -30,8 +30,12 @@
         margin-right:15%; 
       }
       #navbarNav{
-        padding-left: 25%;
+          padding-left: 24%;
         font-size: 95%;
+        
+      }
+      #navbar{
+        width: 100%;
       }
       
       #item{
@@ -60,15 +64,27 @@
     .dropdown-item:hover {
     background-color: #f5f5f5;
     }
-      
+    .nav-link.active{
+        font-weight: bold;
+        opacity: 60%;
+        background-color: #301f14;
+        border-radius: 12%;
+      }
+         .modal-body{
+             justify-content: center;
+             align-items: center; 
+             display: flex;
+         }
+      .spinner-hide{
+          display: flex;
+      }
     </style> 
 </head>
 <body class="">
-  <body>
   <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
-              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%;"  href="#" >
+              <div class="navbar-brand d-flex"  style="align-items: center; cursor: pointer; margin-left: 3%;"  onclick="location.href='../../'" >
                 <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="Logo" width="85" height="85" class="d-inline-block align-top">
                 <span class="ms-2 fs-6 fw-bold text-uppercase">Neo Restaurant</span>
               </div>
@@ -77,23 +93,25 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                  <li class="nav-item" id="item">
-                      <a class="nav-link active" aria-current="page" href="#" >Menu</a>
-                  </li>
-                  <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Localización</a>
-                  </li>
-                  <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Nosotros</a>
-                  </li>
-                  <li class="nav-item" id="item">
-                      <a class="nav-link" href="#">Contacto</a>
-                  </li>
-                  <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link" href="./views/Auth/login.html">Iniciar Sesión</a>
-                </li>
-               </ul>
+              <li class="nav-item" id="item">
+                      <a class="nav-link" aria-current="page" href="../menu" >Menu</a>
+                    </li>
+                    <li class="nav-item" id="item">
+                      <a class="nav-link" href="../localization">Localización</a>
+                    </li>
+                    <li class="nav-item" id="item">
+                      <a class="nav-link" href="../we">Nosotros</a>
+                    </li>
+                    <li class="nav-item" id="item">
+                      <a class="nav-link" href="../contactus">Contacto</a>
+                    </li>
+                    <li class="nav-item" id="item"  style="white-space: nowrap;">
+                    <a class="nav-link active" href="./login" style="color: white;">Iniciar Sesión</a>
+                    </li>
+              </ul>
               </div> 
+              <div class="my-3">
+                    
       </div>
   </nav>
   </div>
@@ -109,11 +127,11 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="apellido">Apellidos:</label>
-                        <input type="text" class="form-control"  name="apellido"  placeholder="Ingrese sus apellidos">
+                        <input type="text" class="form-control"  name="apellido"  placeholder="Ingrese su apellido">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="fecha">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="su fecha de nacimiento">
+                        <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de nacimiento">
                         <script>
                             const fechaInput = document.getElementById('fecha');
                             fechaInput.addEventListener('change', () => {
@@ -132,15 +150,14 @@
                         <input type="tel" class="form-control" name="telefono" placeholder="N° Teléfono">
                     </div>
                     <div class="dropdown col-md-6" id="selector" style="margin-top: 4.5%; ">
-                        <button class="btn btn-light bg-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <select class="btn btn-light bg-white" name="genero"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                        <button class=" dropdown-menu aria-labelledby="dropdownMenuButton" type="button"style="width: 100%; text-align: left; border-color: #DEDEDE;" >
                           Género
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item" href="#">Masculino</a></li>
-                          <li><a class="dropdown-item" href="#">Femenino</a></li>
-                          <!--Mientras tanto lo estoy haciendo asi, despues hacemos la llamada a la base de datos para el combobox-->
-                          <li><a class="dropdown-item" href="#">No especificado</a></li>
-                        </ul>
+                            <option><a>No especificado</a></option>
+                            <option><a>Masculino</a></option>
+                            <option><a>Femenino</a></option>
+                        </select>
                       </div>
                       <script>
                         const dropdownButton = document.getElementById('dropdownMenuButton');
@@ -174,15 +191,42 @@
                 </div>
                  <br>
                 <div class="form-group col-md-9 d-flex justify-content-center" style="margin-left: 12.5%;">
-                    <button type="submit" class="btn btn-lg" style="background-color:#301f14; width: 100%; border-radius: 0; color:white; font-size: 80%;"><b>Registrarse</b></button>
+                    <button type="button" onclick="register()"class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#modal_msg" style="background-color:#301f14; width: 100%; border-radius: 0; color:white; font-size: 80%;"><b>Registrarse</b></button>
                 </div>
+                <div class="text-center">
+                        <p class="link-text" onclick="location.href='../../'" style="cursor: pointer; font-size: 60%; padding-top:20px">Volver al inicio</p>
+                    </div>
             </div>
         </form>
     </div>
 </div>
- 
-  </form>
-  <script src="./Scripts/register.js"></script>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal_msg" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Información</h1>
+        <button id="button-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+          <div id="spinner-hide" class="spinner-hide">
+              <div id="spinner" class="spinner-border" role="status">
+              </div>
+          </div>
+          <p id="response"></p>
+      </div>
+      <div class="modal-footer">
+        <button id='redirect'type="button" class="btn btn-danger" data-bs-dismiss=modal>Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/NeoRestaurante/public/Scripts/validation.js"></script>
+<script src="/NeoRestaurante/public/Scripts/auth.js"></script>
 </body>
 
 </html>

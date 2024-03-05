@@ -35,6 +35,10 @@
         
       }
       #navbar{
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 100;
         width: 100%;
       }
       
@@ -78,6 +82,20 @@
       .spinner-hide{
           display: flex;
       }
+
+      .form-validation-icon{
+        position: absolute;
+        opacity: 0;
+      }
+
+      .form-group-incorrect{
+        
+      }
+
+      .form-group-correct{
+        
+      }
+
     </style> 
 </head>
 <body class="">
@@ -123,11 +141,18 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="nombre">Nombres:</label>
+                        <div>
                         <input type="text" class="form-control" name="nombre" placeholder="Ingrese sus nombres">
+                        <!-- style="top: 19.5%; left: 44.4%" -->
+                        <i class="form-validation-icon fa-regular fa-circle-question"></i>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="apellido">Apellidos:</label>
+                        <div>
                         <input type="text" class="form-control"  name="apellido"  placeholder="Ingrese su apellido">
+                        <i class="form-validation-icon fa-regular fa-circle-question"></i>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="fecha">Fecha de nacimiento:</label>
@@ -143,17 +168,21 @@
                     </div>
                     <div class="form-group col-md-6">
                             <label for="cedula">Cedula:</label>
+                            <div>
                             <input type="text" class="form-control" name="cedula" placeholder="Ingrese su cedula">
+                            <i class="form-validation-icon fa-regular fa-circle-question"></i>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="telefono">Número de Teléfono:</label>
+                        <div>
                         <input type="tel" class="form-control" name="telefono" placeholder="N° Teléfono">
+                        <i class="form-validation-icon fa-regular fa-circle-question"></i>
+                        </div>
                     </div>
-                    <div class="dropdown col-md-6" id="selector" style="margin-top: 4.5%; ">
+                    <div class="dropdown col-md-6" id="selector">
+                    <label for="genero">Género</label>
                     <select class="btn btn-light bg-white" name="genero"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                        <button class=" dropdown-menu aria-labelledby="dropdownMenuButton" type="button"style="width: 100%; text-align: left; border-color: #DEDEDE;" >
-                          Género
-                        </button>
                             <option><a>No especificado</a></option>
                             <option><a>Masculino</a></option>
                             <option><a>Femenino</a></option>
@@ -178,16 +207,25 @@
                
           <div class="form-group">
               <label for="correo">Correo electrónico:</label>
+              <div>
               <input type="email" class="form-control" name="correo" placeholder="Ingrese su correo electrónico">
+              <i class="form-validation-icon fa-regular fa-circle-question"></i>
+              </div>
           </div>
           
            <div class="form-group col-12">
                     <label for="usuario">Nombre de Usuario:</label>
+                    <div>
                     <input type="text" class="form-control"  name="usuario" placeholder="Ingrese su nombre de usuario">
+                    <i class="form-validation-icon fa-regular fa-circle-question"></i>
+                    </div>
                 </div>
                 <div class="form-group col-12">
                     <label for="contraseña">Contraseña:</label>
+                    <div>
                     <input type="password" class="form-control" name="contraseña" placeholder="Ingrese su contraseña">
+                    <i class="form-validation-icon fa-regular fa-circle-question"></i>
+                    </div>
                 </div>
                  <br>
                 <div class="form-group col-md-9 d-flex justify-content-center" style="margin-left: 12.5%;">
@@ -227,6 +265,7 @@
 
 <script src="/NeoRestaurante/public/Scripts/validation.js"></script>
 <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+<script src="https://kit.fontawesome.com/415c918670.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

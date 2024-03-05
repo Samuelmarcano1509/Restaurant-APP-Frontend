@@ -25,6 +25,10 @@
       }
       #navbar{
         width: 100%;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 100;
       }
       
       #item{
@@ -36,7 +40,11 @@
       #cont{
       margin-top: 20%;
       }
-
+      .modal-body{
+             justify-content: center;
+             align-items: center; 
+             display: flex;
+         }
       .nav-link.active{
         font-weight: bold;
         opacity: 60%;

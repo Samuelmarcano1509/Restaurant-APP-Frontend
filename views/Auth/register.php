@@ -115,7 +115,7 @@
                       <a class="nav-link" aria-current="page" href="../menu" >Menu</a>
                     </li>
                     <li class="nav-item" id="item">
-                      <a class="nav-link" href="../localization">Localización</a>
+                      <a class="nav-link" href="../localization">Reservas</a>
                     </li>
                     <li class="nav-item" id="item">
                       <a class="nav-link" href="../we">Nosotros</a>

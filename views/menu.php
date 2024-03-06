@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
     <style>
@@ -13,13 +13,13 @@
             }
         body{
         font-family: 'montserrat';
-        background-image: url('/NeoRestaurante/public/img/fondito-raro.svg');
+        background-color: rgb(217, 213, 213);
         background-size: 110%;
         background-position: top;
       }
       
       #navbarNav{
-          padding-left: 24%;
+        padding-left: 24%;
         font-size: 95%;
         
       }
@@ -41,8 +41,112 @@
         font-weight: bold;
         opacity: 60%;
         background-color: #301f14;
-        border-radius: 12%;
+        border-radius: 20%;
       }
+        .sidebar {
+            background-color: #301f14;
+            color: white;
+            padding-top: 20px;
+            width: 250px;
+            height: 82.2vh auto;
+        }
+        .sidebar-heading {
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .list-group-item {
+            background-color: #301f14;
+            border-color: #301f14;
+            color: white;
+            border-radius: 0;
+            text-align: center;
+        }
+        .list-group-item:hover {
+            background-color: #333;
+            color: white;
+        }
+        .dish-container {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 300px;
+        margin: 10px auto;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        position: relative; /* Posición relativa */
+        
+        }
+        .dish-image {
+            width: 100px; 
+            height: auto;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .dish-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+        
+        .center-container {
+            position: absolute;
+            top: 76%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Pedidos 
+        .order-box {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            position: absolute;
+            top: 0px;
+            left: 500px;
+            margin-top: 70px; 
+            margin-right: 20px;
+            z-index: 999;
+        }
+        .order-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center; 
+        }
+        .separator {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .text-area {
+            margin-bottom: 20px;
+        }
+        .continue-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #301F14;
+            color: white;        
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 20px; /* Ajusta este valor según tu preferencia */
+}*/
+
     
     </style> 
 </head>
@@ -80,16 +184,65 @@
       </div>
   </nav>
   </div>
-      <!-- Proximamente -->
-  <form class="container col-md-9" id="formulario" >
-    <div class="row justify-content-center">
-      <div class="col-md-10 mx-auto row-8" id="cont"> 
-            <div class="card bg-light rounded-3 card-body shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
-        <h1 class="text-center mb-8" style="font-size:500%"> ¡PROXIMAMENTE! </h1>
+
+        <!--Barra Lateral-->
+        <div class="col-md-3 col-12 sidebar" >
+        <h2 class="sidebar-heading"><b>Menú</b></h2>
+        <ul class="list-group">
+          <li class="list-group-item">Platos Principales</li>
+          <li class="list-group-item">Especialidades de la casa</li>
+          <li class="list-group-item">Selección de Carnes</li>
+          <li class="list-group-item">Delicias del Mar</li>
+          <li class="list-group-item">Selección de Mariscos</li>
+          <li class="list-group-item">Platos Vegetarianos</li>
+          <li class="list-group-item">Aperitivos</li>
+          <li class="list-group-item">Acompañamientos</li>
+          <li class="list-group-item">Postres</li>
+          <li class="list-group-item">Bebidas</li>
+        </ul>
+        <!--Platillos-->
         </div>
+        <div class="center-container">
+        <div class="title">Platillos</div>
+         <div class="col-md-6 col-12">
+            <div class="dish-container">
+                <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+                <div class="dish-info">
+                    <h5>Caviar</h5>
+                    <p>Caviar con lorem ipsum.</p>
+                    <span>$15.99</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+            <div class="dish-container">
+                <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+                <div class="dish-info">
+                    <h5>Caviar</h5>
+                    <p>Caviar con lorem ipsum.</p>
+                    <span>$15.99</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+            <div class="dish-container">
+                <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+                <div class="dish-info">
+                    <h5>Caviar</h5>
+                    <p>Caviar con lorem ipsum.</p>
+                    <span>$15.99</span>
+                </div>
+            </div>
+                <div class="col-md-6 col-12">
+                <div class="dish-container">
+                <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+                <div class="dish-info">
+                    <h5>Caviar</h5>
+                    <p>Caviar con lorem ipsum.</p>
+                    <span >$15.99</span>
+                </div>
+                <!-- Agrega más columnas según sea necesario para los demás platillos -->
+            </div>
         </div>
-    </div>
-    </div>
+    
 </form>
 
  

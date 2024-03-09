@@ -37,14 +37,24 @@
       margin-top: 20%;
 
       }
-      .nav-link.active{
-        font-weight: bold;
-        opacity: 60%;
-        background-color: #301f14;
-        border-radius: 20%;
-      }
+        .nav-link.active {
+            font-weight: bold;
+            background-color: transparent; 
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #301f14; /* Color de la línea */
+        }
         .sidebar {
-            background-color: #301f14;
+            background-color: #170E09;
             color: white;
             padding-top: 20px;
             width: 250px;
@@ -56,14 +66,14 @@
             text-align: center;
         }
         .list-group-item {
-            background-color: #301f14;
-            border-color: #301f14;
+            background-color: #170E09;
+            border-color: #170E09;
             color: white;
             border-radius: 0;
             text-align: center;
         }
         .list-group-item:hover {
-            background-color: #333;
+            background-color: #301f14;
             color: white;
         }
         .dish-container {
@@ -165,7 +175,7 @@
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
               <li class="nav-item" id="item">
-                      <a class="nav-link active" aria-current="page" href="#menu" style="color: white;" >Menu</a>
+                      <a class="nav-link active" aria-current="page" href="#menu" >Menu</a>
                   </li>
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./localization">Localización</a>

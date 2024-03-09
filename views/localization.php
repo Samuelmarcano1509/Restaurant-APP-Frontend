@@ -13,7 +13,7 @@
             }
         body{
         font-family: 'montserrat';
-        background-image: url('/NeoRestaurante/public/img/fondoteraro.jpg');
+        background-image: url('/NeoRestaurante/public/img/OIG1.cggt.MuVdud2vmc.jpeg');
         background-size: 110%;
         background-position: center;
       }
@@ -116,7 +116,7 @@
       </div>
   </nav>
   </div>
-<div class="container"> <!-- Añadimos márgenes arriba y abajo al contenedor -->
+<div class="container"> 
     <div class="row justify-content-center mt-4">
         <div class="col-md-8 formulario">
             <h2 class="text-center mb-4">Reservar una Mesa</h2>

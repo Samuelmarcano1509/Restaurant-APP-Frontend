@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
+    <title>Nosotros</title>
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
     <style>
@@ -13,7 +13,7 @@
             }
         body{
         font-family: 'montserrat';
-        background-image: url('/NeoRestaurante/public/img/fondito-raro.svg');
+        
         background-size: 110%;
         background-position: top;
       }
@@ -33,16 +33,22 @@
         
       }
 
-      #cont{
-      margin-top: 20%;
-      white-space: nowrap;
-      }
-      .nav-link.active{
-        font-weight: bold;
-        opacity: 60%;
-        background-color: #301f14;
-        border-radius: 12%;
-      }
+        .nav-link.active {
+            font-weight: bold;
+            background-color: transparent; 
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #301f14; /* Color de la línea */
+        }
     
     </style> 
 </head>
@@ -67,7 +73,7 @@
                       <a class="nav-link" href="./localization">Localización</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link active" href="#we" style="color: white;">Nosotros</a>
+                      <a class="nav-link active" href="#we" >Nosotros</a>
                   </li>
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./contactus">Contacto</a>
@@ -81,16 +87,44 @@
   </nav>
   </div>
 
-      <!-- Proximamente -->
-      <form class="container col-md-9" id="formulario" >
-    <div class="row justify-content-center">
-      <div class="col-md-10 mx-auto row-8" id="cont">  
-            <div class="card bg-light rounded-3 card-body shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
-        <h1 class="text-center mb-8" style="font-size:500%"> ¡PROXIMAMENTE! </h1>
-        </div>
+<!-- Contenedor "¡PROXIMAMENTE!" con imágenes encima -->
+    <div class="container-fluid bg-black text-white py-3">
+        <div class="row align-items-center" style=" height: 190px;">
+            <!-- Imagen a la izquierda -->
+            <div class="col-md-3 text-center">
+                <img src="/NeoRestaurante/public/img/imagen_2024-03-08_101718981.png" alt="Left Image" style="width: 200px; margin-right:130px;">
+            </div>
+            <!-- Texto centralizado -->
+            <div class="col-md-6 text-center">
+                <h1 class="display-4">Sobre Nosotros</h1>
+            </div>
+            <!-- Imagen a la derecha -->
+            <div class="col-md-3 text-center">
+                <img src="/NeoRestaurante/public/img/imagen_2024-03-08_101718981.png" alt="Right Image" style="width: 200px; margin-left:120px;">
+            </div>
         </div>
     </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12 text-center" style="padding-bottom:40px; margin-top:20px;">
+            <h2><b>La Historia de Neo Restaurante</b></h2>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend pharetra arcu, sit amet lacinia tortor auctor vel. Donec posuere, mi eget pharetra blandit, sem ante pellentesque metus, nec cursus nunc risus et nulla. Quisque semper justo in justo consectetur, at interdum dui tincidunt. Vivamus tincidunt justo ac mi fringilla, nec lobortis ex scelerisque. Pellentesque vitae efficitur nunc. Integer non velit metus.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <img src="/NeoRestaurante/public/img/OIG1.B.j78s.jpeg" alt="Imagen" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+
 </form>
 <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
 </body>

@@ -45,13 +45,22 @@
              align-items: center; 
              display: flex;
          }
-      .nav-link.active{
-        font-weight: bold;
-        opacity: 60%;
-        background-color: #301f14;
-        background-position: center;
-        border-radius: 12%;
-      }
+        .nav-link.active {
+            font-weight: bold;
+            background-color: transparent; 
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #301f14; /* Color de la línea */
+        }
     
     </style> 
 </head>
@@ -82,7 +91,7 @@
                       <a class="nav-link" href="../contactus">Contacto</a>
                     </li>
                     <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link active" href="#login" style="color: white;"><b>Iniciar Sesión</b></a>
+                    <a class="nav-link active" href="#login" ><b>Iniciar Sesión</b></a>
                     </li>
                 </ul>
                 </div> 

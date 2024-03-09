@@ -257,7 +257,7 @@
           <p id="response"></p>
       </div>
       <div class="modal-footer">
-        <button id='redirect'type="button" class="btn btn-danger" data-bs-dismiss=modal>Cerrar</button>
+        <button id='redirect'type="button" class="btn btn-secondary" data-bs-dismiss=modal>Cerrar</button>
       </div>
     </div>
   </div>
@@ -265,7 +265,7 @@
 
 <script src="/NeoRestaurante/public/Scripts/validation.js"></script>
 <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
-<script src="https://kit.fontawesome.com/415c918670.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neo Restaurant</title>
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
-    <link rel="stylesheet" href="public/Glider.js-master/glider.min.css">
+    <link rel="stylesheet" href="/NeoRestaurante/public/vendor/libs/js/Glider.js-master/glider.min.css">
     
     <style>
        @font-face {
@@ -75,14 +75,13 @@
 
     .left,
     .right {
-      background: none;
-      display: block;
+        display: block;
       width: 30px;
       height: 30px;
       border: none;
       cursor: pointer;
-      background-color: none;
-      color: #ffffff;
+        background: none;
+        color: #ffffff;
       opacity: 20%;
     }
 
@@ -180,7 +179,7 @@
 <div class="slider" style="background-color:  rgb(0, 0, 0)">
   <div class="slider-contenedor ">
     <button aria-label="prueba" class="left">
-      <img src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/svgs/solid/chevron-left.svg" alt=""> 
+      <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/chevron-left.svg" alt=""> 
     </button>
       <div class="slider-contenido" style="padding-top: 3%;">
         <div class="slider-elemento">
@@ -214,7 +213,7 @@
         </div>
         
         <button aria-label="prueba" class="right">
-          <img src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/svgs/solid/chevron-right.svg" alt="">
+          <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/chevron-right.svg" alt="">
         </button>
       </div>
 
@@ -228,9 +227,9 @@
 
  
  
-<script src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/js/fontawesome.js"></script>  
-<script src="/NeoRestaurante/public/Glider.js-master/glider.min.js"></script>   
-<script src="/NeoRestaurante/public/js/bootstrap.js"></script>
+<script src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/js/fontawesome.js"></script>  
+<script src="/NeoRestaurante/public/vendor/libs/js/Glider.js-master/glider.min.js"></script>
+<script src="/NeoRestaurante/public/js/bootstrap.js"></script>   
 <script src="/NeoRestaurante/public/Scripts/register.js"></script>
 <script src="/NeoRestaurante/public/Scripts/slider.js"></script>
 

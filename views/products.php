@@ -18,6 +18,7 @@
     <!-- Helpers -->
     <script src="/NeoRestaurante/public/vendor/js/helpers.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/config.js"></script>
+
     <style>
       .card{
         margin-top: 5%;
@@ -25,7 +26,6 @@
         margin-right: 7%;
       }
     </style>
-
 </head>
 <body onload="authValidation()">
     <!-- Layout wrapper -->
@@ -45,25 +45,25 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item">
+            <li class="menu-item ">
               <a href="/NeoRestaurante/views/statistics.php" class="menu-link">
-              <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
+                <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
                 <div data-i18n="Analytics">Estadisticas</div>
               </a>
             </li>
-            <li class="menu-item active open">
-              <a href="" class="menu-link">
+            <li class="menu-item">
+              <a href="/NeoRestaurante/views/profile.php" class="menu-link">
                 <div data-i18n="Account">Perfiles</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item active open">
               <a href="/NeoRestaurante/views/products.php" class="menu-link">
               <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
                 <div data-i18n="Analytics">Productos</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="/NeoRestaurante/views/orders.php" class="menu-link">
+            <a href="/NeoRestaurante/views/orders.php" class="menu-link">
               <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
                 <div data-i18n="Analytics">Pedidos</div>
               </a>
@@ -111,7 +111,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/user.svg" alt class="w-px-30 h-auto rounded-circle" /> <!--avatar-->
+                    <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/user.svg" alt class="w-px-30 h-auto rounded-circle" /> <!--avatar-->
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -133,23 +133,21 @@
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
-
+            
             <div class="card">
-                <h5 class="card-header">Perfiles de usuarios</h5>
-                <div class="table-responsive text-nowrap">
+                <h5 class="card-header">Listado de productos<button type="button" class="btn btn-secondary" style="margin-left:59%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar producto</button> </h5>
+                <div class="table-responsive text-nowrap"> 
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>Nombre y Apellido</th>
-                        <th>Usuario</th>
-                        <th>Estatus</th>
+                        <th>Nombre del Producto</th>
+                        <th>Estado</th>
                         <th>Acciones</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                       <tr>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Nombre_apellido</strong></td>
-                        <td>#tipo_usuario</td>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Producto</strong></td>
                         <td><span class="badge bg-label-primary me-1">Active</span></td>
                         <td>
                         <div class="dropdown">
@@ -157,15 +155,16 @@
                               <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
                             </button>
                             <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
                               <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar </button>
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar producto</button>
                             </div>
                           </div>
                         </td>
                       </tr>
                       <tr>
-                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>Nombre_apellido</strong></td>
-                        <td>#tipo_usuario</td>
+                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>Producto</strong></td>
                         <td><span class="badge bg-label-success me-1">Completed</span></td>
                         <td>
                         <div class="dropdown">
@@ -173,15 +172,17 @@
                               <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
                             </button>
                             <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
                               <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar</button>
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar producto</button>
                             </div>
                           </div>
                         </td>
                       </tr>
                       <tr>
-                        <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>Nombre_apellido</strong></td>
-                        <td>#tipo_usuario</td>
+                        <td>
+                          <i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>Producto</strong></td>
                         <td><span class="badge bg-label-info me-1">Scheduled</span></td>
                         <td>
                         <div class="dropdown">
@@ -189,17 +190,18 @@
                               <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
                             </button>
                             <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
                               <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar </button>
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar producto</button>
                             </div>
                           </div>
                         </td>
                       </tr>
                       <tr>
                         <td>
-                          <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Nombre_apellido</strong>
+                          <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Producto</strong>
                         </td>
-                        <td>#tipo_usuario</td>
                         <td><span class="badge bg-label-warning me-1">Pending</span></td>
                         <td>
                         <div class="dropdown">
@@ -207,27 +209,27 @@
                               <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
                             </button>
                             <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
                               <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar </button>
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar producto</button>
                             </div>
                           </div>
                         </td>
-                      </tr>
+                      </tr>                            
                     </tbody>
                   </table>
                 </div>
               </div>
-            </div>
-          </div>
+         
+        </div>
        
       </div>
-      
 
       <div class="layout-overlay layout-menu-toggle"></div>
     </div> 
-
-    <!--Modal-->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -235,7 +237,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>¿Esta seguro que desea eliminar a este usuario?</p>
+        <p>¿Esta seguro que desea eliminar este producto?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -245,6 +247,88 @@
   </div>
 </div>
 <!--/Modal-->
+
+<!-- /Modal -->
+<div class="modal fade" id="modalCenter" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" tabindex="-1" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalCenterTitle">Editar Producto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body"><!--comienza-->
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Nombre</label>
+                                    <input type="text" id="nameWithTitle"  class="form-control"  placeholder="Ingresa el nombre"  />
+                                  </div>
+                                </div>
+                                <div class="row g-2"></div>
+                                <!--aqui-->
+                                <div class="card-body">
+                                 <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                  <img src="/NeoRestaurante/public/img/platillo1.jpg"  alt="user-avatar"  class="d-block rounded" 
+                                   height="100"  width="100"  id="uploadedAvatar"/>
+                                  <div class="button-wrapper">
+                                    <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                      <span class="d-none d-sm-block">Asignar imagen</span>
+                                      <input  type="file"  id="upload"  class="account-file-input" 
+                                      hidden accept="image/png, image/jpeg"/>
+                                    </label>
+                                  </div>
+                                </div>
+                                <!--acaba-->
+                              </div><!--termina-->  
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    <!--/Modal-->
+    <div class="modal fade" id="modalCenter2" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" tabindex="-1" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalCenterTitle">Agregar Producto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body"><!--comienza-->
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Nombre</label>
+                                    <input type="text" id="nameWithTitle"  class="form-control"  placeholder="Ingresa el nombre"  />
+                                  </div>
+                                </div>
+                                <div class="row g-2"></div>
+                                <!--aqui-->
+                                <div class="card-body">
+                                 <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                  <img src="/NeoRestaurante/public/img/platillo1.jpg"  alt="user-avatar"  class="d-block rounded" 
+                                   height="100"  width="100"  id="uploadedAvatar"/>
+                                  <div class="button-wrapper">
+                                    <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                      <span class="d-none d-sm-block">Asignar imagen</span>
+                                      <input  type="file"  id="upload"  class="account-file-input" 
+                                      hidden accept="image/png, image/jpeg"/>
+                                    </label>
+                                  </div>
+                                </div>
+                                <!--acaba-->
+                              </div><!--termina-->  
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary">Guardar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
     
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>

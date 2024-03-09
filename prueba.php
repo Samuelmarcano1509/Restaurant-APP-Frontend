@@ -10,7 +10,7 @@
 
     <meta name="description" content="" />
 
-    <link rel="stylesheet" href="/NeoRestaurante/public/Fonts/fonts/boxicons.css" />
+    <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/fonts/boxicons.css" />
 
 
     <!-- Core CSS -->
@@ -22,7 +22,7 @@
     
 
     <!-- Helpers -->
-    <script src="/NeoRestaurante/public/js/helpers.js"></script>
+    <script src="public/vendor/js/helpers.js"></script>
 
    
   </head>
@@ -161,9 +161,9 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div> 
    
-    <script src="/NeoRestaurante/public/js/bootstrap copy.js"></script>
-    <script src="/NeoRestaurante/public/js/menu.js"></script>
-    <script src="/NeoRestaurante/public/js/main.js"></script>
+    <script src="public/vendor/js/bootstrap copy.js"></script>
+    <script src="public/vendor/js/menu.js"></script>
+    <script src="public/vendor/js/main.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
   </body>
 </html>

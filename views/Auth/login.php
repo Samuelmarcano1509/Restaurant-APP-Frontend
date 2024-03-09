@@ -136,7 +136,7 @@
           <p id="response"></p>
       </div>
       <div class="modal-footer">
-        <button id='redirect'type="button" class="btn btn-danger" data-bs-dismiss=modal>Cerrar</button>
+        <button id='redirect'type="button" class="btn btn-secondary" data-bs-dismiss=modal>Cerrar</button>
       </div>
     </div>
   </div>

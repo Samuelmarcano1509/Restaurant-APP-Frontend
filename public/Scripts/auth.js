@@ -39,7 +39,7 @@ const authRegister = async()=> {
                             document.getElementById('spinner-hide').style.display='none'
                             document.getElementById('redirect').textContent='continuar'
                             document.getElementById('redirect').addEventListener('click',() => {
-                                window.location.href = '/NeoRestaurante/views/profile';
+                                window.location.href = '/NeoRestaurante/views/statistics.php';
                             })
                             localStorage.setItem('token', datas.token);
                             const statusCode = response.status;
@@ -80,7 +80,7 @@ const authLogin = async()=> {
                             document.getElementById('spinner-hide').style.display='none'
                             document.getElementById('redirect').textContent='continuar'
                             document.getElementById('redirect').addEventListener('click',() => {
-                                window.location.href = '/NeoRestaurante/views/profile';
+                                window.location.href = '/NeoRestaurante/views/statistics.php';
                             })
                             localStorage.setItem('token', datas.token);
                             const statusCode = response.status;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
-    <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
+    
     <style>
         @font-face {
             font-family: montserrat;
@@ -93,6 +93,6 @@
 </form>
 
  
-<script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+<script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
 </body>
 </html>

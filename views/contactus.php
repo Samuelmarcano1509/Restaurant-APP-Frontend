@@ -78,7 +78,7 @@
 
         #side-box {
             width: 200px;
-            height:300px;
+            height:350px;
             background-color: #170E09;
             color: white;
             text-align: center;
@@ -86,7 +86,9 @@
         }
 
         #side-box p {
-            margin: 10px 0;
+            margin: 5px;
+            line-height: 15px;
+            
         }
     </style>
 </head>
@@ -130,12 +132,17 @@
         </div>
         <div id="map-container">
             <div id="map" class="text-center">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.6265850578534!2d-63.80571438978583!3d10.99153255514482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c318fa66dd623d9%3A0xb0e705d5169b86c2!2sX5RW%2BJQ4%2C%20C.%20Nueva%20C%C3%A1diz%2C%20Pampatar%206316%2C%20Nueva%20Esparta!5e0!3m2!1ses-419!2sve!4v1709667280311!5m2!1ses-419!2sve" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.6265850578534!2d-63.80571438978583!3d10.99153255514482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c318fa66dd623d9%3A0xb0e705d5169b86c2!2sX5RW%2BJQ4%2C%20C.%20Nueva%20C%C3%A1diz%2C%20Pampatar%206316%2C%20Nueva%20Esparta!5e0!3m2!1ses-419!2sve!4v1709667280311!5m2!1ses-419!2sve" width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div id="side-box">
-                <p><b>Nueva Esparta</b></p>
-                <p>Pampatar 6316 Calle Nueva Cadiz</p>
-                <p>Horarios:</p>
+                <p style="padding-top: 25px;"><b>Nueva Esparta</b></p>
+                <br>
+                <p>Pampatar 6316</p>
+                <p>Calle</p>
+                <p>Nueva Cadiz</p>
+                <br>
+                <p><b>Horarios</b></p>
+                <br>
                 <p>Lun - Vie</p>
                 <p>| 11:00am - 11:00pm |</p>
                 <p>Sab - Dom</p>
@@ -147,8 +154,8 @@
             <p>0295-2692733</p>
             <p>neocontacto@gmail.com</p>
             <p>
-                <img src="/NeoRestaurante/public/img/instagram.svg" alt="Imagen1" style="width: 25px; height: 25px;"> @neorestaurante 
-                <span style="margin-left: 20px;"><img src="/NeoRestaurante/public/img/facebook.svg" alt="Imagen2" style="width: 25px; height: 25px;"> Neo Restaurante</span>
+                <img src="/NeoRestaurante/public/img/instagram.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" > @neorestaurante 
+                <span style="margin-left: 70px;"><img src="/NeoRestaurante/public/img/facebook.svg" alt="Imagen2" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'"> Neo Restaurante</span>
             </p>
         </div>
     </div>

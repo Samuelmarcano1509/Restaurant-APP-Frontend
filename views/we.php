@@ -114,12 +114,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6" style="padding-left:100px;">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend pharetra arcu, sit amet lacinia tortor auctor vel. Donec posuere, mi eget pharetra blandit, sem ante pellentesque metus, nec cursus nunc risus et nulla. Quisque semper justo in justo consectetur, at interdum dui tincidunt. Vivamus tincidunt justo ac mi fringilla, nec lobortis ex scelerisque. Pellentesque vitae efficitur nunc. Integer non velit metus.
+            Neo Restaurante es el sueño hecho realidad de un padre y un hijo que comparten la pasión por la cocina y el sabor del Caribe. Su historia comenzó hace diez años, cuando el padre, José, decidió dejar su trabajo como contador y abrir un pequeño local de comida rápida en el centro de la ciudad. Allí, ofrecía platos típicos de su país natal, Venezuela, como arepas, empanadas, pabellón y tequeños.
+
+            <br> <br>Su hijo, Miguel, que acababa de terminar la secundaria, lo apoyó desde el primer día, ayudándole en la cocina, en el servicio y en la administración. Juntos, lograron atraer a una clientela fiel y diversa, que apreciaba la calidad, la variedad y el buen precio de su oferta gastronómica.
+
+            <!--<br> <br>Con el tiempo, José y Miguel decidieron ampliar sus horizontes y explorar otras cocinas del Caribe, como la cubana, la dominicana, la puertorriqueña y la jamaicana. Para ello, viajaron por la región, aprendiendo de los chefs locales, degustando sus platos y adquiriendo sus ingredientes. Así, incorporaron a su menú delicias como el lechón asado, el sancocho, el mofongo y el jerk chicken.
+
+            <br> <br>Fue entonces cuando surgió la idea de crear un restaurante de alta gama, que fusionara la comida caribeña con la cocina gourmet, utilizando productos de primera calidad, técnicas innovadoras y una presentación sofisticada. Así nació Neo Restaurante, un espacio moderno, elegante y acogedor, donde se puede disfrutar de una experiencia culinaria única y memorable.
+
+            <br> <br>Neo Restaurante se ha convertido en uno de los referentes de la gastronomía caribeña en la ciudad, y ha recibido varios premios y reconocimientos por su excelencia y creatividad. José y Miguel siguen al frente del negocio, supervisando cada detalle y sorprendiendo a sus comensales con nuevas propuestas y sabores. Su historia es un ejemplo de emprendimiento, dedicación y amor por la cocina. -->
+
             </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" style="padding-bottom:50px; ">
             <img src="/NeoRestaurante/public/img/OIG1.B.j78s.jpeg" alt="Imagen" class="img-fluid">
         </div>
     </div>

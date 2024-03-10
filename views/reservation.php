@@ -121,9 +121,10 @@
     <div class="row justify-content-center mt-4">
         <div class="col-md-8 formulario">
             <h2 class="text-center mb-4">Reservar una Mesa</h2>
-            <p class="text-center mb-4">Para reservar una mesa en Neo Restaurante, seleccione el número de personas, la fecha y la hora para su reservación.</p>
+            <h5 class="text-center mb-3" style="padding-top:5%">Para reservar una mesa en Neo Restaurante</h5>
+            <p class="text-center mb-3">seleccione el número de personas, la fecha y la hora para su reservación.</p>
             <form>
-                <div class="mb-3 d-flex">
+                <div class="mb-2 d-flex">
                     <select class="form-select me-2 mb-2" id="numPersonas" name="numPersonas" style="font-size: 15px; width: 200px;">
                         <option value="" disabled selected hidden>N° de Personas</option>
                         <option value="1">2 Persona</option>

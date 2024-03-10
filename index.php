@@ -36,7 +36,7 @@
     }
 
     #navbarNav{
-          padding-left: 24%;
+        padding-left: 28.5%;
         font-size: 95%;
         
       }

@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
-
+    <link rel="stylesheet" href="../public/vendor/libs/js/apex-charts/apex-charts.css">
   
     
 
     <!-- Helpers -->
     <script src="/NeoRestaurante/public/vendor/js/helpers.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/config.js"></script>
+    <script src="../public/vendor/js/config.js"></script>
+    
 </head>
 <body onload="authValidation()">
     <!-- Layout wrapper -->
@@ -66,9 +67,7 @@
                 <div data-i18n="Analytics">Reservaciones</div>
               </a>
             </li>
-        
           </ul>
-       
         </aside>
         
        
@@ -108,9 +107,8 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" href="">
-                      <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
-                     
+                      <a class="dropdown-item">
+                      <span id="casocerrado" onclick="closeSesion()">Cerrar sesion</span>
                       </a>
                     </li>
                   </ul>
@@ -127,24 +125,21 @@
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="row">
-                <div class="col-lg-8 mb-4 order-0">
+                <div class="col-lg-8 mb-4 order-0"><!--primer bloque-->
                   <div class="card">
-                    <div class="d-flex align-items-end row">
+                    <div class="d-flex align-items-end row"><!--A-->
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                          <h3 class="card-title text-primary">Bienvenido Jhon</h3>
                           <p class="mb-4">
-                            You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                            your profile.
+                            <b>fechita</b>
                           </p>
-
-                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
                         </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">
-                        <div class="card-body pb-0 px-0 px-md-4">
+                        <div class="card-body pb-10 px-0 px-md-4">
                           <img
-                            src="../assets/img/illustrations/man-with-laptop-light.png"
+                            src="../public/img/Platillos.jpg"
                             height="140"
                             alt="View Badge User"
                             data-app-dark-img="illustrations/man-with-laptop-dark.png"
@@ -152,10 +147,10 @@
                           />
                         </div>
                       </div>
-                    </div>
+                    </div><!--/A-->
                   </div>
-                </div>
-                <div class="col-lg-4 col-md-4 order-1">
+                </div><!--/primer bloque-->
+                <div class="col-lg-4 col-md-4 order-1"><!--numeros de la esquina superior derecha-->
                   <div class="row">
                     <div class="col-lg-6 col-md-12 col-6 mb-4">
                       <div class="card">
@@ -226,7 +221,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div><!--/numeros de la esquina superior derecha-->
                 <!-- Total Revenue -->
                 <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
                   <div class="card">
@@ -662,11 +657,12 @@
 
       <div class="layout-overlay layout-menu-toggle"></div>
     </div> 
-    <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
-    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
-    <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
+    <script src="../public/vendor/libs/js/popper/popper.js"></script>
+    <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>++++++
+    <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>++++++
+    <script src="/NeoRestaurante/public/vendor/js/main.js"></script>+++++++++
+    <script src="../public/vendor/js/dashboards-analytics.js"></script>****
+    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>=======
+    <script src="../public/vendor/libs/js/apex-charts/apexcharts.js"></script>***
   </body>
 </html>

@@ -88,4 +88,14 @@ const getProduct = async(id)=> {
     } catch (error){
         console.log(error)
     }
+    
+}
+function subirArchivo(){
+    console.log('click')
+        const formData = new FormData();
+        formData.append('archivo', document.getElementById('subir').files[0]);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '../vendor/php/upload.php');
+        xhr.setRequestHeader('enctype', 'multipart/form-data');
+        xhr.send(formData);
 }

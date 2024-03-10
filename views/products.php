@@ -116,7 +116,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" href="">
+                      <a class="dropdown-item" >
                       <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
                      
                       </a>
@@ -189,10 +189,32 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
-                                <div class="row">
+                            <form >
+                              <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Nombre</label>
                                     <input type="text" id="nameWithTitle"  class="form-control"  placeholder="Ingresa el nombre"  />
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Descripción</label>
+                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa la descripción"/>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Precio</label>
+                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa el precio"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Categoría</label>
+                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa la categoría"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                  <label for="estado">Estado</label>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option><a>Disponible</a></option>
+                                        <option><a>No disponible</a></option>
+                                    </select>
                                   </div>
                                 </div>
                                 <div class="row g-2"></div>
@@ -216,23 +238,46 @@
                                 <button type="button" class="btn btn-primary">Guardar cambios</button>
                               </div>
                             </div>
+                          </form> 
                           </div>
                         </div>
                       </div>
                     </div>
     <!--/Modal-->
     <div class="modal fade" id="modalCenter2" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" tabindex="-1" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <h5 class="modal-title" id="modalCenterTitle">Agregar Producto</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
-                                <div class="row">
+                            <form >
+                              <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Nombre</label>
                                     <input type="text" id="nameWithTitle"  class="form-control"  placeholder="Ingresa el nombre"  />
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Descripción</label>
+                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa la descripción"/>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Precio</label>
+                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa el precio"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Categoría</label>
+                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa la categoría"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                  <label for="estado">Estado</label>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option><a>Disponible</a></option>
+                                        <option><a>No disponible</a></option>
+                                    </select>
                                   </div>
                                 </div>
                                 <div class="row g-2"></div>
@@ -251,12 +296,12 @@
                                 </div>
                                 <!--acaba-->
                               </div><!--termina-->  
-                              </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-primary">Guardar</button>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Guardar cambios</button>
                               </div>
                             </div>
+                          </form> 
                           </div>
                         </div>
                       </div>

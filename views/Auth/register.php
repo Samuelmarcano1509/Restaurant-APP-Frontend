@@ -181,8 +181,8 @@
                         </div>
                     </div>
                     <div class="dropdown col-md-6" id="selector">
-                    <label for="genero">Género</label>
-                    <select class="btn btn-light bg-white" name="genero"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                       <label for="genero">Género</label>
+                        <select class="btn btn-light bg-white" name="genero"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
                             <option><a>No especificado</a></option>
                             <option><a>Masculino</a></option>
                             <option><a>Femenino</a></option>

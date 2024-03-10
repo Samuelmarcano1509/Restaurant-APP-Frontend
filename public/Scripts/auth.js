@@ -91,15 +91,15 @@ const authLogin = async()=> {
                    
         }
 }
-   function closeSesion (){
+   function closeSesion(){
+    console.log('aqui')
+        authClose();
+       }
+   
+   document.getElementById('casocerrado').addEventListener("click", function(e){
+    e.preventDefault()
     authClose();
-    document.getElementById('casocerrado').addEventListener("click", function(e){
-        e.preventDefault()
-        console.log('aqui')
-       })
-   }
-   
-   
+   })
    
    const authClose = async()=> {
                 try{

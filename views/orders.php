@@ -116,7 +116,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" href="">
+                      <a class="dropdown-item">
                       <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
                      
                       </a>

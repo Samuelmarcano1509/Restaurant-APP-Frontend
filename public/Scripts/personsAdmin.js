@@ -17,7 +17,8 @@ const personList = async()=> {
             if (response.ok) {
                 const datas = await response.json();
                     let body=''
-                for (let i=0; i< Object.keys(datas).length;i++){
+               console.log(datas.data) 
+                for (let i=0; i< Object.keys(datas.data).length;i++){
                     body+=`<tr>
                         <td>
                             ${datas.data[i].names}

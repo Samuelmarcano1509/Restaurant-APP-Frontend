@@ -141,7 +141,7 @@
                       <a class="nav-link" aria-current="page" href="./views/menu" >Menú</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link" href="./views/localization">Reserva</a>
+                      <a class="nav-link" href="./views/reservation">Reserva</a>
                   </li>
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./views/we">Nosotros</a>

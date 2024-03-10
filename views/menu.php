@@ -178,7 +178,7 @@
                       <a class="nav-link active" aria-current="page" href="#menu" style="color:#301f14 ;" >Menú</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link" href="./localization">Reserva</a>
+                      <a class="nav-link" href="./reservation">Reserva</a>
                   </li>
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./we">Nosotros</a>

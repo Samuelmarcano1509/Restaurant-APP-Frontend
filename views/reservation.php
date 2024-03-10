@@ -100,7 +100,7 @@
                       <a class="nav-link" aria-current="page" href="./menu" >Menú</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link active" href="#localization" style="color: #301f14;">Reserva</a>
+                      <a class="nav-link active" href="#reservation" style="color: #301f14;">Reserva</a>
                   </li>
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./we">Nosotros</a>

@@ -82,7 +82,7 @@
                       <a class="nav-link" aria-current="page" href="../menu" >Menú</a>
                     </li>
                     <li class="nav-item" id="item">
-                      <a class="nav-link" href="../localization">Reserva</a>
+                      <a class="nav-link" href="../reservation">Reserva</a>
                     </li>
                     <li class="nav-item" id="item">
                       <a class="nav-link" href="../we">Nosotros</a>

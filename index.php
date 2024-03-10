@@ -119,7 +119,7 @@
     }
     .slider-indicadores .glider-dot:hover{
       opacity: 100%;
-      background-color: #301f14;
+      background-color: #FFFF;
       opacity: 65%;
     }
    

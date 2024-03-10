@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
+    <link rel="shortcut icon" href="../../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.min.css">
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script> 
     <script>
@@ -134,12 +135,11 @@
                       <a class="nav-link" href="../contactus">Contacto</a>
                     </li>
                     <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link active" href="./login" >Iniciar Sesión</a>
+                    <a class="nav-link " href="./login" >Iniciar Sesión</a>
                     </li>
               </ul>
               </div> 
               <div class="my-3">
-                    
       </div>
   </nav>
   </div>

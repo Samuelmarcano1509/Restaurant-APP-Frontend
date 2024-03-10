@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
+    <link rel="shortcut icon" href="../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
     <style>

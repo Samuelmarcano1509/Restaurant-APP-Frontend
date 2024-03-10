@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neo Restaurant</title>
+    <link rel="shortcut icon" href="public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
     <link rel="stylesheet" href="public/Glider.js-master/glider.min.css">
     
@@ -152,13 +153,13 @@
                   <li class="nav-item" id="item"  style="white-space: nowrap;">
                     <a id="titleusers" class="nav-link" href="./views/Auth/login">Iniciar Sesión</a>
                 </li>
-               </ul>
+                </ul>
               </div> 
       </div>
   </nav>
   </div>
 
-  <div class="row" id="modal">
+  <div class="row" id="modal" style="Opacity: 95%;">
     <div class="col-md-11 mx-auto row-8" id="cont"> 
         <div class="card bg-white rounded-5 card-body  shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
           <div id="message">
@@ -179,7 +180,7 @@
 
 <div class="slider" style="background-color:  rgb(0, 0, 0)">
   <div class="slider-contenedor ">
-    <button aria-label="prueba" class="left">
+    <button aria-label="prueba" class="left" style="padding-top: 20%;">
       <img src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/svgs/solid/chevron-left.svg" alt=""> 
     </button>
       <div class="slider-contenido" style="padding-top: 3%;">
@@ -213,7 +214,7 @@
           </div>
         </div>
         
-        <button aria-label="prueba" class="right">
+        <button aria-label="prueba" class="right" style="padding-top: 20%">
           <img src="/NeoRestaurante/public/fontawesome-free-6.5.1-web/svgs/solid/chevron-right.svg" alt="">
         </button>
       </div>

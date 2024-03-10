@@ -123,7 +123,7 @@
    
     </style>
 </head>
-<body >
+<body onload="userdata(); ">
   <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
@@ -148,7 +148,7 @@
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./views/contactus">Contacto</a>
                   </li>
-                  <li class="nav-item" id="item"  style="white-space: nowrap;">
+                  <li class="nav-item" id="itemI"  style="white-space: nowrap;">
                     <a id="titleusers" class="nav-link" href="./views/Auth/login">Iniciar Sesión</a>
                 </li>
                </ul>
@@ -229,9 +229,9 @@
  
 <script src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/js/fontawesome.js"></script>  
 <script src="/NeoRestaurante/public/vendor/libs/js/Glider.js-master/glider.min.js"></script>
-<script src="/NeoRestaurante/public/js/bootstrap.js"></script>   
-<script src="/NeoRestaurante/public/Scripts/register.js"></script>
+<script src="/NeoRestaurante/public/js/bootstrap.js"></script>
 <script src="/NeoRestaurante/public/Scripts/slider.js"></script>
+  <script src="/NeoRestaurante/public/Scripts/userdata.js"></script>
 
 </body>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 </html>

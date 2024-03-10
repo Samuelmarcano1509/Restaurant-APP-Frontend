@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neo Restaurant</title>
+    <link rel="shortcut icon" href="public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
-    <link rel="stylesheet" href="/NeoRestaurante/public/vendor/libs/js/Glider.js-master/glider.min.css">
+    <link rel="stylesheet" href="public/vendor/libs/js/Glider.js-master/glider.min.css">
     
     <style>
        @font-face {
@@ -35,7 +36,7 @@
     }
 
     #navbarNav{
-        padding-left: 24%;
+        padding-left: 28.5%;
         font-size: 95%;
         
       }
@@ -75,13 +76,14 @@
 
     .left,
     .right {
-        display: block;
+      background: none;
+      display: block;
       width: 30px;
       height: 30px;
       border: none;
       cursor: pointer;
-        background: none;
-        color: #ffffff;
+      background-color: none;
+      color: #ffffff;
       opacity: 20%;
     }
 
@@ -123,11 +125,11 @@
    
     </style>
 </head>
-<body onload="userdata(); ">
+<body >
   <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
-              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%; cursor:pointer" onclick="location.href='../'"  >
+              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%; cursor:pointer" onclick="location.href='#index'"  >
                 <img src="./public/img/neo-favicon-white.svg" alt="Logo" width="85" height="85" class="d-inline-block align-top">
                 <span class="ms-2 fs-6 fw-bold text-uppercase">Neo Restaurant</span>
               </div>
@@ -137,10 +139,10 @@
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                   <li class="nav-item" id="item">
-                      <a class="nav-link" aria-current="page" href="./views/menu" >Menu</a>
+                      <a class="nav-link" aria-current="page" href="./views/menu" >Menú</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link" href="./views/localization">Localización</a>
+                      <a class="nav-link" href="./views/reservation">Reserva</a>
                   </li>
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./views/we">Nosotros</a>
@@ -148,16 +150,16 @@
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./views/contactus">Contacto</a>
                   </li>
-                  <li class="nav-item" id="itemI"  style="white-space: nowrap;">
+                  <li class="nav-item" id="item"  style="white-space: nowrap;">
                     <a id="titleusers" class="nav-link" href="./views/Auth/login">Iniciar Sesión</a>
                 </li>
-               </ul>
+                </ul>
               </div> 
       </div>
   </nav>
   </div>
 
-  <div class="row" id="modal">
+  <div class="row" id="modal" style="Opacity: 95%;">
     <div class="col-md-11 mx-auto row-8" id="cont"> 
         <div class="card bg-white rounded-5 card-body  shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
           <div id="message">
@@ -178,8 +180,8 @@
 
 <div class="slider" style="background-color:  rgb(0, 0, 0)">
   <div class="slider-contenedor ">
-    <button aria-label="prueba" class="left">
-      <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/chevron-left.svg" alt=""> 
+    <button aria-label="prueba" class="left" style="padding-top: 20%;">
+      <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/chevron-left.svg" alt="">
     </button>
       <div class="slider-contenido" style="padding-top: 3%;">
         <div class="slider-elemento">
@@ -212,7 +214,7 @@
           </div>
         </div>
         
-        <button aria-label="prueba" class="right">
+        <button aria-label="prueba" class="right" style="padding-top: 20%">
           <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/chevron-right.svg" alt="">
         </button>
       </div>
@@ -227,11 +229,10 @@
 
  
  
-<script src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/js/fontawesome.js"></script>  
+<script src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/js/fontawesome.js"></script>
 <script src="/NeoRestaurante/public/vendor/libs/js/Glider.js-master/glider.min.js"></script>
 <script src="/NeoRestaurante/public/js/bootstrap.js"></script>
 <script src="/NeoRestaurante/public/Scripts/slider.js"></script>
-  <script src="/NeoRestaurante/public/Scripts/userdata.js"></script>
 
 </body>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 </html>

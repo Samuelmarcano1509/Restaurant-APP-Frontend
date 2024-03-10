@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
+    <link rel="shortcut icon" href="../../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
     <style>
@@ -19,7 +20,7 @@
       }
       
         #navbarNav{
-          padding-left: 24%;
+        padding-left: 28.5%;
         font-size: 95%;
         
       }
@@ -45,13 +46,22 @@
              align-items: center; 
              display: flex;
          }
-      .nav-link.active{
-        font-weight: bold;
-        opacity: 60%;
-        background-color: #301f14;
-        background-position: center;
-        border-radius: 12%;
-      }
+        .nav-link.active {
+            font-weight: bold;
+            background-color: transparent; 
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: 8.5px;
+            width: 86%;
+            height: 2px;
+            background-color: #301f14; /* Color de la línea */
+        }
     
     </style> 
 </head>
@@ -70,10 +80,10 @@
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                     <li class="nav-item" id="item">
-                      <a class="nav-link" aria-current="page" href="../menu" >Menu</a>
+                      <a class="nav-link" aria-current="page" href="../menu" >Menú</a>
                     </li>
                     <li class="nav-item" id="item">
-                      <a class="nav-link" href="../localization">Localización</a>
+                      <a class="nav-link" href="../reservation">Reserva</a>
                     </li>
                     <li class="nav-item" id="item">
                       <a class="nav-link" href="../we">Nosotros</a>
@@ -82,7 +92,7 @@
                       <a class="nav-link" href="../contactus">Contacto</a>
                     </li>
                     <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link active" href="#login" style="color: white;"><b>Iniciar Sesión</b></a>
+                    <a class="nav-link active" href="#login" style="color: #301f14;" ><b>Iniciar Sesión</b></a>
                     </li>
                 </ul>
                 </div> 

@@ -122,10 +122,10 @@
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
               <li class="nav-item" id="item">
-                      <a class="nav-link" aria-current="page" href="../menu" >Menu</a>
+                      <a class="nav-link" aria-current="page" href="../menu" >Menú</a>
                     </li>
                     <li class="nav-item" id="item">
-                      <a class="nav-link" href="../localization">Reservas</a>
+                      <a class="nav-link" href="../localization">Reserva</a>
                     </li>
                     <li class="nav-item" id="item">
                       <a class="nav-link" href="../we">Nosotros</a>

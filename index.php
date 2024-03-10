@@ -128,7 +128,7 @@
   <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
-              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%; cursor:pointer" onclick="location.href='../'"  >
+              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%; cursor:pointer" onclick="location.href='#index'"  >
                 <img src="./public/img/neo-favicon-white.svg" alt="Logo" width="85" height="85" class="d-inline-block align-top">
                 <span class="ms-2 fs-6 fw-bold text-uppercase">Neo Restaurant</span>
               </div>
@@ -138,10 +138,10 @@
               <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                   <li class="nav-item" id="item">
-                      <a class="nav-link" aria-current="page" href="./views/menu" >Menu</a>
+                      <a class="nav-link" aria-current="page" href="./views/menu" >Menú</a>
                   </li>
                   <li class="nav-item" id="item">
-                      <a class="nav-link" href="./views/localization">Localización</a>
+                      <a class="nav-link" href="./views/localization">Reserva</a>
                   </li>
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./views/we">Nosotros</a>

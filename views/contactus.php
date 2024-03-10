@@ -46,8 +46,8 @@
             display: block;
             position: absolute;
             bottom: -5px;
-            left: 0;
-            width: 100%;
+            left: 8.5px;
+            width: 80%;
             height: 2px;
             background-color: #301f14; /* Color de la línea */
         }
@@ -104,10 +104,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item" id="item">
-                        <a class="nav-link" aria-current="page" href="./menu" >Menu</a>
+                        <a class="nav-link" aria-current="page" href="./menu" >Menú</a>
                     </li>
                     <li class="nav-item" id="item">
-                        <a class="nav-link" href="./localization">Localización</a>
+                        <a class="nav-link" href="./localization">Reserva</a>
                     </li>
                     <li class="nav-item" id="item">
                         <a class="nav-link" href="./we">Nosotros</a>

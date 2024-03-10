@@ -102,11 +102,12 @@ function authValidation (){
 
    function closeSesion (){
     authClose();
+    document.getElementById('casocerrado').addEventListener("click", function(e){
+        e.preventDefault()
+        console.log('aqui')
+       })
    }
-   document.getElementById('casocerrado').addEventListener("click", function(e){
-    e.preventDefault()
-    console.log('aqui')
-   })
+   
    
    
    const authClose = async()=> {

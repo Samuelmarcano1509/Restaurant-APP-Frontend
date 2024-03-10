@@ -27,7 +27,7 @@
     </style>
 
 </head>
-<body onload="authValidation()">
+<body onload="getPersons();">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -141,78 +141,13 @@
                     <thead>
                       <tr>
                         <th>Nombre y Apellido</th>
+                        <th>Identificación</th>
                         <th>Usuario</th>
-                        <th>Estatus</th>
+                        <th>Género</th>
                         <th>Acciones</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0">
-                      <tr>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Nombre_apellido</strong></td>
-                        <td>#tipo_usuario</td>
-                        <td><span class="badge bg-label-primary me-1">Active</span></td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar </button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>Nombre_apellido</strong></td>
-                        <td>#tipo_usuario</td>
-                        <td><span class="badge bg-label-success me-1">Completed</span></td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>Nombre_apellido</strong></td>
-                        <td>#tipo_usuario</td>
-                        <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar </button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Nombre_apellido</strong>
-                        </td>
-                        <td>#tipo_usuario</td>
-                        <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar </button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
+                    <tbody class="table-border-bottom-0" id="inf-body">
                     </tbody>
                   </table>
                 </div>
@@ -250,7 +185,7 @@
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
-    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+    <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
   </body>
 </html>

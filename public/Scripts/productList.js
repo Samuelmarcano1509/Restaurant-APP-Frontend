@@ -1,9 +1,14 @@
 function productList(){
+    if (localStorage.getItem('token')){
         getProductList();
+    }else{
+        alert('Ha expirado la sesión');
+        window.location.href='../../views/Auth/login.php'
+    }
 }
 const getProductList = async()=> {
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/product/list', {
+        const response = await fetch('http://127.0.0.1:8000/api/products/list', {
             method: 'GET',
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('token')
@@ -15,6 +20,7 @@ const getProductList = async()=> {
             let classSpan=''
             let idProduct=0
             for (let i=0; i< Object.keys(datas.data).length;i++){
+                if (datas.data[i]){
                 if (datas.data[i].status === 'Disponible'){
                     classSpan='class="badge bg-label-success me-1"'
                 }else{
@@ -47,14 +53,22 @@ const getProductList = async()=> {
                             <div class="dropdown-menu">
                             <button class="dropdown-item btn btn-outline-secondary" id="edit" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
                                 <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
+                              <button class="dropdown-item btn btn-outline-secondary"  id="delete" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
                                 <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar producto</button>
                             </div>
                           </div>
                         </td>
                     </tr>`;
             }
+            }
             document.getElementById('inf-body').innerHTML=body
+        }else if(response.status===401){
+            alert('No autorizado');
+            window.location.href='/NeoRestaurante/'
+        }else if(response.status===500){
+
+            alert('Ha expirado la sesión');
+
         }
     } catch (error) {
         console.log(error)
@@ -67,10 +81,29 @@ tableBody.addEventListener("click", (event) => {
     const elementId = row.getAttribute("id");
     if (target.getAttribute('id')==='edit'){
         getProduct(elementId)
+    }else if(target.getAttribute('id')==='delete'){
+        document.getElementById('borrar').name=elementId
     }
-
-
 });
+function sendProductDelete(){
+    productDelete()
+}
+const productDelete = async()=> {
+    try{
+        const response = await fetch('http://127.0.0.1:8000/api/delete/product/'+document.getElementById('borrar').name, {
+            method: 'POST',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            alert('Producto Eliminado satisfactoriamente')
+            location.reload()
+        }
+    } catch (error){
+        console.log(error)
+    }
+}
 const getProduct = async(id)=> {
     try{
         const response = await fetch('http://127.0.0.1:8000/api/product/'+id, {
@@ -81,14 +114,89 @@ const getProduct = async(id)=> {
         })
         if (response.ok) {
             const datas = await response.json();
-            document.getElementById('modalCenterTitle').textContent="prueba"
-            document.getElementById('nameWithTitle').value="hola"
-            console.log(datas)
+            document.getElementById('nombre').value=datas.data.name
+            document.getElementById('descripcion').value=datas.data.description
+            document.getElementById('precio').value=datas.data.amount
+            document.getElementById('categoria').value=datas.data.category
+            document.getElementById('dropdownMenuButton').value = datas.data.status
+            document.getElementById('send').name =  datas.data.id
         }
     } catch (error){
         console.log(error)
     }
     
+}
+function editProduct(){
+    sendEditProduct()
+}
+const sendEditProduct = async()=> {
+    try{
+        var formulario = document.getElementById('formulario')
+        var data = new FormData(formulario);
+        let status =0;
+        if (data.get('estado')==='Disponible'){
+            status=1
+        }else {
+            status=2
+        }
+        const inf ={
+            name: data.get('nombre'),
+            description: data.get('descripcion'),
+            amount:      data.get('precio'),
+            status_id:    status,
+            category:     data.get('categoria'),
+        }
+        const response = await fetch('http://127.0.0.1:8000/api/edit/product/'+document.getElementById('send').name, {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json',
+                "Authorization": "Bearer " + localStorage.getItem('token'),
+            },
+            body: JSON.stringify(inf),
+        })
+        if (response.ok) {
+            alert('Producto Editado Satisfactoriamente')
+            location.reload();
+        }
+    } catch (error){
+        console.log(error)
+    }
+}
+function createProduct(){
+    sendCreateProduct()
+}
+const sendCreateProduct = async()=> {
+    try{
+        var formulario = document.getElementById('formulario2')
+        var data = new FormData(formulario);
+        let status =0;
+        if (data.get('estado')==='Disponible'){
+            status=1
+        }else {
+            status=2
+        }
+        const inf ={
+            name: data.get('nombre'),
+            description: data.get('descripcion'),
+            amount:      data.get('precio'),
+            status_id:    status,
+            category:     data.get('categoria'),
+        }
+        const response = await fetch('http://127.0.0.1:8000/api/create/product/', {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json',
+                "Authorization": "Bearer " + localStorage.getItem('token'),
+            },
+            body: JSON.stringify(inf),
+        })
+        if (response.ok) {
+            alert('Producto Ha Sido Creado Satisfactoriamente')
+            location.reload();
+        }
+    } catch (error){
+        console.log(error)
+    }
 }
 function subirArchivo(){
     console.log('click')

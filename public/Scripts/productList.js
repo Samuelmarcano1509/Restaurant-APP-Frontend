@@ -66,9 +66,9 @@ const getProductList = async()=> {
             alert('No autorizado');
             window.location.href='/NeoRestaurante/'
         }else if(response.status===500){
-
+            localStorage.removeItem('token')
             alert('Ha expirado la sesión');
-
+            window.location.href='/NeoRestaurante/views/Auth/login.php'
         }
     } catch (error) {
         console.log(error)

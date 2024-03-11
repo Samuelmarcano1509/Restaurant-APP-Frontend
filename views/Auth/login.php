@@ -40,6 +40,8 @@
 
       #cont{
       margin-top: 20%;
+      
+      
       }
       .modal-body{
              justify-content: center;
@@ -61,6 +63,10 @@
             width: 86%;
             height: 2px;
             background-color: #301f14; /* Color de la línea */
+        }
+        #prueba1{
+          font-size: 135%;
+          
         }
     
     </style> 
@@ -102,8 +108,8 @@
 
  <!--Contenedor para el login-->
   <form class="container col-md-6" id="formulario" >
-    <div class="row justify-content-center">
-        <div class="col-md-9 mx-auto row-8" id="cont"> 
+    <div class="row justify-content-center" id="prueba1">
+        <div class="col-md-9 mx-auto  row-8" id="cont" > 
             <div class="card bg-light rounded-3 card-body  shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
             <h1 class="text-center mb-4" style="font-size: 210%;"><b>¡BIENVENIDO!</b></h1>
             <div id="campos">

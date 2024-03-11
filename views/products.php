@@ -173,7 +173,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger">Eliminar</button>
+        <button onclick="sendProductDelete()" type="button" id="borrar"class="btn btn-danger">Eliminar</button>
       </div>
     </div>
   </div>
@@ -189,31 +189,31 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
-                            <form >
+                            <form id="formulario">
                               <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Nombre</label>
-                                    <input type="text" id="nameWithTitle"  class="form-control"  placeholder="Ingresa el nombre"  />
+                                    <input type="text" id="nombre"  name="nombre" class="form-control"  placeholder="Ingresa el nombre"  />
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Descripción</label>
-                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa la descripción"/>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa la descripción"/>
                                   </div>
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Precio</label>
-                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa el precio"/>
+                                    <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el precio"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Categoría</label>
-                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa la categoría"/>
+                                    <input type="text" id="categoria"  name="categoria" class="form-control"  placeholder="Ingresa la categoría"/>
                                   </div>
                                   <div class="col mb-3">
-                                  <label for="estado">Estado</label>
+                                  <label for="estado" style="margin-bottom: 8px">Estado</label>
                                     <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option><a>Disponible</a></option>
-                                        <option><a>No disponible</a></option>
+                                        <option value="Disponible">Disponible</option>
+                                        <option value="No disponible">No disponible</option>
                                     </select>
                                   </div>
                                 </div>
@@ -235,7 +235,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                                <button onclick="editProduct()" id="send" type="button" class="btn btn-primary">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 
@@ -252,28 +252,28 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
-                            <form >
+                            <form id="formulario2">
                               <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Nombre</label>
-                                    <input type="text" id="nameWithTitle"  class="form-control"  placeholder="Ingresa el nombre"  />
+                                    <input type="text" name="nombre"id="nameWithTitle"  class="form-control"  placeholder="Ingresa el nombre"  />
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Descripción</label>
-                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa la descripción"/>
+                                    <input type="text" name="descripcion"id="descripcion"  class="form-control"  placeholder="Ingresa la descripción"/>
                                   </div>
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Precio</label>
-                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa el precio"/>
+                                    <input type="text" name="precio"id="descripcion"  class="form-control"  placeholder="Ingresa el precio"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Categoría</label>
-                                    <input type="text" id="descripcion"  class="form-control"  placeholder="Ingresa la categoría"/>
+                                    <input type="text" name="categoria"id="descripcion"  class="form-control"  placeholder="Ingresa la categoría"/>
                                   </div>
                                   <div class="col mb-3">
-                                  <label for="estado">Estado</label>
+                                  <label for="estado" style="margin-bottom: 8px">Estado</label>
                                     <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
                                         <option><a>Disponible</a></option>
                                         <option><a>No disponible</a></option>
@@ -298,7 +298,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                                <button onclick="createProduct()" type="button" class="btn btn-primary">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 

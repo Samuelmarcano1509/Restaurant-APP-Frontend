@@ -54,18 +54,24 @@
             height: 2px;
             background-color: #301f14; /* Color de la línea */
         }
+        /* Estilos para la barra lateral */
         .sidebar {
             background-color: #170E09;
             color: white;
             padding-top: 20px;
             width: 250px;
-            height: 82.2vh auto;
+            height: 100vh;
+            position: sticky;
+            top: 0; /* Fija la barra lateral en la parte superior */
         }
+
+        /* Estilos para los elementos de la barra lateral */
         .sidebar-heading {
             padding: 10px;
             font-size: 20px;
             text-align: center;
         }
+
         .list-group-item {
             background-color: #170E09;
             border-color: #170E09;
@@ -73,6 +79,7 @@
             border-radius: 0;
             text-align: center;
         }
+
         .list-group-item:hover {
             background-color: #301f14;
             color: white;
@@ -118,45 +125,98 @@
             margin-bottom: 20px;
         }
 
-        /* Pedidos 
-        .order-box {
+        /* Estilos para el contenedor del cuadro de pedidos */
+        .order-container {
+            position: fixed;
+            top: 160px;
+            right: 90px;
             background-color: white;
             border: 1px solid #ccc;
             border-radius: 5px;
-            padding: 20px;
-            width: 300px;
-            position: absolute;
-            top: 0px;
-            left: 500px;
-            margin-top: 70px; 
-            margin-right: 20px;
-            z-index: 999;
-        }
-        .order-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-align: center; 
-        }
-        .separator {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ccc;
-        }
-        .text-area {
-            margin-bottom: 20px;
-        }
-        .continue-button {
-            display: block;
-            width: 100%;
             padding: 10px;
+            width: 350px; /* Ancho del cuadro */
+            height: 300px; /* Reducir el alto del cuadro */
+            display: flex;
+            flex-direction: column;
+           
+        }
+
+        
+        .order-text {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        
+        .order-button {
+            display: block;
+            width: 50%;
+            margin-top: 65px;
+            padding: 8px 0;
             text-align: center;
             background-color: #301F14;
-            color: white;        
+            color: white;
+            border: none;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
-            border-radius: 20px; /* Ajusta este valor según tu preferencia */
-}*/
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; 
+            text-align: center;
+    
+}
+
+            .order-container .dish-container {
+                width: 80%; 
+                margin: 10px auto;  
+            }
+
+            .dish-description {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.7); /* Ajusta el fondo del precio */
+            border-top-left-radius: 5px; /* Ajusta la esquina superior izquierda del fondo del precio */
+}
+
+            .dish-description p {
+                margin: 0;
+            }
+
+            .price {
+                
+                color: #333;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+
+            .quantity {
+                position: absolute;
+                top: 20px;
+                left: -38px;
+                background-color: rgba(255, 255, 255, 0.7); /* Ajusta el fondo del texto */
+                padding: 5px;
+                
+                border-bottom-right-radius: 5px; /* Ajusta la esquina inferior derecha del fondo del texto */
+            }
+
+            .remove-item {
+                position: absolute;
+                
+                top: 20px;
+                right: -25px;
+                cursor: pointer;
+                font-size: 20px;
+                margin: 0;
+            }
+
+
 
     
     </style> 
@@ -256,7 +316,25 @@
                 <!-- Agrega más columnas según sea necesario para los demás platillos -->
                     </div>
                 </div>
-        </div>
+          </div>
+<div class="order-container">
+    <p class="order-text">Mis Pedidos</p>
+    <hr>
+<div class="dish-container">
+    <div class="quantity">1x - </div>
+    <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+    <div class="dish-info">
+        <h5>Caviar</h5>
+    </div>
+    <div class="dish-description">
+        <p class="price">$15.99</p>
+    </div>
+    <p class="remove-item">x</p>
+</div>
+    <div class="button-container">
+        <button class="order-button">Continuar</button>
+    </div>
+</div>
 </form>
 <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
 </body>

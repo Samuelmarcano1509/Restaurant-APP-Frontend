@@ -133,6 +133,11 @@ const sendEditProduct = async()=> {
     try{
         var formulario = document.getElementById('formulario')
         var data = new FormData(formulario);
+        const foto = document.getElementById('upload').files[0]
+        const formdata= new FormData()
+        formdata.append('image',foto,foto.name)
+        const file = URL.createObjectURL(foto)
+        document.getElementById('uploadedAvatar').setAttribute('src',file)
         let status =0;
         if (data.get('estado')==='Disponible'){
             status=1
@@ -143,8 +148,8 @@ const sendEditProduct = async()=> {
             name: data.get('nombre'),
             description: data.get('descripcion'),
             amount:      data.get('precio'),
-            status_id:    status,
-            category:     data.get('categoria'),
+            status_id:   status,
+            category:    data.get('categoria'),
         }
         const response = await fetch('http://127.0.0.1:8000/api/edit/product/'+document.getElementById('send').name, {
             method: 'POST',
@@ -152,11 +157,30 @@ const sendEditProduct = async()=> {
                 'Content-Type': 'application/json',
                 "Authorization": "Bearer " + localStorage.getItem('token'),
             },
-            body: JSON.stringify(inf),
+            body: JSON.stringify(inf)
         })
         if (response.ok) {
-            alert('Producto Editado Satisfactoriamente')
-            location.reload();
+            $.ajax()
+            const upfile = await fetch('http://127.0.0.1:8000/api/image/product/'+document.getElementById('send').name, {
+                method: 'POST',
+                headers:{
+                    "Authorization": "Bearer " + localStorage.getItem('token'),
+                },
+                body: formdata
+            })
+            if (upfile.ok){
+                const datas2 = await upfile.json();
+                alert(datas2.title)
+                location.reload();
+            }else if (upfile.status===413){
+                alert('El archivo es muy pesado')
+            }else {
+                const datas2 = await upfile.json();
+                alert(datas2.title)
+            }
+        }else {
+            const datas1 = await response.json();
+            alert(datas1.title)
         }
     } catch (error){
         console.log(error)

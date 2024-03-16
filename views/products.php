@@ -226,7 +226,7 @@
                                   <div class="button-wrapper">
                                     <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                       <span class="d-none d-sm-block">Asignar imagen</span>
-                                      <input  type="file"  id="upload"  class="account-file-input" 
+                                      <input  type="file"  id="upload" name="foto" class="account-file-input"
                                       hidden accept="image/png, image/jpeg"/>
                                     </label>
                                   </div>

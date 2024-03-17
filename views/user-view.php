@@ -157,9 +157,27 @@
                             </div>
                           </div> 
                           <div class="mb-3 col-md-6">
+                            <label class="form-label" for="cedula">Número de cedula</label>
+                            <div class="input-group input-group-merge">
+                              <span class="input-group-text"></span>
+                              <input type="text" id="cedula" name="cedula" class="form-control" placeholder="30654853" />
+                            </div>
+                          </div> 
+                          <div class="mb-3 col-md-6">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input class="form-control" type="text" name="direccion" id="addres" value=""/>
+                          </div>
+                          <div class="mb-3 col-md-6">
                             <label for="user" class="form-label">Usuario</label>
                             <input class="form-control" type="text" id="user" name="user" value="Usuario" placeholder="john.doe"/>
                           </div>
+                          <div class="col mb-3">
+                                  <label for="membresia" style="margin-bottom: 8px">Tipo de membresia</label>
+                                    <select class="btn btn-light bg-white" name="membresia"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" disabled>
+                                        <option value="Disponible">membresia_tipo1</option>
+                                        <option value="No disponible">membresia_tipo2</option>
+                                    </select>
+                                  </div>
                           <div class="mb-3 col-md-6">
                             <label for="password" class="form-label">contraseña</label>
                             <input class="form-control" type="password" id="password" name="password" value="" placeholder=""/>

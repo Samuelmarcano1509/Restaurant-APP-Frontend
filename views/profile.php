@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
-    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.css">  
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.min.css">
     <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css">  
     
 

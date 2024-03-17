@@ -22,9 +22,12 @@ const personList = async()=> {
             if (response.ok) {
                 const datas = await response.json();
                     let body=''
+                    let personid=0
                console.log(datas.data) 
                 for (let i=0; i< Object.keys(datas.data).length;i++){
-                    body+=`<tr>
+                    if (datas.data[i]) {
+                        personid=datas.data[i].id
+                        body += `<tr id="${personid}">
                         <td>
                             ${datas.data[i].names}
                         </td>
@@ -51,7 +54,8 @@ const personList = async()=> {
                           </div>
                         </td>
                     </tr>`;
-                }
+                    }
+                    }
 
                 document.getElementById('inf-body').innerHTML=body
             }else if (response.status === 401) {
@@ -67,7 +71,7 @@ const personList = async()=> {
             Swal.fire({
               title: 'Ha expirado la sesión',
               type: 'error',
-              confirmButtonText: 'Ir a Logi'
+              confirmButtonText: 'Ir a Login'
             }).then(() => {
               window.location.href = '/NeoRestaurante/views/Auth/login.php';
             });
@@ -81,6 +85,7 @@ tableBody.addEventListener("click", (event) => {
     const target = event.target;
     const row = target.closest("tr");
     const elementId = row.getAttribute("id");
+    console.log(elementId)
     if (target.getAttribute('id')==='edit'){
         getProduct(elementId)
     }else if(target.getAttribute('id')==='delete'){

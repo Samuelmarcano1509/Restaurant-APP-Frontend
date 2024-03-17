@@ -140,7 +140,7 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>Nombre y Apellido</th>
+                        <th>Nombres y Apellidos</th>  
                         <th>Identificación</th>
                         <th>Usuario</th>
                         <th>Género</th>
@@ -174,7 +174,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger">Eliminar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
       </div>
     </div>
   </div>
@@ -192,15 +192,23 @@
                             <form id="formulario">
                               <div class="row">
                                   <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Nombre y Apellido</label>
-                                    <input type="text" id="nombre"  name="nombre" class="form-control"  placeholder="Ingresa nombre y apellido"/>
+                                    <label for="nameWithTitle" class="form-label">Nombre</label>
+                                    <input type="text" id="nombre"  name="nombre" class="form-control"  placeholder="Ingresa nombre"/>
                                   </div>
                                   <div class="col mb-3">
-                                    <label for="descripcion" class="form-label">Identificación</label>
-                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° de identificación"/>
+                                    <label for="apellido" class="form-label">Apellido</label>
+                                    <input type="text" id="apellido"  name="apellido" class="form-control"  placeholder="Ingresa  apellido"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">N° telefónico</label>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° telefono"/>
                                   </div>
                                 </div>
                                 <div class="row">
+                                <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Identificación</label>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° cedula"/>
+                                  </div>
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Usuario</label>
                                     <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
@@ -214,13 +222,19 @@
                                     </select>
                                   </div>
                                 </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="addres" class="form-label">Dirección</label>
+                                    <input type="text" id="addres"  name="addres" class="form-control"  placeholder="Ingresa una dirección"/>
+                                  </div>
+                                </div>
                                 <div class="row g-2"></div>
                                 <!--aqui-->
                                 <!--acaba-->
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button  type="button" class="btn btn-primary">Guardar cambios</button>
+                                <button  type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 
@@ -240,8 +254,12 @@
                             <form id="formulario2">
                               <div class="row">
                               <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Nombre y Apellido</label>
+                                    <label for="nameWithTitle" class="form-label">Nombre</label>
                                     <input type="text" id="nombre"  name="nombre" class="form-control"  placeholder="Ingresa nombre y apellido"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="apellido" class="form-label">Apellido</label>
+                                    <input type="text" id="apellido"  name="apellido" class="form-control"  placeholder="Ingresa nombre y apellido"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Identificación</label>
@@ -268,7 +286,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 

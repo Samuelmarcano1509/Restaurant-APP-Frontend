@@ -174,7 +174,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button onclick="sendProductDelete()" type="button" id="borrar"class="btn btn-danger">Eliminar</button>
+        <button onclick="sendProductDelete()" type="button" id="borrar"class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
       </div>
     </div>
   </div>
@@ -236,7 +236,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button onclick="editProduct()" id="send" type="button" class="btn btn-primary">Guardar cambios</button>
+                                <button onclick="editProduct()" id="send" type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 
@@ -299,7 +299,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button onclick="createProduct()" type="button" class="btn btn-primary">Guardar cambios</button>
+                                <button onclick="createProduct()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 

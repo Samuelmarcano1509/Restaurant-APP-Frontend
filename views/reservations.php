@@ -135,7 +135,7 @@
           <div class="content-wrapper">
             <!-- Content -->
             <div class="card">
-                <h5 class="card-header">Listado de reservaciones</h5>
+            <h5 class="card-header">Listado de Reservaciones <button type="button" class="btn btn-secondary" style="margin-left:54%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar reservación</button></h5>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>
@@ -253,7 +253,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger">Eliminar</button>
+        <button type="button" class="btn btn-danger"  data-bs-dismiss="modal">Eliminar</button>
       </div>
     </div>
   </div>
@@ -270,28 +270,111 @@
                               </div>
                               <div class="modal-body"><!--comienza-->
                                 <div class="row">
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Hora de llegada</label>
-                                    <input type="time" name="hora">
+                                    <div class="col mb-3">
+                                    <label for="usuario" class="form-label">Usuarios disponibles</label>
+                                      <select class="btn btn-light bg-white" name="usuario"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="">usuario1 (nombre y apellido)</option>
+                                        <option value="">usuario2 (nombre y apellido)</option>
+                                        <option value="">usuario3 (nombre y apellido)</option>
+                                    </select>
+                                    </div>
+                                    <div class="col mb-3">
+                                      <label for="mesas" class="form-label">Mesas</label>
+                                      <select class="btn btn-light bg-white" name="mesas"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="">mesa1, capacidad #personas</option>
+                                        <option value="">mesa2, capacidad #personas</option>
+                                        <option value="">mesa3, capacidad #personas</option>
+                                    </select>
+                                    </div>
                                   </div>
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Hora de salida</label>
-                                    <input type="time" name="hora">
+                                  <div class="row">
+                                    <div class="col mb-3">
+                                      <label for="hora1" class="form-label">Hora de llegada</label>
+                                      <input type="time" name="hora1">
+                                    </div>
+                                    <div class="col mb-3">
+                                      <label for="hora2" class="form-label">Hora de salida<br></label>
+                                      <input type="time" name="hora2">
+                                    </div>
+                                    <div class="col mb-3">
+                                    <label for="estado" style="margin-bottom: 8px">Estado</label>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option><a>Disponible</a></option>
+                                        <option><a>No disponible</a></option>
+                                    </select>
                                   </div>
-                                </div>
+                                  </div>
                                 <div class="row g-2"></div>
                                 <!--aqui-->
                                 <!--acaba-->
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+<!--Modal-->
+<div class="modal fade" id="modalCenter2" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" tabindex="-1" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalCenterTitle"><b>Editar Reservacion</b></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body"><!--comienza-->
+                                <div class="row">
+                                    <div class="col mb-3">
+                                    <label for="usuario" class="form-label">Usuarios disponibles</label>
+                                      <select class="btn btn-light bg-white" name="usuario"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="">usuario1 (nombre y apellido)</option>
+                                        <option value="">usuario2 (nombre y apellido)</option>
+                                        <option value="">usuario3 (nombre y apellido)</option>
+                                    </select>
+                                    </div>
+                                    <div class="col mb-3">
+                                      <label for="mesas" class="form-label">Mesas</label>
+                                      <select class="btn btn-light bg-white" name="mesas"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="">mesa1, capacidad #personas</option>
+                                        <option value="">mesa2, capacidad #personas</option>
+                                        <option value="">mesa3, capacidad #personas</option>
+                                    </select>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col mb-3">
+                                      <label for="hora1" class="form-label">Hora de llegada</label>
+                                      <input type="time" name="hora1">
+                                    </div>
+                                    <div class="col mb-3">
+                                      <label for="hora2" class="form-label">Hora de salida</label>
+                                      <input type="time" name="hora2">
+                                    </div>
+                                    <div class="col mb-3">
+                                    <label for="estado" style="margin-bottom: 8px">Estado</label>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option><a>Disponible</a></option>
+                                        <option><a>No disponible</a></option>
+                                    </select>
+                                  </div>
+                                  </div>
+                                <div class="row g-2"></div>
+                                <!--aqui-->
+                                <!--acaba-->
+                              </div><!--termina-->  
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+ <!--/Modal-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>               
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>

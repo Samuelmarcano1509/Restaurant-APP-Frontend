@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
 
   
-    
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.css">  
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css">  
 
     <!-- Helpers -->
     <script src="/NeoRestaurante/public/vendor/js/helpers.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/config.js"></script>
-
+  
     <style>
       .card{
         margin-top: 5%;
@@ -165,7 +166,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Advertencia</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Advertencia</b></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -185,7 +186,7 @@
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="modalCenterTitle">Editar Producto</h5>
+                                <h5 class="modal-title" id="modalCenterTitle"><b>Editar Producto</b></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
@@ -306,7 +307,8 @@
                         </div>
                       </div>
                     </div>
-    
+    <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
+    <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>

@@ -1,10 +1,15 @@
 function getPersons(){
     if(localStorage.getItem('token')){
         personList()
-    }else{
-        alert('Ha expirado la sesión');
-        window.location.href = '/NeoRestaurante/views/Auth/login.php'
-    }
+    }else {
+        Swal.fire({
+          title: 'Ha expirado la sesión',
+          type: 'warning',
+          confirmButtonText: 'Entendido',
+        }).then(() => {
+          window.location.href = '../../views/Auth/login.php';
+        });
+      }
 }
 const personList = async()=> {
     try{
@@ -38,7 +43,9 @@ const personList = async()=> {
                               <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
                             </button>
                             <div class="dropdown-menu">
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
+                            <button class="dropdown-item btn btn-outline-secondary" id="edit" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
+                            <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" >Editar</button>
+                              <button class="dropdown-item btn btn-outline-secondary"  id="delete" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
                                 <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar </button>
                             </div>
                           </div>
@@ -47,15 +54,36 @@ const personList = async()=> {
                 }
 
                 document.getElementById('inf-body').innerHTML=body
-            }else if(response.status===401){
-                alert('No autorizado');
-                window.location.href='/NeoRestaurante/'
-            }else if(response.status===500){
-                localStorage.removeItem('token')
-                alert('Ha expirado la sesión');
-                window.location.href='/NeoRestaurante/views/Auth/login.php'
-            }
+            }else if (response.status === 401) {
+            Swal.fire({
+              title: 'No autorizado',
+              type: 'warning',
+              confirmButtonText: 'Entendido'
+            }).then(() => {
+              window.location.href = '/NeoRestaurante/';
+            });
+          } else if (response.status === 500) {
+            localStorage.removeItem('token');
+            Swal.fire({
+              title: 'Ha expirado la sesión',
+              type: 'error',
+              confirmButtonText: 'Ir a Logi'
+            }).then(() => {
+              window.location.href = '/NeoRestaurante/views/Auth/login.php';
+            });
+          }
     } catch (error){ 
         console.log(error)
+ }
 }
-}
+const tableBody = document.getElementById("inf-body");
+tableBody.addEventListener("click", (event) => {
+    const target = event.target;
+    const row = target.closest("tr");
+    const elementId = row.getAttribute("id");
+    if (target.getAttribute('id')==='edit'){
+        getProduct(elementId)
+    }else if(target.getAttribute('id')==='delete'){
+        document.getElementById('borrar').name=elementId
+    }
+});

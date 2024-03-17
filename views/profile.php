@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
-
-  
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.css">  
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css">  
     
 
     <!-- Helpers -->
@@ -27,7 +27,7 @@
     </style>
 
 </head>
-<body onload="getPersons();">
+<body onload="getPersons()">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -135,7 +135,7 @@
             <!-- Content -->
 
             <div class="card">
-                <h5 class="card-header">Perfiles de usuarios</h5>
+                <h5 class="card-header">Perfiles de usuarios<button type="button" class="btn btn-secondary" style="margin-left:62%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar usuario</button></h5>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>
@@ -166,7 +166,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Advertencia</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Advertencia</b></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -180,7 +180,104 @@
   </div>
 </div>
 <!--/Modal-->
-    
+<!-- /Modal -->
+<div class="modal fade" id="modalCenter" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" tabindex="-1" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalCenterTitle"><b>Editar Usuario</b></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body"><!--comienza-->
+                            <form id="formulario">
+                              <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Nombre y Apellido</label>
+                                    <input type="text" id="nombre"  name="nombre" class="form-control"  placeholder="Ingresa nombre y apellido"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Identificación</label>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° de identificación"/>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Usuario</label>
+                                    <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                  <label for="estado" style="margin-bottom: 8px">Género</label>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="Disponible">No especificado</option>
+                                        <option value="No disponible">Masculino</option>
+                                        <option value="No disponible">Femenino</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="row g-2"></div>
+                                <!--aqui-->
+                                <!--acaba-->
+                              </div><!--termina-->  
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button  type="button" class="btn btn-primary">Guardar cambios</button>
+                              </div>
+                            </div>
+                          </form> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    <!--/Modal-->
+    <div class="modal fade" id="modalCenter2" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalCenterTitle">Agregar Usuario</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body"><!--comienza-->
+                            <form id="formulario2">
+                              <div class="row">
+                              <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Nombre y Apellido</label>
+                                    <input type="text" id="nombre"  name="nombre" class="form-control"  placeholder="Ingresa nombre y apellido"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Identificación</label>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° de identificación"/>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Usuario</label>
+                                    <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                  <label for="estado" style="margin-bottom: 8px">Género</label>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="Disponible">No especificado</option>
+                                        <option value="No disponible">Masculino</option>
+                                        <option value="No disponible">Femenino</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="row g-2"></div>
+                                <!--aqui-->
+                                <!--acaba-->
+                              </div><!--termina-->  
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                              </div>
+                            </div>
+                          </form> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
+    <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>

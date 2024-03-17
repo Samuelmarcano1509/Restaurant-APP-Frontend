@@ -1,10 +1,16 @@
+
 function productList(){
     if (localStorage.getItem('token')){
         getProductList();
-    }else{
-        alert('Ha expirado la sesión');
-        window.location.href='../../views/Auth/login.php'
-    }
+    }else { 
+        Swal.fire({
+          title: 'Ha expirado la sesión',
+          type: 'error',
+          confirmButtonText: 'Entendido',
+        }).then(() => {
+          window.location.href = '/NeoRestaurante/views/Auth/login.php';
+        });
+      }
 }
 const getProductList = async()=> {
     try {
@@ -62,14 +68,24 @@ const getProductList = async()=> {
             }
             }
             document.getElementById('inf-body').innerHTML=body
-        }else if(response.status===401){
-            alert('No autorizado');
-            window.location.href='/NeoRestaurante/'
-        }else if(response.status===500){
-            localStorage.removeItem('token')
-            alert('Ha expirado la sesión');
-            window.location.href='/NeoRestaurante/views/Auth/login.php'
-        }
+        }else if (response.status === 401) {
+            Swal.fire({
+              title: 'No autorizado',
+              type: 'warning',
+              confirmButtonText: 'Entendido'
+            }).then(() => {
+              window.location.href = '/NeoRestaurante/';
+            });
+          } else if (response.status === 500) {
+            localStorage.removeItem('token');
+            Swal.fire({
+              title: 'Ha expirado la sesión',
+              type: 'error',
+              confirmButtonText: 'Ir a Login'
+            }).then(() => {
+              window.location.href = '/NeoRestaurante/views/Auth/login.php';
+            });
+          }
     } catch (error) {
         console.log(error)
     }
@@ -97,9 +113,15 @@ const productDelete = async()=> {
             }
         })
         if (response.ok) {
-            alert('Producto Eliminado satisfactoriamente')
-            location.reload()
-        }
+            Swal.fire({
+              title: '¡Producto Eliminado!',
+              text: 'El producto ha sido eliminado satisfactoriamente.',
+              type: 'success',
+              confirmButtonText: 'Entendido'
+            }).then(() => {
+              location.reload();
+            });
+          }
     } catch (error){
         console.log(error)
     }
@@ -160,7 +182,6 @@ const sendEditProduct = async()=> {
             body: JSON.stringify(inf)
         })
         if (response.ok) {
-            $.ajax()
             const upfile = await fetch('http://127.0.0.1:8000/api/image/product/'+document.getElementById('send').name, {
                 method: 'POST',
                 headers:{
@@ -168,18 +189,40 @@ const sendEditProduct = async()=> {
                 },
                 body: formdata
             })
-            if (upfile.ok){
+            if (upfile.ok) {
                 const datas2 = await upfile.json();
-                alert(datas2.title)
-                location.reload();
-            }else if (upfile.status===413){
-                alert('El archivo es muy pesado')
-            }else {
-                const datas2 = await upfile.json();
-                alert(datas2.title)
-            }
+                Swal.fire({
+                  title: 'Archivo Cargado',
+                  text: datas2.title,
+                  type: 'success',
+                  confirmButtonText: 'Entendido'
+                }).then(() => {
+                  location.reload();
+                });
+              } else if (upfile.status === 413) {
+                Swal.fire({
+                  title: 'Error',
+                  text: 'El archivo es muy pesado',
+                  type: 'error',
+                  confirmButtonText: 'Cerrar'
+                });
+              } else {
+                const datas2 = await upfile.text(); 
+                Swal.fire({
+                  title: 'Error',
+                  text: datas2,
+                  type: 'error',
+                  confirmButtonText: 'Cerrar'
+                });
+              }
         }else {
             const datas1 = await response.json();
+            Swal.fire({
+                title: 'Error',
+                text: 'Ha ocurrido un error inesperado',
+                type:'warning',
+                confirmButtonText:'Aceptar'
+            })
             alert(datas1.title)
         }
     } catch (error){
@@ -215,8 +258,14 @@ const sendCreateProduct = async()=> {
             body: JSON.stringify(inf),
         })
         if (response.ok) {
-            alert('Producto Ha Sido Creado Satisfactoriamente')
-            location.reload();
+            Swal.fire({
+                title:'Aviso',
+                text:'EL producto ha sido creado satisfactoriamente',
+                type: 'success',
+                confirmButtonText: 'aceptar'
+            }).then(() => {
+                location.reload();
+              });
         }
     } catch (error){
         console.log(error)

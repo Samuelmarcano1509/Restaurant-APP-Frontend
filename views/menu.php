@@ -129,8 +129,8 @@
         /* Estilos para el contenedor del cuadro de pedidos */
         .order-container {
             position: fixed;
-            top: 160px;
-            right: 90px;
+            top: 208px;
+            right: 50px;
             background-color: white;
             border: 1px solid #ccc;
             border-radius: 5px;

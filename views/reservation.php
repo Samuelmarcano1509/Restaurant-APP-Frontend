@@ -79,6 +79,82 @@
           color: white; 
 }
 
+        @media only screen and (max-width: 360px) and (max-height: 740px) {
+            body {
+                font-family: 'montserrat';
+                background-image: url('/NeoRestaurante/public/img/OIG1.cggt.MuVdud2vmc.jpeg');
+                background-size: 110%;
+                background-position: center;
+            }
+
+            #navbarNav {
+                padding-left: 28.5%;
+                font-size: 95%;
+            }
+
+            #navbar {
+                width: 100%;
+            }
+
+            #item {
+                margin-left: 3%;
+                padding-left: 5%;
+
+            }
+
+            .nav-link.active {
+                font-weight: bold;
+                background-color: transparent;
+                position: relative;
+            }
+
+            .nav-link.active::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                width: 30%;
+                height: 2px;
+                background-color: #301f14;
+               
+            }
+
+            .formulario {
+                flex-direction: column;
+                align-items: center;
+                background-color: #DEDEDE;
+                text-align: center;
+                /* Centrar el texto */
+            }
+
+             .mb-2.d-flex {
+                flex-direction: column;
+                align-items: flex-start; /* Alinea los elementos a la izquierda */
+                margin-top: 10px; /* Agrega un espacio superior */
+                
+                }
+
+            
+
+            .form-select,
+            .form-control {
+                margin: 15px 0; 
+                border-color: black;
+                margin-left: 50px;
+                
+
+            }
+
+            .btn-reservar {
+                margin-top: 50px;
+                background-color: #301F14;
+                border-color: #301F14;
+            }
+
+
+        }
+
 
 
     </style> 

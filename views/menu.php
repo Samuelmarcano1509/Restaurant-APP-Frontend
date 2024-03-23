@@ -87,7 +87,8 @@
         .dish-container {
         border: 1px solid #ccc;
         border-radius: 5px;
-        width: 300px;
+        width: 600px;
+        height: 150px;
         margin: 10px auto;
         background-color: #f9f9f9;
         display: flex;
@@ -112,7 +113,7 @@
         
         .center-container {
             position: absolute;
-            top: 76%;
+            top: 80%;
             left: 45%;
             transform: translate(-50%, -50%);
         }
@@ -128,8 +129,8 @@
         /* Estilos para el contenedor del cuadro de pedidos */
         .order-container {
             position: fixed;
-            top: 160px;
-            right: 90px;
+            top: 208px;
+            right: 50px;
             background-color: white;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -216,8 +217,162 @@
                 margin: 0;
             }
 
+            /* Estilos para el botón "Agregar" */
+            .add-button {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                background-color: #301F14;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
 
+            /* Media query para dispositivos Samsung (360x740) */
+            @media only screen and (max-width: 360px) and (max-height: 740px) {
+        .body {
+            font-size: 8px; /* Ajusta el tamaño de la fuente */
+        }  
+        /* Estilos para la barra lateral en dispositivos Samsung */
+        .sidebar {
+            width: 30%; /* Ancho completo */
+        }
 
+        .list-group-item {
+            font-size: 9px; /* Tamaño de fuente más pequeño */
+        }
+
+         .nav-link.active {
+            font-weight: bold;
+            background-color: transparent; 
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: -10px;
+            width: 30%;
+            height: 2px;
+            background-color: #301f14; /* Color de la línea */
+        }   
+
+        /* Estilos para la barra de navegación en dispositivos Samsung */
+        .navbar-brand img {
+            width: 60px; /* Ajusta el tamaño del logo */
+            height: 60px;
+        }
+
+        .navbar-brand span {
+            font-size: 14px; /* Ajusta el tamaño del texto */
+        }
+        
+
+        .title {
+            margin-left:135px;
+            
+        }
+        .center-container {
+            position: relative;
+            top: -300px;
+            left: 45%;
+           
+        }
+
+        /* Estilos para los cuadros de platillos en dispositivos Samsung */
+        .dish-container {
+            width: 240px; /* Ancho del 90% */  
+            height: 20%; /* Reducción de la altura */
+            margin: 10px auto; /* Margen superior e inferior de 10px y centrado horizontal */
+            margin-left: 37%; /* Mover a la derecha */
+        }
+
+        .order-dish-image {
+            width: 60px; /* Nuevo tamaño de la imagen */
+            margin-right: 20px; /* Ajuste de margen (si es necesario) */
+        }
+
+        .dish-info h5 {
+            font-size: 10px; /* Tamaño de fuente más pequeño */
+        }
+
+        .dish-info p,
+        .dish-info span {
+            font-size: 8px; /* Tamaño de fuente más pequeño */
+        }
+
+        /* Estilos para el cuadro de pedidos en dispositivos Samsung */
+        .order-container {
+            position:relative;
+            top: -1150px;
+            left: 35%;
+            height: 25%;
+            width: 60%; /* Ancho del 90% */
+            right: 5%; /* Alineación hacia la derecha */
+        }
+  
+
+        .order-text {
+            font-size: 12px; /* Tamaño de fuente más pequeño */
+        }
+
+        .price {
+            position: absolute;
+            top: -5px;
+            left: -25px;
+            font-weight: bold;
+            font-size: 8px;
+        }
+
+        .dish-description p {
+            font-size: 8px;
+            margin: 0;
+        }
+
+        .quantity {
+            position: absolute;
+            font-size: 8px;
+            top: 15px;
+            left: -30px;
+            background-color: rgba(255, 255, 255, 0.7); /* Ajusta el fondo del texto */
+            padding: 5px;
+            border-bottom-right-radius: 5px; /* Ajusta la esquina inferior derecha del fondo del texto */
+        }
+
+        .order-container .dish-container {
+            height: 30%; /* Reducción de la altura */
+            margin: 10px auto; /* Margen superior e inferior de 10px y centrado horizontal */
+            margin-left: 25px;
+        }
+
+        .remove-item {
+            position: absolute;
+            font-size: 12px;
+            top: 15px;
+            left: 160px;
+        }
+
+        .order-button {
+            font-size: 8px; /* Tamaño de fuente del botón */
+            display: block;
+            width: 50%;
+            margin-top: 5px; /* Reducción del margen superior */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; 
+            text-align: center;
+        }
+
+        .add-button {
+            font-size: 6px;
+        }
+    }
     
     </style> 
 </head>
@@ -283,6 +438,7 @@
                     <p>Caviar con lorem ipsum.</p>
                     <span>$15.99</span>
                 </div>
+                <button class="add-button">Agregar Pedido</button> <!-- Botón Agregar -->
             </div>
          </div>
             <div class="col-md-6 col-12">
@@ -293,6 +449,7 @@
                         <p>Caviar con lorem ipsum.</p>
                         <span>$15.99</span>
                     </div>
+                    <button class="add-button">Agregar Pedido</button> <!-- Botón Agregar -->
                 </div>
             </div>
             <div class="col-md-6 col-12">
@@ -303,6 +460,7 @@
                         <p>Caviar con lorem ipsum.</p>
                         <span>$15.99</span>
                     </div>
+                    <button class="add-button">Agregar Pedido</button> <!-- Botón Agregar -->
                 </div>
             </div>
                 <div class="col-md-6 col-12">
@@ -313,6 +471,7 @@
                             <p>Caviar con lorem ipsum.</p>
                             <span >$15.99</span>
                         </div>
+                        <button class="add-button">Agregar Pedido</button> <!-- Botón Agregar -->
                 <!-- Agrega más columnas según sea necesario para los demás platillos -->
                     </div>
                 </div>
@@ -321,16 +480,16 @@
     <p class="order-text">Mis Pedidos</p>
     <hr>
 <div class="dish-container">
-    <div class="quantity">1x - </div>
-    <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-    <div class="dish-info">
-        <h5>Caviar</h5>
-    </div>
-    <div class="dish-description">
-        <p class="price">$15.99</p>
-    </div>
-    <p class="remove-item">x</p>
-</div>
+            <div class="quantity">1x - </div>
+            <img class="dish-image order-dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+            <div class="dish-info">
+                <h5>Caviar</h5>
+            </div>
+            <div class="dish-description">
+                <p class="price">$15.99</p>
+            </div>
+            <p class="remove-item">x</p>
+        </div>
     <div class="button-container">
         <button class="order-button">Continuar</button>
     </div>

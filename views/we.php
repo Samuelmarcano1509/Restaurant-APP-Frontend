@@ -11,35 +11,28 @@
         @font-face {
             font-family: montserrat;
             src: url(/NeoRestaurante/public/Fonts/Montserrat/static/Montserrat-Regular.ttf);
-            }
-        body{
-        font-family: 'montserrat';
-        
-        background-size: 110%;
-        background-position: top;
-      }
-      
-      #navbarNav{
-        padding-left: 28.5%;
-        font-size: 95%;
-        
-      }
-      #navbar{
-        width: 100%;
-      }
-      
-      #item{
-        margin-left: 3%;
-        padding-left: 5%;
-        
-      }
-
+        }
+        body {
+            font-family: 'montserrat';
+            background-size: 110%;
+            background-position: top;
+        }
+        #navbarNav {
+            padding-left: 28.5%;
+            font-size: 95%;
+        }
+        #navbar {
+            width: 100%;
+        }
+        #item {
+            margin-left: 3%;
+            padding-left: 5%;
+        }
         .nav-link.active {
             font-weight: bold;
             background-color: transparent; 
             position: relative;
         }
-
         .nav-link.active::after {
             content: '';
             display: block;
@@ -50,7 +43,92 @@
             height: 2px;
             background-color: #301f14; /* Color de la línea */
         }
+        
+        .col-md-6{
+            padding-left:100px;
+        }
+        .col-md-4{
+            padding-bottom:50px;
+        }
+
+        /* Media query para dimensiones de 360 x 740 */
+        @media only screen and (max-width: 360px) and (max-height: 740px) {
+    /* Ajustes generales */
+    body {
+                font-family: 'montserrat';
+
+                background-position: center;
+    }
+
+         .nav-link.active {
+            font-weight: bold;
+            background-color: transparent; 
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 30%;
+            height: 2px;
+            background-color: #301f14; /* Color de la línea */
+        }  
+
+    /* Ajustes para los ítems de navegación */
+    #item {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    /* Ajustes para el encabezado */
+    .display-4 {
+        font-size: 24px;
+        
+    }
     
+
+    /* Ajustes para el contenido principal */
+    .col-md-6 {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .col-md-3:first-child img {
+        
+        width: 0%; /* Cambia el tamaño de la primera imagen según sea necesario */
+        height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+    }
+
+    /* Ajustes para las imágenes */
+     .col-md-3 img {
+        max-width: 30%; /* Reducir el ancho de la imagen */
+        height: auto; /* Ajustar la altura automáticamente para mantener la proporción */
+        margin-left: -150px;
+        margin-right: -165px;
+        margin-top: -20px; /* Añadir margen superior */
+    }
+
+
+
+    /* Ajustes para el texto */
+    p {
+        font-size: 12px;
+        margin-left:5px;
+        margin-right:10px;
+        text-align: center; /* Centra el texto */
+    }
+    col-md-4{
+        padding-right:0px;
+        width: 10%;
+        margin-right:20px; /* Establecer el ancho máximo de la imagen al 100% del contenedor */
+        height: auto; /* Ajustar la altura automáticamente para mantener la proporción */
+
+    }
+}
+
     </style> 
 </head>
 <body>
@@ -88,7 +166,7 @@
   </nav>
   </div>
 
-<!-- Contenedor "¡PROXIMAMENTE!" con imágenes encima -->
+
     <div class="container-fluid bg-black text-white py-3">
         <div class="row align-items-center" style=" height: 190px;">
             <!-- Imagen a la izquierda -->
@@ -114,7 +192,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6" style="padding-left:100px;">
+        <div class="col-md-6" >
             <p>
             Neo Restaurante es el sueño hecho realidad de un padre y un hijo que comparten la pasión por la cocina y el sabor del Caribe. Su historia comenzó hace diez años, cuando el padre, José, decidió dejar su trabajo como contador y abrir un pequeño local de comida rápida en el centro de la ciudad. Allí, ofrecía platos típicos de su país natal, Venezuela, como arepas, empanadas, pabellón y tequeños.
 
@@ -128,7 +206,7 @@
 
             </p>
         </div>
-        <div class="col-md-4" style="padding-bottom:50px; ">
+        <div class="col-md-4">
             <img src="/NeoRestaurante/public/img/OIG1.B.j78s.jpeg" alt="Imagen" class="img-fluid">
         </div>
     </div>

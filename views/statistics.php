@@ -13,12 +13,22 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
 
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     
 
     <!-- Helpers -->
     <script src="/NeoRestaurante/public/vendor/js/helpers.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/config.js"></script>
+    
+
+    <style>
+      body{
+        background-color:#F2F2F2;
+      }
+      .tile_count{
+        color:black;
+      }
+    </style>
 </head>
 <body onload="authValidation()">
     <!-- Layout wrapper -->
@@ -101,7 +111,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      usuario
+                  
                     <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/user.svg" alt class="w-px-30 h-auto rounded-circle" /> <!--avatar-->
                     </div>
                   </a>
@@ -124,7 +134,7 @@
           <!-- Content wrapper -->
           <div class="" role="main">
               <!-- top tiles -->
-              <div class="row" style="display: inline-block; margin-left:10%; width: 80%;" >
+              <div class="row" style="display: inline-block; margin-left:12%; width: 80%;" >
                 <div class="tile_count">
                   <div class="col-md-4 col-sm-6  tile_stats_count">
                     <span class="count_top"><i class="fa fa-user"></i> Total de ventas</span>
@@ -143,104 +153,115 @@
                   </div>
                 </div>
             </div>
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+                <div class="col-lg-8 mb-4 order-0">
+                  <div class="card">
+                    <div class="d-flex align-items-end row">
+                      <div class="col-sm-7">
+                        <div class="card-body"><!--primer modal-->
+                          <h5 class="card-title text-primary">Bienvenido "ADMIN"! 🎉</h5>
+                          <p class="mb-4">
+                            Aca tienes <span class="fw-bold">Todos</span> los datos indispensables para administrar las ventas en los
+                             distintos periodos
+                            
+                          </p>
+                         
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!--/primer modal-->
+                <!--grafica1-->
+                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+                  <div class="card">
+                    <div class="row row-bordered g-0">
+                      <div class="col-md-8">
+                        <h5 class="card-header m-0 me-2 pb-3">Promedio de ventas Semestral</h5>
+                        <div id="totalRevenueChart" class="px-2"></div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-body">
+                        </div>
+                        <div id="growthChart" style="margin-top: 15%;"></div>
+                        <div class="text-center fw-semibold pt-3 mb-2">Promedio de ventas anual</div>
+
+                        <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
+                          <div class="d-flex">
+                            <div class="me-2">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                        <!--grafica2-->
+                <div class="col-md-6 col-lg-4 col-xl-4  mb-4">
+                  <div class="card">
+                    <div class="card-header d-flex align-items-center pb-0">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Promedio de ventas semanal</h5>
+                         <div class="d-flex  align-items-center mb-3">
+                          <div class="row">
+                          <div id="orderStatisticsChart" class="col mb-3"></div>
+                          <p style="font-size:220%; margin-top: 20%;" class="col mb-3"><b>Mes</b></p>
+                          </div>
+                      </div> 
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <!--Grafica3-->
+             <div class="col-md-6 col-lg-4 order-1 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body px-0">
+                      <div class="tab-content p-0">
+                        <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                          <div class="d-flex p-4 pt-3">
+                            <div style="font-size: 200%">
+                              <b>Promedio de ventas trimestral</b>
+                            </div>
+                          </div>
+                          <div id="incomeChart"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             </div>
+             
+                       
           
-            <!--Grafica1-->
-            <div class="row x_title">
-              <div class="col-md-6">
-                 <h3>Periodo Mensual</h3>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-               <div id="chart_plot_01" class="demo-placeholder"></div>
-            </div>
-           <!--/Grafica1--> 
-           <!--Grafica3-->
-           <div class="col-md-5 col-sm-5">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Periodo Anual</h2>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <canvas id="canvasDoughnut"></canvas>
-                  </div>
-                </div>
-              </div>
-               <!--/Grafica3-->
-          
-          <!--Grafica2-->
-          <div style="margin-top:30%;">
-            <div class="col-md-6 col-sm-6">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Periodo Semestral</h2>
-                  </div>
-                  <div class="x_content">
-                    <canvas id="lineChart"></canvas>
-                  </div>
-                </div>
-          </div>
-           <!--/Grafica2-->
-           <!--Grafica4-->
-           <div class="col-md-6 col-sm-6  ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Periodo trimestral</h2>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <canvas id="mybarChart"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-           <!--/Grafica4-->
-        </div>
+           
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
     <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
-    <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="../vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="../vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
-    <script src="../vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="../vendors/Flot/jquery.flot.js"></script>
-    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS -->
-    <script src="../vendors/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
-    <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="../vendors/moment/min/moment.min.js"></script>
-    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+   
 
-    <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="../assets/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+   
   </body>
 </html>

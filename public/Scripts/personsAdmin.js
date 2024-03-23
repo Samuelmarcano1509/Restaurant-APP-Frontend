@@ -7,7 +7,7 @@ function getPersons(){
           type: 'warning',
           confirmButtonText: 'Entendido',
         }).then(() => {
-          window.location.href = '../../views/Auth/login.php';
+          window.location.href = '/NeoRestaurante/views/Auth/login.php';
         });
       }
 }

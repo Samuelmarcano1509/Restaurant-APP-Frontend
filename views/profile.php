@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
-    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.css">  
     <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css">  
     
 
@@ -174,7 +174,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" onclick="sendPersonDelete()" id="borrar" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
       </div>
     </div>
   </div>
@@ -201,40 +201,80 @@
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">N° telefónico</label>
-                                    <input type="text" id="telefono"  name="telefono" class="form-control"  placeholder="Ingresa N° telefono"/>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° telefono"/>
                                   </div>
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Identificación</label>
-                                    <input type="text" id="cedula"  name="identification" class="form-control"  placeholder="Ingresa N° cedula"/>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° cedula"/>
                                   </div>
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Usuario</label>
-                                    <input type="text" id="user"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                    <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
                                   </div>
                                   <div class="col mb-3">
-                                  <label for="gender" style="margin-bottom: 8px">Género</label>
-                                    <select class="btn btn-light bg-white" name="gender"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="No especificado">No especificado</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Femenino">Femenino</option>
+                                  <label for="estado" style="margin-bottom: 8px">Género</label>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="Disponible">No especificado</option>
+                                        <option value="No disponible">Masculino</option>
+                                        <option value="No disponible">Femenino</option>
                                     </select>
                                   </div>
                                 </div>
                                 <div class="row">
-                                <div class="col mb-3">
-                                    <label for="addres" class="form-label">Dirección</label>
-                                    <input type="text" id="address"  name="address" class="form-control"  placeholder="Ingresa una dirección"/>
+                                  <div class="col mb-3">
+                                      <label for="fecha">Fecha de nacimiento:</label>
+                                      <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de nacimiento">
+                                      <script>
+                                          const fechaInput = document.getElementById('fecha');
+                                          fechaInput.addEventListener('change', () => {
+                                              const fechaSeleccionada = fechaInput.value;
+                                              const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                                              fechaInput.value = fechaFormateada;
+                                          });
+                                      </script>
+                                  </div>
+                                  <div class="col mb-3">
+                                  <label for="membresia" style="margin-bottom: 8px">Tipo de membresia</label>
+                                    <select class="btn btn-light bg-white" name="membresia"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;">
+                                        <option value="Disponible">membresia_tipo1</option>
+                                        <option value="No disponible">membresia_tipo2</option>
+                                    </select>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input class="form-control" type="text" id="email" name="email" value="" placeholder="Ingresa tu correo"/>
+                                </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="direccion" class="form-label">Dirección del usuario</label>
+                                    <input type="text" id="direccion"  name="direccion" class="form-control"  placeholder="Ingresa una dirección"/>
                                   </div>
                                 </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="municipio" class="form-label">Municipio</label>
+                                    <input type="text" id="municipio"  name="municipio" class="form-control"  placeholder="Ingresa un municipio"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="referencia" class="form-label">Punto de referencia</label>
+                                    <input type="text" id="referencia"  name="referencia" class="form-control"  placeholder="Referencia de tu vivienda"/>
+                                  </div>
+                                  
+                                </div>
+                                <hr>
                                 <div class="row g-2"></div>
+                                
                                 <!--aqui-->
                                 <!--acaba-->
-                              </div><!--termina-->  
+                              </div><!--termina-->
+                              
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button  type="button" id="send" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                                <button  type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 
@@ -261,25 +301,61 @@
                                     <label for="apellido" class="form-label">Apellido</label>
                                     <input type="text" id="apellido"  name="apellido" class="form-control"  placeholder="Ingresa nombre y apellido"/>
                                   </div>
-                                  <div class="col mb-3">
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Identificación</label>
-                                    <input type="text" id="identificacion"  name="ident" class="form-control"  placeholder="Ingresa N° de identificación"/>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° de identificación"/>
                                   </div>
+                                <div class="col mb-3">
+                                      <label for="fecha">Fecha de nacimiento:</label>
+                                      <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de nacimiento">
+                                      <script>
+                                          const fechaInput = document.getElementById('fecha');
+                                          fechaInput.addEventListener('change', () => {
+                                              const fechaSeleccionada = fechaInput.value;
+                                              const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                                              fechaInput.value = fechaFormateada;
+                                          });
+                                      </script>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col mb-3">
+                                  <label for="estado" style="margin-bottom: 8px">Género</label>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="Disponible">No especificado</option>
+                                        <option value="No disponible">Masculino</option>
+                                        <option value="No disponible">Femenino</option>
+                                    </select>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">N° telefónico</label>
+                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° telefono"/>
+                                  </div> 
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Usuario</label>
-                                    <input type="text" id="user"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                    <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
                                   </div>
                                   <div class="col mb-3">
-                                  <label for="estado" style="margin-bottom: 8px">Género</label>
-                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="No especificado">No especificado</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Femenino">Femenino</option>
-                                    </select>
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input class="form-control" type="text" id="email" name="email" value="" placeholder="Ingresa tu correo"/>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input class="form-control" type="password" id="password" name="password" value="" placeholder="Ingresa la contraseña"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="password" class="form-label"> Confirmar contraseña</label>
+                                    <input class="form-control" type="password" id="password" name="password" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
+
+                                
                                 <div class="row g-2"></div>
                                 <!--aqui-->
                                 <!--acaba-->
@@ -299,7 +375,6 @@
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
-    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
     <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>

@@ -120,7 +120,64 @@ const getPerson = async(id)=> {
     } catch (error){
         console.log(error)
     }
+}
+function sendAdminRegister(){
+    adminRegister()
+}
+const adminRegister = async()=> {
+    try{
+        const inf ={
+            first_name: document.getElementById('nombre1').value,
+            last_name:  document.getElementById('apellido1').value,
+            identification_value:document.getElementById('identificacion1').value,
+            birth_date: document.getElementById('fecha1').value,
+            email: document.getElementById('email1').value,
+            phone_number: document.getElementById('telefono1').value,
+            username: document.getElementById('user1').value,
+            password: document.getElementById('password1').value,
+            password2:document.getElementById('password2').value,
+            gender: document.getElementById('dropdownMenuButton').value
+        }
+        const response = await fetch('http://127.0.0.1:8000/api/person/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            },
+            body: JSON.stringify(inf),
+        })
+        const datas = await response.json();
+        if (response.status===400){
+            Swal.fire({
+                title: '¡Error!',
+                text: datas.title,
+                type: 'warning',
+                confirmButtonText: 'Entendido'
+            }).then(() => {
+                location.reload();
+            });
+        }
+        if (response.status===201) {
+            Swal.fire({
+                title: '¡Registro Realizado!',
+                text: datas.title,
+                type: 'success',
+                confirmButtonText: 'Entendido'
+            }).then(() => {
+                location.reload();
+            });
 
+        }
+    } catch (error){
+        Swal.fire({
+            title: '¡Ha Ocurrido un Error!',
+            text: error,
+            type: 'error',
+            confirmButtonText: 'Entendido'
+        }).then(() => {
+            location.reload();
+        });
+    }
 }
 function sendPersonEdit(){
     personEdit()

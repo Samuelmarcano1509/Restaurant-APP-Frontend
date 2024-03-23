@@ -295,21 +295,21 @@
                               <div class="row">
                               <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Nombre</label>
-                                    <input type="text" id="nombre"  name="nombre" class="form-control"  placeholder="Ingresa nombre y apellido"/>
+                                    <input type="text" id="nombre1"  name="nombre" class="form-control"  placeholder="Ingresa nombre y apellido"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="apellido" class="form-label">Apellido</label>
-                                    <input type="text" id="apellido"  name="apellido" class="form-control"  placeholder="Ingresa nombre y apellido"/>
+                                    <input type="text" id="apellido1"  name="apellido" class="form-control"  placeholder="Ingresa nombre y apellido"/>
                                   </div>
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Identificación</label>
-                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° de identificación"/>
+                                    <input type="text" id="identificacion1"  name="descripcion" class="form-control"  placeholder="Ingresa N° de identificación"/>
                                   </div>
                                 <div class="col mb-3">
                                       <label for="fecha">Fecha de nacimiento:</label>
-                                      <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de nacimiento">
+                                      <input type="date" class="form-control"  name="fecha" id="fecha1" placeholder="fecha de nacimiento">
                                       <script>
                                           const fechaInput = document.getElementById('fecha');
                                           fechaInput.addEventListener('change', () => {
@@ -324,34 +324,34 @@
                                   <div class="col mb-3">
                                   <label for="estado" style="margin-bottom: 8px">Género</label>
                                     <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="Disponible">No especificado</option>
-                                        <option value="No disponible">Masculino</option>
-                                        <option value="No disponible">Femenino</option>
+                                        <option value="No especificado">No especificado</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
                                     </select>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">N° telefónico</label>
-                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° telefono"/>
+                                    <input type="text" id="telefono1"  name="descripcion" class="form-control"  placeholder="Ingresa N° telefono"/>
                                   </div> 
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Usuario</label>
-                                    <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                    <input type="text" id="user1"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="email" class="form-label">Correo electrónico</label>
-                                    <input class="form-control" type="text" id="email" name="email" value="" placeholder="Ingresa tu correo"/>
+                                    <input class="form-control" type="text" id="email1" name="email" value="" placeholder="Ingresa tu correo"/>
                                 </div>
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="password" class="form-label">Contraseña</label>
-                                    <input class="form-control" type="password" id="password" name="password" value="" placeholder="Ingresa la contraseña"/>
+                                    <input class="form-control" type="password" id="password1" name="password" value="" placeholder="Ingresa la contraseña"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="password" class="form-label"> Confirmar contraseña</label>
-                                    <input class="form-control" type="password" id="password" name="password" value="" placeholder="Repita la contraseña"/>
+                                    <input class="form-control" type="password" id="password2" name="password" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
 
@@ -362,7 +362,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendAdminRegister()">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 

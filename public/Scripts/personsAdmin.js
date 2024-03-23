@@ -22,9 +22,12 @@ const personList = async()=> {
             if (response.ok) {
                 const datas = await response.json();
                     let body=''
+                    let personid=0
                console.log(datas.data) 
                 for (let i=0; i< Object.keys(datas.data).length;i++){
-                    body+=`<tr>
+                    if (datas.data[i]) {
+                        personid=datas.data[i].id
+                        body += `<tr id="${personid}">
                         <td>
                             ${datas.data[i].names}
                         </td>
@@ -51,7 +54,8 @@ const personList = async()=> {
                           </div>
                         </td>
                     </tr>`;
-                }
+                    }
+                    }
 
                 document.getElementById('inf-body').innerHTML=body
             }else if (response.status === 401) {
@@ -67,7 +71,7 @@ const personList = async()=> {
             Swal.fire({
               title: 'Ha expirado la sesión',
               type: 'error',
-              confirmButtonText: 'Ir a Logi'
+              confirmButtonText: 'Ir a Login'
             }).then(() => {
               window.location.href = '/NeoRestaurante/views/Auth/login.php';
             });
@@ -82,8 +86,84 @@ tableBody.addEventListener("click", (event) => {
     const row = target.closest("tr");
     const elementId = row.getAttribute("id");
     if (target.getAttribute('id')==='edit'){
-        getProduct(elementId)
+        getPerson(elementId)
     }else if(target.getAttribute('id')==='delete'){
         document.getElementById('borrar').name=elementId
     }
 });
+
+const getPerson = async(id)=> {
+    try{
+        const response = await fetch('http://127.0.0.1:8000/api/person/'+id, {
+            method: 'GET',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            const datas = await response.json();
+            console.log(datas)
+            document.getElementById('nombre').value=datas.data.first_name
+            document.getElementById('apellido').value=datas.data.last_name
+            document.getElementById('cedula').value=datas.data.identification_value
+            document.getElementById('user').value=datas.data.username
+            document.getElementById('telefono').value=datas.data.phone
+            document.getElementById('address').value=datas.data.address
+            document.getElementById('send').name =  datas.data.id
+            document.getElementById('dropdownMenuButton').value = datas.data.gender
+        }
+    } catch (error){
+        console.log(error)
+    }
+
+}
+function senPersonEdit(){
+    personEdit()
+}
+const personEdit = async()=> {
+    try{
+        const response = await fetch('http://127.0.0.1:8000/api/delete/person/'+document.getElementById('borrar').name, {
+            method: 'POST',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            Swal.fire({
+                title: '¡Persona Eliminada!',
+                text: 'La persona ha sido eliminada satisfactoriamente.',
+                type: 'success',
+                confirmButtonText: 'Entendido'
+            }).then(() => {
+                location.reload();
+            });
+        }
+    } catch (error){
+        console.log(error)
+    }
+}
+function sendPersonDelete(){
+    personDelete()
+}
+const personDelete = async()=> {
+    try{
+        const response = await fetch('http://127.0.0.1:8000/api/delete/person/'+document.getElementById('borrar').name, {
+            method: 'POST',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            Swal.fire({
+                title: '¡Persona Eliminada!',
+                text: 'La persona ha sido eliminada satisfactoriamente.',
+                type: 'success',
+                confirmButtonText: 'Entendido'
+            }).then(() => {
+                location.reload();
+            });
+        }
+    } catch (error){
+        console.log(error)
+    }
+}

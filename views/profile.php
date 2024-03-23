@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
-    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.css">  
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.min.css">
     <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css">  
     
 
@@ -174,7 +174,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+        <button type="button" onclick="sendPersonDelete()" id="borrar" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
       </div>
     </div>
   </div>
@@ -201,31 +201,31 @@
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">N° telefónico</label>
-                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° telefono"/>
+                                    <input type="text" id="telefono"  name="telefono" class="form-control"  placeholder="Ingresa N° telefono"/>
                                   </div>
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Identificación</label>
-                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° cedula"/>
+                                    <input type="text" id="cedula"  name="identification" class="form-control"  placeholder="Ingresa N° cedula"/>
                                   </div>
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Usuario</label>
-                                    <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                    <input type="text" id="user"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
                                   </div>
                                   <div class="col mb-3">
-                                  <label for="estado" style="margin-bottom: 8px">Género</label>
-                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="Disponible">No especificado</option>
-                                        <option value="No disponible">Masculino</option>
-                                        <option value="No disponible">Femenino</option>
+                                  <label for="gender" style="margin-bottom: 8px">Género</label>
+                                    <select class="btn btn-light bg-white" name="gender"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="No especificado">No especificado</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
                                     </select>
                                   </div>
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="addres" class="form-label">Dirección</label>
-                                    <input type="text" id="addres"  name="addres" class="form-control"  placeholder="Ingresa una dirección"/>
+                                    <input type="text" id="address"  name="address" class="form-control"  placeholder="Ingresa una dirección"/>
                                   </div>
                                 </div>
                                 <div class="row g-2"></div>
@@ -234,7 +234,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button  type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                                <button  type="button" id="send" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 
@@ -263,20 +263,20 @@
                                   </div>
                                   <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Identificación</label>
-                                    <input type="text" id="descripcion"  name="descripcion" class="form-control"  placeholder="Ingresa N° de identificación"/>
+                                    <input type="text" id="identificacion"  name="ident" class="form-control"  placeholder="Ingresa N° de identificación"/>
                                   </div>
                                 </div>
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Usuario</label>
-                                    <input type="text" id="precio"  name="precio" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                    <input type="text" id="user"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
                                   </div>
                                   <div class="col mb-3">
                                   <label for="estado" style="margin-bottom: 8px">Género</label>
                                     <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="Disponible">No especificado</option>
-                                        <option value="No disponible">Masculino</option>
-                                        <option value="No disponible">Femenino</option>
+                                        <option value="No especificado">No especificado</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
                                     </select>
                                   </div>
                                 </div>
@@ -299,6 +299,7 @@
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
+    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
     <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>

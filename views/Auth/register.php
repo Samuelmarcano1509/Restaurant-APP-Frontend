@@ -273,6 +273,9 @@
   </div>
 </div>
 
+
+
+<script src="/NeoRestaurante/public/Scripts/form_validation.js"></script>
 <script src="/NeoRestaurante/public/Scripts/validation.js"></script>
 <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
 

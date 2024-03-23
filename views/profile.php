@@ -174,7 +174,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+        <button type="button" onclick="sendPersonDelete()" id="borrar" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
       </div>
     </div>
   </div>

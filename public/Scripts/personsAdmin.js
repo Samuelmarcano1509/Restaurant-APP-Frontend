@@ -92,3 +92,29 @@ tableBody.addEventListener("click", (event) => {
         document.getElementById('borrar').name=elementId
     }
 });
+
+function sendPersonDelete(){
+    personDelete()
+}
+const personDelete = async()=> {
+    try{
+        const response = await fetch('http://127.0.0.1:8000/api/delete/person/'+document.getElementById('borrar').name, {
+            method: 'POST',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            Swal.fire({
+                title: '¡Persona Eliminada!',
+                text: 'La persona ha sido eliminada satisfactoriamente.',
+                type: 'success',
+                confirmButtonText: 'Entendido'
+            }).then(() => {
+                location.reload();
+            });
+        }
+    } catch (error){
+        console.log(error)
+    }
+}

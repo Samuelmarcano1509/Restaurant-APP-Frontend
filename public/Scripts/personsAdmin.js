@@ -85,14 +85,63 @@ tableBody.addEventListener("click", (event) => {
     const target = event.target;
     const row = target.closest("tr");
     const elementId = row.getAttribute("id");
-    console.log(elementId)
     if (target.getAttribute('id')==='edit'){
-        getProduct(elementId)
+        getPerson(elementId)
     }else if(target.getAttribute('id')==='delete'){
         document.getElementById('borrar').name=elementId
     }
 });
 
+const getPerson = async(id)=> {
+    try{
+        const response = await fetch('http://127.0.0.1:8000/api/person/'+id, {
+            method: 'GET',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            const datas = await response.json();
+            console.log(datas)
+            document.getElementById('nombre').value=datas.data.first_name
+            document.getElementById('apellido').value=datas.data.last_name
+            document.getElementById('cedula').value=datas.data.identification_value
+            document.getElementById('user').value=datas.data.username
+            document.getElementById('telefono').value=datas.data.phone
+            document.getElementById('address').value=datas.data.address
+            document.getElementById('send').name =  datas.data.id
+            document.getElementById('dropdownMenuButton').value = datas.data.gender
+        }
+    } catch (error){
+        console.log(error)
+    }
+
+}
+function senPersonEdit(){
+    personEdit()
+}
+const personEdit = async()=> {
+    try{
+        const response = await fetch('http://127.0.0.1:8000/api/delete/person/'+document.getElementById('borrar').name, {
+            method: 'POST',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            Swal.fire({
+                title: '¡Persona Eliminada!',
+                text: 'La persona ha sido eliminada satisfactoriamente.',
+                type: 'success',
+                confirmButtonText: 'Entendido'
+            }).then(() => {
+                location.reload();
+            });
+        }
+    } catch (error){
+        console.log(error)
+    }
+}
 function sendPersonDelete(){
     personDelete()
 }

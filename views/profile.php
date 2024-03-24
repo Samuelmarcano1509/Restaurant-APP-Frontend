@@ -25,6 +25,9 @@
         margin-right: 7%;
       }
     </style>
+      <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
+      <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
+      <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
 
 </head>
 <body onload="getPersons()">
@@ -137,7 +140,7 @@
             <div class="card">
                 <h5 class="card-header">Perfiles de usuarios<button type="button" class="btn btn-secondary" style="margin-left:62%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar usuario</button></h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                  <table class="table" id="table_persons">
                     <thead>
                       <tr>
                         <th>Nombres y Apellidos</th>  
@@ -154,7 +157,7 @@
               </div>
             </div>
           </div>
-       
+
       </div>
       
 
@@ -174,7 +177,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="borrar" onclick="sendPersonDelete();">Eliminar</button>
       </div>
     </div>
   </div>
@@ -199,31 +202,13 @@
                                     <label for="apellido" class="form-label">Apellido</label>
                                     <input type="text" id="apellido"  name="apellido" class="form-control"  placeholder="Ingresa  apellido"/>
                                   </div>
-                                  <div class="col mb-3">
-                                    <label for="descripcion" class="form-label">N° telefónico</label>
-                                    <input type="text" id="telefono"  name="telefono" class="form-control"  placeholder="Ingresa N° telefono"/>
                                   </div>
-                                </div>
-                                <div class="row">
-                                <div class="col mb-3">
-                                    <label for="descripcion" class="form-label">Identificación</label>
-                                    <input type="text" id="cedula"  name="cedula" class="form-control"  placeholder="Ingresa N° cedula"/>
-                                  </div>
-                                <div class="col mb-3">
-                                    <label for="descripcion" class="form-label">Usuario</label>
-                                    <input type="text" id="user"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
-                                  </div>
-                                  <div class="col mb-3">
-                                  <label for="estado" style="margin-bottom: 8px">Género</label>
-                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="No especificado">No especificado</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Femenino">Femenino</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col mb-3">
+                                  <div class="row">
+                                    <div class="col mb-3">
+                                      <label for="descripcion" class="form-label">Identificación</label>
+                                      <input type="text" id="cedula"  name="cedula" class="form-control"  placeholder="Ingresa N° cedula"/>
+                                    </div>
+                                    <div class="col mb-3">
                                       <label for="fecha">Fecha de nacimiento:</label>
                                       <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de nacimiento">
                                       <script>
@@ -235,6 +220,26 @@
                                           });
                                       </script>
                                   </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col mb-3">
+                                    <label for="estado" style="margin-bottom: 8px">Género</label>
+                                      <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                          <option value="No especificado">No especificado</option>
+                                          <option value="Masculino">Masculino</option>
+                                          <option value="Femenino">Femenino</option>
+                                      </select>
+                                      </div>
+                                      <div class="col mb-3">
+                                        <label for="descripcion" class="form-label">N° telefónico</label>
+                                        <input type="text" id="telefono"  name="descripcion" class="form-control"  placeholder="Ingresa N° telefono"/>
+                                      </div> 
+                                  </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Usuario</label>
+                                    <input type="text" id="user"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                  </div>
                                   <div class="col mb-3">
                                   <label for="membresia" style="margin-bottom: 8px">Tipo de membresia</label>
                                     <select class="btn btn-light bg-white" name="membresia"  id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;">
@@ -242,10 +247,22 @@
                                         <option value="VIP">VIP</option>
                                     </select>
                                   </div>
+                                </div>
+                                <div class="row">
                                   <div class="col mb-3">
                                     <label for="email" class="form-label">Correo electrónico</label>
                                     <input class="form-control" type="text" id="email" name="email" value="" placeholder="Ingresa tu correo"/>
                                 </div>
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input class="form-control" type="password" id="password1" name="password" value="" placeholder="Ingresa la contraseña"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="password" class="form-label"> Confirmar contraseña</label>
+                                    <input class="form-control" type="password" id="password2" name="password" value="" placeholder="Repita la contraseña"/>
+                                  </div>
                                 </div>
                                 <hr>
                                 <div class="row">
@@ -323,7 +340,7 @@
                                 <div class="row">
                                   <div class="col mb-3">
                                   <label for="estado" style="margin-bottom: 8px">Género</label>
-                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
                                         <option value="No especificado">No especificado</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>

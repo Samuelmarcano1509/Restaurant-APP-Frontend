@@ -275,7 +275,7 @@
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="modalCenterTitle"><b>Editar Reservacion</b></h5>
+                                <h5 class="modal-title" id="modalCenterTitle"><b>Agregar producto</b></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
@@ -309,7 +309,7 @@
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="modalCenterTitle"><b>Editar Reservacion</b></h5>
+                                <h5 class="modal-title" id="modalCenterTitle"><b>Editar pedido</b></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
@@ -358,7 +358,7 @@
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="modalCenterTitle"><b>Editar Reservacion</b></h5>
+                                <h5 class="modal-title" id="modalCenterTitle"><b>Agregar nuevo pedido</b></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->

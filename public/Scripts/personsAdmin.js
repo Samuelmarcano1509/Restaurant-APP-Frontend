@@ -58,6 +58,8 @@ const personList = async()=> {
                     }
 
                 document.getElementById('inf-body').innerHTML=body
+                $('#table_persons').DataTable();
+
             }else if (response.status === 401) {
             Swal.fire({
               title: 'No autorizado',
@@ -136,7 +138,7 @@ const adminRegister = async()=> {
             username: document.getElementById('user1').value,
             password: document.getElementById('password1').value,
             password2:document.getElementById('password2').value,
-            gender: document.getElementById('dropdownMenuButton').value
+            gender: document.getElementById('dropdownMenuButton1').value
         }
         const response = await fetch('http://127.0.0.1:8000/api/person/create', {
             method: 'POST',

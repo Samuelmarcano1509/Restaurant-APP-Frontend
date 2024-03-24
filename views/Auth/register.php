@@ -230,6 +230,7 @@
                     <i class="form-validation-icon fa-regular fa-circle-question"></i>
                     </div>
                 </div>
+            <div class="row">
                 <div class="form-group col-12">
                     <label for="contraseña">Contraseña:</label>
                     <div>
@@ -237,6 +238,14 @@
                     <i class="form-validation-icon fa-regular fa-circle-question"></i>
                     </div>
                 </div>
+                <div class="form-group col-12">
+                    <label for="confirm">Confirmar contraseña:</label>
+                    <div>
+                    <input type="password" class="form-control" name="confirm" placeholder="Repita la contraseña">
+                    <i class="form-validation-icon fa-regular fa-circle-question"></i>
+                    </div>
+                </div>
+            </div>
                  <br>
                 <div class="form-group col-md-9 d-flex justify-content-center" style="margin-left: 12.5%;">
                     <button type="button" onclick="register()"class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#modal_msg" style="background-color:#301f14; width: 100%; border-radius: 0; color:white; font-size: 80%;"><b>Registrarse</b></button>

@@ -143,8 +143,7 @@
                         <th>Nombre y Apellido</th>
                         <th>Mesa</th>
                         <th>Estatus</th>
-                        <th>Hora de reserva</th>
-                        <th>Hora de salida</th>
+                        <th>Fecha de reserva</th>
                         <th>Acciones</th>
                       </tr>
                     </thead>
@@ -153,8 +152,7 @@
                         <td><strong>Nombre_apellido</strong></td>
                         <td>#Numero_mesa</td>
                         <td><span class="badge bg-label-primary me-1">Active</span></td>
-                        <td>#hora de llegada</td>
-                        <td>#hora de salida</td>
+                        <td>#Fecha de llegada</td>
                         <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -173,8 +171,7 @@
                         <td> <strong>Nombre_apellido</strong></td>
                         <td>#Numero_mesa</td>
                         <td><span class="badge bg-label-success me-1">Completed</span></td>
-                        <td>#hora de llegada</td>
-                        <td>#hora de salida</td>
+                        <td>#Fecha de llegada</td>
                         <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -193,8 +190,7 @@
                         <td> <strong>Nombre_apellido</strong></td>
                         <td>#Numero_mesa</td>
                         <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                        <td>#hora de llegada</td>
-                        <td>#hora de salida</td>
+                        <td>#Fecha de llegada</td>
                         <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -213,8 +209,7 @@
                         <td> <strong>Nombre_apellido</strong> </td>
                         <td>#Numero_mesa</td>
                         <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                        <td>#hora de llegada</td>
-                        <td>#hora de salida</td>
+                        <td>#Fecha de llegada</td>
                         <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -288,13 +283,21 @@
                                     </div>
                                   </div>
                                   <div class="row">
-                                    <div class="col mb-3">
-                                      <label for="hora1" class="form-label">Hora de llegada</label>
-                                      <input type="time" name="hora1">
-                                    </div>
-                                    <div class="col mb-3">
-                                      <label for="hora2" class="form-label">Hora de salida<br></label>
-                                      <input type="time" name="hora2">
+                                  <div class="col mb-3">
+                                      <label for="fecha">Fecha de reservación:</label>
+                                      <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de reservacion">
+                                      <script>
+                                          const fechaInput = document.getElementById('fecha');
+                                          fechaInput.addEventListener('change', () => {
+                                              const fechaSeleccionada = fechaInput.value;
+                                              const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                                              fechaInput.value = fechaFormateada;
+                                          });
+                                      </script>
+                                  </div>
+                                    <div class="col mb-3" >
+                                      <label for="hora2" class="form-label">Hora de Reservación</label>
+                                      <input type="time" name="hora2" style="margin-left: 20%;">
                                     </div>
                                     <div class="col mb-3">
                                     <label for="estado" style="margin-bottom: 8px">Estado</label>
@@ -322,7 +325,7 @@
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="modalCenterTitle"><b>Editar Reservacion</b></h5>
+                                <h5 class="modal-title" id="modalCenterTitle"><b>Agregar Reservacion</b></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
@@ -345,13 +348,21 @@
                                     </div>
                                   </div>
                                   <div class="row">
-                                    <div class="col mb-3">
-                                      <label for="hora1" class="form-label">Hora de llegada</label>
-                                      <input type="time" name="hora1">
-                                    </div>
-                                    <div class="col mb-3">
-                                      <label for="hora2" class="form-label">Hora de salida</label>
-                                      <input type="time" name="hora2">
+                                  <div class="col mb-3">
+                                      <label for="fecha">Fecha de reservación:</label>
+                                      <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de reservacion">
+                                      <script>
+                                          const fechaInput = document.getElementById('fecha');
+                                          fechaInput.addEventListener('change', () => {
+                                              const fechaSeleccionada = fechaInput.value;
+                                              const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                                              fechaInput.value = fechaFormateada;
+                                          });
+                                      </script>
+                                  </div>
+                                    <div class="col mb-3" >
+                                      <label for="hora2" class="form-label">Hora de Reservación</label>
+                                      <input type="time" name="hora2" style="margin-left: 20%;">
                                     </div>
                                     <div class="col mb-3">
                                     <label for="estado" style="margin-bottom: 8px">Estado</label>

@@ -22,10 +22,18 @@
     <style>
       .card{
         margin-top: 5%;
-        margin-left: 7%;
-        margin-right: 7%;
+        margin-left: 6%;
+        margin-right: 6%;
+      }
+      .tablita{
+        margin-left:2%;
+        margin-right:2%;
       }
     </style>
+      <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
+      <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
+      <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
+      
 </head>
 <body onload="authValidation()">
     <!-- Layout wrapper -->
@@ -135,8 +143,9 @@
             <!-- Content -->
             <div class="card">
                 <h5 class="card-header">Listado de pedidos <button type="button" class="btn btn-secondary" style="margin-left:62%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar pedido</button></h5>
+                <div class="tablita">
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                  <table class="table" id="table_orders">
                     <thead>
                       <tr>
                         <th>Nombre y Apellido</th>
@@ -221,15 +230,14 @@
                                 <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/circle-info.svg" style="width: 15px; heigth: 15px;" alt="" > Ver detalles </button>
                             </div>
                           </div>
-                  
                       </tr>
                     </tbody>
                   </table>
+                  <script>$('#table_orders').DataTable();</script>
+                </div>
                 </div>
               </div>
-         
         </div>
-       
       </div>
 
       <div class="layout-overlay layout-menu-toggle"></div>

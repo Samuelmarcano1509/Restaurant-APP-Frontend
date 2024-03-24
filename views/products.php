@@ -23,10 +23,19 @@
     <style>
       .card{
         margin-top: 5%;
-        margin-left: 7%;
-        margin-right: 7%;
+        margin-left: 6%;
+        margin-right: 6%;
+      }
+      .tablita{
+        margin-left:2%;
+        margin-right:2%;
       }
     </style>
+      <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
+      <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
+      <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
+
+
 </head>
 <body onload="productList()">
     <!-- Layout wrapper -->
@@ -137,8 +146,9 @@
             
             <div class="card">
                 <h5 class="card-header">Listado de productos<button type="button" class="btn btn-secondary" style="margin-left:59%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar producto</button> </h5>
+                <div class="tablita">
                 <div class="table-responsive text-nowrap"> 
-                  <table class="table" style="width: 100%">
+                  <table class="table" style="width: 100%" id="table_products">
                     <thead>
                       <tr">
                         <th style="width: 12%;">Nombre</th>
@@ -154,9 +164,8 @@
                   </table>
                 </div>
               </div>
-         
+           </div>
         </div>
-       
       </div>
 
       <div class="layout-overlay layout-menu-toggle"></div>

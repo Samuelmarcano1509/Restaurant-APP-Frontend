@@ -22,8 +22,12 @@
     <style>
       .card{
         margin-top: 5%;
-        margin-left: 7%;
-        margin-right: 7%;
+        margin-left: 6%;
+        margin-right: 6%;
+      }
+      .tablita{
+        margin-left: 2%;
+        margin-right: 2%;
       }
     </style>
 
@@ -141,6 +145,7 @@
             <div class="card">
             <h5 class="card-header">Listado de Reservaciones <button type="button" class="btn btn-secondary" style="margin-left:54%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar reservación</button></h5>
                 <div class="table-responsive text-nowrap">
+                  <div class="tablita">
                   <table class="table" id="table_r">
                     <thead>
                       <tr>
@@ -231,6 +236,7 @@
                     </tbody>
                   </table>
                   <script>$('#table_r').DataTable();</script>
+                  </div>
                 </div>
               </div>
          

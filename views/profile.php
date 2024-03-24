@@ -21,8 +21,12 @@
     <style>
       .card{
         margin-top: 5%;
-        margin-left: 7%;
-        margin-right: 7%;
+        margin-left: 6%;
+        margin-right: 6%;
+      }
+      .tablita{
+        margin-left:2%;
+        margin-right:2%;
       }
     </style>
       <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
@@ -139,6 +143,7 @@
 
             <div class="card">
                 <h5 class="card-header">Perfiles de usuarios<button type="button" class="btn btn-secondary" style="margin-left:62%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar usuario</button></h5>
+                <div class="tablita">
                 <div class="table-responsive text-nowrap">
                   <table class="table" id="table_persons">
                     <thead>
@@ -154,6 +159,8 @@
                     </tbody>
                   </table>
                 </div>
+                </div>
+                
               </div>
             </div>
           </div>

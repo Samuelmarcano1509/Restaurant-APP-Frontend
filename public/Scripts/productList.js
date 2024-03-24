@@ -68,6 +68,7 @@ const getProductList = async()=> {
             }
             }
             document.getElementById('inf-body').innerHTML=body
+            $('#table_products').DataTable();
         }else if (response.status === 401) {
             Swal.fire({
               title: 'No autorizado',

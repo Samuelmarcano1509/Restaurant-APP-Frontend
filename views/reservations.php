@@ -26,6 +26,10 @@
         margin-right: 7%;
       }
     </style>
+
+      <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
+      <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
+      <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
 </head>
 <body onload="authValidation()">
     <!-- Layout wrapper -->
@@ -137,7 +141,7 @@
             <div class="card">
             <h5 class="card-header">Listado de Reservaciones <button type="button" class="btn btn-secondary" style="margin-left:54%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar reservación</button></h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                  <table class="table" id="table_r">
                     <thead>
                       <tr>
                         <th>Nombre y Apellido</th>
@@ -226,6 +230,7 @@
                       </tr>
                     </tbody>
                   </table>
+                  <script>$('#table_r').DataTable();</script>
                 </div>
               </div>
          

@@ -8,18 +8,31 @@
 
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="/NeoRestaurante/public/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="/NeoRestaurante/public/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
+   
+    <!-- Core CSS -->
+   <!-- Core CSS -->
+   <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css"> 
+    <link href="../build/css/custom.min.css" rel="stylesheet"> 
 
-    <link href="../build/css/custom.min.css" rel="stylesheet">
-    
-    
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+   
+
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="/NeoRestaurante/public/vendor/js/helpers.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/config.js"></script>
-    
+    <script src="../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
 
     <style>
       body{
@@ -34,8 +47,8 @@
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
-        <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
+      <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
@@ -50,11 +63,11 @@
             <!-- Dashboard -->
             <li class="menu-item active open">
               <a href="/NeoRestaurante/views/statistics.php" class="menu-link">
-                <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
+              <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
                 <div data-i18n="Analytics">Estadisticas</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item ">
               <a href="/NeoRestaurante/views/profile.php" class="menu-link">
                 <div data-i18n="Account">Perfiles</div>
               </a>
@@ -66,7 +79,7 @@
               </a>
             </li>
             <li class="menu-item">
-            <a href="/NeoRestaurante/views/orders.php" class="menu-link">
+              <a href="/NeoRestaurante/views/orders.php" class="menu-link">
               <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
                 <div data-i18n="Analytics">Pedidos</div>
               </a>
@@ -89,21 +102,22 @@
         <div class="layout-page">
           <!-- Navbar -->
 
-          <nav
-            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-            id="layout-navbar">
+          <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
               <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
               <img src="../public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/bars.svg" alt="" style="widht: 20px; height:20px;"> <!--icono hamburguesa-->
               </a>
             </div>
+            
+
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <!-- Search -->
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
                 </div>
               </div>
-      
-            
+              <!-- /Search -->
+
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
 
@@ -111,13 +125,12 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                  
                     <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/user.svg" alt class="w-px-30 h-auto rounded-circle" /> <!--avatar-->
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item">
+                      <a class="dropdown-item" >
                       <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
                      
                       </a>
@@ -234,34 +247,28 @@
              
                        
           
-           
-    <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
-    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
-    <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
+    <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
+    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>     
+    <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
+    <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
     
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    
+   
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
    
 
     <script src="../assets/vendor/js/menu.js"></script>
-    <!-- endbuild -->
+   
+    
 
-    <!-- Vendors JS -->
     <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
-    <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+      <!-- Main JS -->
+      <script src="../assets/js/main.js"></script>
 
-    <!-- Page JS -->
-    <script src="../assets/js/dashboards-analytics.js"></script>
-
-    <!-- Place this tag in your head or just before your close body tag. -->
+      <!-- Page JS -->
+      <script src="../assets/js/dashboards-analytics.js"></script>
+    
    
   </body>
 </html>

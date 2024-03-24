@@ -28,6 +28,13 @@
         margin-left:2%;
         margin-right:2%;
       }
+      .formulario .pass{
+        border: 1px solid #00BFFF;
+        
+      }
+      .formulario .pass-incorrecta{
+        border: 1px solid #DEDEDE;
+      }
     </style>
       <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
       <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
@@ -93,9 +100,7 @@
         <div class="layout-page">
           <!-- Navbar -->
 
-          <nav
-            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-            id="layout-navbar">
+          <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
               <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
               <img src="../public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/bars.svg" alt="" style="widht: 20px; height:20px;"> <!--icono hamburguesa-->
@@ -118,7 +123,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/user.svg" alt class="w-px-30 h-auto rounded-circle" /> <!--avatar-->
+                    <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/user.svg" alt class="w-px-30 h-auto rounded-circle" /> <!--avatar-->
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -199,7 +204,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
-                            <form id="formulario">
+                            <form id="formulario" class="formulario">
                               <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Nombre</label>
@@ -261,14 +266,14 @@
                                     <input class="form-control" type="text" id="email" name="email" value="" placeholder="Ingresa tu correo"/>
                                 </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" id="contraseñas">
                                 <div class="col mb-3">
                                     <label for="password" class="form-label">Contraseña</label>
-                                    <input class="form-control" type="password" id="password1" name="password" value="" placeholder="Ingresa la contraseña"/>
+                                    <input class="form-control pass" type="password" id="pass1" name="password1" value="" placeholder="Ingresa la contraseña"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="password" class="form-label"> Confirmar contraseña</label>
-                                    <input class="form-control" type="password" id="password2" name="password" value="" placeholder="Repita la contraseña"/>
+                                    <input class="form-control pass" type="password" id="pass2" name="password2" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
                                 <hr>
@@ -315,7 +320,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body"><!--comienza-->
-                            <form id="formulario2">
+                            <form id="formulario2" class="formulario">
                               <div class="row">
                               <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Nombre</label>
@@ -368,14 +373,14 @@
                                     <input class="form-control" type="text" id="email1" name="email" value="" placeholder="Ingresa tu correo"/>
                                 </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" id="contraseñas">
                                 <div class="col mb-3">
                                     <label for="password" class="form-label">Contraseña</label>
-                                    <input class="form-control" type="password" id="password1" name="password" value="" placeholder="Ingresa la contraseña"/>
+                                    <input class="form-control pass" type="password" id="pass1" name="password1" value="" placeholder="Ingresa la contraseña"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="password" class="form-label"> Confirmar contraseña</label>
-                                    <input class="form-control" type="password" id="password2" name="password" value="" placeholder="Repita la contraseña"/>
+                                    <input class="form-control pass" type="password" id="pass2" name="password2" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
 
@@ -402,5 +407,7 @@
     <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
     <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
+    <script src="../public/Scripts/pass_validation.js"></script>
+    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
   </body>
 </html>

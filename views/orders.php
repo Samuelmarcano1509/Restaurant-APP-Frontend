@@ -336,6 +336,10 @@
                                         <option value="">Producto3</option>
                                     </select>
                                     </div>
+                                    <div class="col mb-3">
+                                    <label for="stock" class="form-label">Cantidad a pedir</label>
+                                    <input type="text" id="stock"  name="stock" class="form-control"  placeholder="#Cantidad de productos"/>
+                                  </div>
                                   </div>
                                 <div class="row g-2"></div>
                                 <!--aqui-->

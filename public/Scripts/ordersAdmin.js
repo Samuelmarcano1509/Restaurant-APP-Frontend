@@ -350,6 +350,8 @@ const orderDetails = async(elementId)=> {
             document.getElementById('inf-body2').innerHTML=body
             $('#table_products').DataTable();
             document.getElementById('sendProduct').name=datas.order
+            document.getElementById('totalProductos').textContent='Total Productos '+datas.totalProducts
+            document.getElementById('totalPagar').textContent='Total a Pagar '  +datas.total
         }else if (response.status === 500) {
             localStorage.removeItem('token');
             Swal.fire({

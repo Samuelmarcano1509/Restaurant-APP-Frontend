@@ -210,8 +210,8 @@
                     </tbody>
                     <tfoot>
                       <td></td>
-                      <td>#total_productos</td>
-                      <td>Total a pagar</td>
+                      <td id="totalProductos"></td>
+                      <td id="totalPagar"></td>
                     </tfoot>
                   </table>
                 </div>

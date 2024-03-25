@@ -137,7 +137,6 @@ const adminRegister = async()=> {
             phone_number: document.getElementById('telefono1').value,
             username: document.getElementById('user1').value,
             password: document.getElementById('password1').value,
-            password2:document.getElementById('password2').value,
             gender: document.getElementById('dropdownMenuButton1').value
         }
         const response = await fetch('http://127.0.0.1:8000/api/person/create', {
@@ -194,6 +193,7 @@ const personEdit = async()=> {
          phone_number:          document.getElementById('telefono').value,
          address:               document.getElementById('address').value,
          birth_date:            document.getElementById('fecha').value,
+         pass:                  document.getElementById('pass1').value,
          membership:            document.getElementById('dropdownMenuButton2').value,
          email:                 document.getElementById('email').value,
          municipality:          document.getElementById('municipio').value,

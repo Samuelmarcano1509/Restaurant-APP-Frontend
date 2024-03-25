@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Productos</title>
+    <link rel="shortcut icon" href="../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/fonts/boxicons.css" />
 
 
@@ -229,7 +230,7 @@
                                 <!--aqui-->
                                 <div class="card-body">
                                  <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                  <img src="/NeoRestaurante/public/img/platillo1.jpg"  alt="user-avatar"  class="d-block rounded" 
+                                  <img src="/NeoRestaurante/public/img/platillo1.jpg"  alt="#producto"  class="d-block rounded" 
                                    height="100"  width="100"  id="uploadedAvatar"/>
                                   <div class="button-wrapper">
                                     <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
@@ -239,6 +240,23 @@
                                     </label>
                                   </div>
                                 </div>
+                                <script>
+                                  const uploadedAvatar = document.getElementById('uploadedAvatar');
+                                  const uploadInput = document.getElementById('upload');
+
+                                  uploadInput.addEventListener('change', function() {
+                                    if (this.files && this.files[0]) {
+                                      const reader = new FileReader();
+
+                                      reader.onload = function() {
+                                        uploadedAvatar.src = reader.result;
+                                      };
+
+                                      reader.readAsDataURL(this.files[0]);
+                                    }
+                                  });
+                                </script>
+
                                 <!--acaba-->
                               </div><!--termina-->  
                               <div class="modal-footer">
@@ -290,20 +308,39 @@
                                 </div>
                                 <div class="row g-2"></div>
                                 <!--aqui-->
-                                <div class="card-body">
+                                <div class="card-body" id="imagen">
                                  <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                  <img src="/NeoRestaurante/public/img/platillo1.jpg"  alt="user-avatar"  class="d-block rounded" 
-                                   height="100"  width="100"  id="uploadedAvatar"/>
-                                  <div class="button-wrapper">
-                                    <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                  <img src=""  alt="#Producto"  class="d-block rounded" 
+                                   height="100"  width="100"  id="uploadedAvatar2"/>
+                                    <label for="upload2" class="btn btn-primary me-2 mb-4" tabindex="0">
                                       <span class="d-none d-sm-block">Asignar imagen</span>
-                                      <input  type="file"  id="upload"  class="account-file-input" 
+                                      <input  type="file"  id="upload2"  class="account-file-input" 
                                       hidden accept="image/png, image/jpeg"/>
                                     </label>
                                   </div>
                                 </div>
+                                <script>
+                                  const uploadedAvatar2 = document.getElementById('uploadedAvatar2');
+                                    const uploadInput2 = document.getElementById('upload2');
+
+                                    uploadInput2.addEventListener('change', function() {
+                                      if (this.files && this.files[0]) {
+                                        const reader2 = new FileReader();
+
+                                        reader2.onload = function() {
+                                          uploadedAvatar2.src = reader2.result;
+                                        };
+
+                                        reader2.readAsDataURL(this.files[0]);
+                                      }
+                                    });
+                                </script>
+                               
+                                </div>
+                               
+                              
                                 <!--acaba-->
-                              </div><!--termina-->  
+                              <!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 <button onclick="createProduct()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Estadisticas</title>
+    <link rel="shortcut icon" href="../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/fonts/boxicons.css" />
 
 
@@ -245,7 +246,8 @@
                 </div>
              </div>
              
-                       
+             <div class="layout-overlay layout-menu-toggle"></div>
+    </div>                   
           
     <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>     

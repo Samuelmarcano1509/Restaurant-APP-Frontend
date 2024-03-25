@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi perfil</title>
+    <link rel="shortcut icon" href="../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/fonts/boxicons.css" />
 
 
@@ -11,6 +12,8 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css"> 
 
   
     
@@ -45,33 +48,15 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item">
-              <a href="/NeoRestaurante/views/statistics.php" class="menu-link">
-              <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
-                <div data-i18n="Analytics">Estadisticas</div>
-              </a>
-            </li>
-            <li class="menu-item">
+            <li class="menu-item active open">
               <a href="" class="menu-link">
-                <div data-i18n="Account">Perfiles</div>
+                <div data-i18n="Account">Mi perfil</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="/NeoRestaurante/views/products.php" class="menu-link">
+              <a href="/NeoRestaurante/views/user-orders.php" class="menu-link">
               <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
-                <div data-i18n="Analytics">Productos</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="/NeoRestaurante/views/orders.php" class="menu-link">
-              <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
-                <div data-i18n="Analytics">Pedidos</div>
-              </a>
-            </li>
-            <li class="menu-item">
-            <a href="/NeoRestaurante/views/reservations.php" class="menu-link">
-              <!--  <i class="menu-icon tf-icons bx bx-home-circle"></i>--> <!--icono al lado de la seccion-->
-                <div data-i18n="Analytics">Reservaciones</div>
+                <div data-i18n="Analytics">Mis Pedidos</div>
               </a>
             </li>
         
@@ -201,8 +186,11 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div> 
 
-   
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
+    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>     
+    <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
+    <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>

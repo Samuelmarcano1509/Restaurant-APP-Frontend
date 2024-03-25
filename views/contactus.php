@@ -209,7 +209,7 @@
         <div class="text-center mt-4">
             <h1 style="display: inline-block; border-bottom: 5px solid #301f14; margin-bottom:20px;"><b>Contacto</b></h1>
             <p>0295-2692733</p>
-            <p>neocontacto@gmail.com</p>
+            <p>neocontactooficial@gmail.com</p>
         <div class="social-icons">
             <img src="/NeoRestaurante/public/img/instagram.svg" alt="Instagram" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'">
             <span style="vertical-align: middle;">@neorestaurante</span>

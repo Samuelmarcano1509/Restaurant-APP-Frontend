@@ -31,7 +31,7 @@
       <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
       <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
 </head>
-<body onload="authValidation()">
+<body onload="getReservations();">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -139,9 +139,9 @@
           <div class="content-wrapper">
             <!-- Content -->
             <div class="card">
-            <h5 class="card-header">Listado de Reservaciones <button type="button" class="btn btn-secondary" style="margin-left:54%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" >Agregar reservación</button></h5>
+            <h5 class="card-header">Listado de Reservaciones <button type="button" class="btn btn-secondary" style="margin-left:54%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" onclick="getUsers()" >Agregar reservación</button></h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table" id="table_r">
+                  <table class="table" id="table_reservation">
                     <thead>
                       <tr>
                         <th>Nombre y Apellido</th>
@@ -151,86 +151,9 @@
                         <th>Acciones</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0">
-                      <tr>
-                        <td><strong>Nombre_apellido</strong></td>
-                        <td>#Numero_mesa</td>
-                        <td><span class="badge bg-label-primary me-1">Active</span></td>
-                        <td>#Fecha de llegada</td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar reservación</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td> <strong>Nombre_apellido</strong></td>
-                        <td>#Numero_mesa</td>
-                        <td><span class="badge bg-label-success me-1">Completed</span></td>
-                        <td>#Fecha de llegada</td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar reservación</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td> <strong>Nombre_apellido</strong></td>
-                        <td>#Numero_mesa</td>
-                        <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                        <td>#Fecha de llegada</td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar reservación</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td> <strong>Nombre_apellido</strong> </td>
-                        <td>#Numero_mesa</td>
-                        <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                        <td>#Fecha de llegada</td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar reservación</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
+                    <tbody class="table-border-bottom-0" id="inf-body">
                     </tbody>
                   </table>
-                  <script>$('#table_r').DataTable();</script>
                 </div>
               </div>
          
@@ -253,7 +176,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger"  data-bs-dismiss="modal">Eliminar</button>
+        <button type="button" class="btn btn-danger"  data-bs-dismiss="modal" id="borrar" onclick="deleteReservation()">Eliminar</button>
       </div>
     </div>
   </div>
@@ -272,25 +195,19 @@
                                 <div class="row">
                                     <div class="col mb-3">
                                     <label for="usuario" class="form-label">Usuarios disponibles</label>
-                                      <select class="btn btn-light bg-white" name="usuario"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="">usuario1 (nombre y apellido)</option>
-                                        <option value="">usuario2 (nombre y apellido)</option>
-                                        <option value="">usuario3 (nombre y apellido)</option>
+                                      <select class="btn btn-light bg-white" name="usuario"  id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
                                     </select>
                                     </div>
                                     <div class="col mb-3">
                                       <label for="mesas" class="form-label">Mesas</label>
-                                      <select class="btn btn-light bg-white" name="mesas"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="">mesa1, capacidad #personas</option>
-                                        <option value="">mesa2, capacidad #personas</option>
-                                        <option value="">mesa3, capacidad #personas</option>
+                                      <select class="btn btn-light bg-white" name="mesas"  id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
                                     </select>
                                     </div>
                                   </div>
                                   <div class="row">
                                   <div class="col mb-3">
                                       <label for="fecha">Fecha de reservación:</label>
-                                      <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de reservacion">
+                                      <input type="date" class="form-control"  name="fecha" id="fecha4" placeholder="fecha de reservacion">
                                       <script>
                                           const fechaInput = document.getElementById('fecha');
                                           fechaInput.addEventListener('change', () => {
@@ -302,13 +219,13 @@
                                   </div>
                                     <div class="col mb-3" >
                                       <label for="hora2" class="form-label">Hora de Reservación</label>
-                                      <input type="time" name="hora2" style="margin-left: 20%;">
+                                      <input type="time" name="hora4" id="hora4" style="margin-left: 20%;">
                                     </div>
                                     <div class="col mb-3">
                                     <label for="estado" style="margin-bottom: 8px">Estado</label>
-                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option><a>Disponible</a></option>
-                                        <option><a>No disponible</a></option>
+                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton9" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                        <option value="1">Activa</option>
+                                        <option value="2">Cancelada</option>
                                     </select>
                                   </div>
                                   </div>
@@ -318,7 +235,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="send"onclick="editReservation()">Guardar cambios</button>
                               </div>
                             </div>
                           </div>
@@ -337,25 +254,19 @@
                                 <div class="row">
                                     <div class="col mb-3">
                                     <label for="usuario" class="form-label">Usuarios disponibles</label>
-                                      <select class="btn btn-light bg-white" name="usuario"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="">usuario1 (nombre y apellido)</option>
-                                        <option value="">usuario2 (nombre y apellido)</option>
-                                        <option value="">usuario3 (nombre y apellido)</option>
+                                      <select class="btn btn-light bg-white" name="usuario"  id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
                                     </select>
                                     </div>
                                     <div class="col mb-3">
                                       <label for="mesas" class="form-label">Mesas</label>
-                                      <select class="btn btn-light bg-white" name="mesas"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="">mesa1, capacidad #personas</option>
-                                        <option value="">mesa2, capacidad #personas</option>
-                                        <option value="">mesa3, capacidad #personas</option>
+                                      <select class="btn btn-light bg-white" name="mesas"  id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
                                     </select>
                                     </div>
                                   </div>
                                   <div class="row">
                                   <div class="col mb-3">
                                       <label for="fecha">Fecha de reservación:</label>
-                                      <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de reservacion">
+                                      <input type="date" class="form-control"  name="fecha" id="fecha3" placeholder="fecha de reservacion">
                                       <script>
                                           const fechaInput = document.getElementById('fecha');
                                           fechaInput.addEventListener('change', () => {
@@ -367,13 +278,13 @@
                                   </div>
                                     <div class="col mb-3" >
                                       <label for="hora2" class="form-label">Hora de Reservación</label>
-                                      <input type="time" name="hora2" style="margin-left: 20%;">
+                                      <input type="time" name="hora2"  id="hora2" style="margin-left: 20%;">
                                     </div>
                                     <div class="col mb-3">
                                     <label for="estado" style="margin-bottom: 8px">Estado</label>
                                     <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option><a>Disponible</a></option>
-                                        <option><a>No disponible</a></option>
+                                        <option value="1"> Disponible</option>
+                                        <option value="2">No disponible</option>
                                     </select>
                                   </div>
                                   </div>
@@ -383,7 +294,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="reservationTable()">Guardar cambios</button>
                               </div>
                             </div>
                           </div>
@@ -397,6 +308,7 @@
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+    <script src="/NeoRestaurante/public/Scripts/reservationAdmin.js"></script>
     <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
   </body>
 </html>

@@ -230,7 +230,7 @@
                                 <!--aqui-->
                                 <div class="card-body">
                                  <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                  <img src="/"  alt="#producto"  class="d-block rounded" 
+                                  <img src=""  alt="#producto"  class="d-block rounded" 
                                    height="100"  width="100"  id="uploadedAvatar"/>
                                   <div class="button-wrapper">
                                     <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
@@ -306,35 +306,10 @@
                                     </select>
                                   </div>
                                 </div>
-                                <div class="row g-2"></div>
+                                
                                 <!--aqui-->
-                                <div class="card-body" id="imagen">
-                                 <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                  <img src=""  alt="#Producto"  class="d-block rounded" 
-                                   height="100"  width="100"  id="uploadedAvatar2"/>
-                                    <label for="upload2" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                      <span class="d-none d-sm-block">Asignar imagen</span>
-                                      <input  type="file"  id="upload2"  class="account-file-input" 
-                                      hidden accept="image/png, image/jpeg"/>
-                                    </label>
-                                  </div>
-                                </div>
-                                <script>
-                                  const uploadedAvatar2 = document.getElementById('uploadedAvatar2');
-                                    const uploadInput2 = document.getElementById('upload2');
-
-                                    uploadInput2.addEventListener('change', function() {
-                                      if (this.files && this.files[0]) {
-                                        const reader2 = new FileReader();
-
-                                        reader2.onload = function() {
-                                          uploadedAvatar2.src = reader2.result;
-                                        };
-
-                                        reader2.readAsDataURL(this.files[0]);
-                                      }
-                                    });
-                                </script>
+                                
+                                
                                
                                 </div>
                                

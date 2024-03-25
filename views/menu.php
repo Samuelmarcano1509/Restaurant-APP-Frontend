@@ -11,36 +11,36 @@
         @font-face {
             font-family: montserrat;
             src: url(/NeoRestaurante/public/Fonts/Montserrat/static/Montserrat-Regular.ttf);
-            }
-        body{
-        font-family: 'montserrat';
-        background-color: rgb(217, 213, 213);
-        background-size: 110%;
-        background-position: top;
-      }
-      
-      #navbarNav{
-        padding-left: 28.5%;
-        font-size: 95%;
-        
-      }
-      #navbar{
-        width: 100%;
-      }
-      
-      #item{
-        margin-left: 3%;
-        padding-left: 5%;
-        
-      }
+        }
 
-      #cont{
-      margin-top: 20%;
+        body {
+            font-family: 'montserrat';
+            background-color: rgb(217, 213, 213);
+            background-size: 110%;
+            background-position: top;
+        }
 
-      }
+        #navbarNav {
+            padding-left: 28.5%;
+            font-size: 95%;
+        }
+
+        #navbar {
+            width: 100%;
+        }
+
+        #item {
+            margin-left: 3%;
+            padding-left: 5%;
+        }
+
+        #cont {
+            margin-top: 20%;
+        }
+
         .nav-link.active {
             font-weight: bold;
-            background-color: transparent; 
+            background-color: transparent;
             position: relative;
         }
 
@@ -54,6 +54,7 @@
             height: 2px;
             background-color: #301f14; /* Color de la línea */
         }
+
         /* Estilos para la barra lateral */
         .sidebar {
             background-color: #170E09;
@@ -84,49 +85,48 @@
             background-color: #301f14;
             color: white;
         }
+
         .dish-container {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        width: 600px;
-        height: 150px;
-        margin: 10px auto;
-        background-color: #f9f9f9;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 10px;
-        position: relative; /* Posición relativa */
-        
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 600px; /* Ancho total de los platillos */
+            height: 150px;
+            margin: 10px auto;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            position: relative; /* Posición relativa */
         }
+
         .dish-image {
-            width: 100px; 
+            width: 100px;
             height: auto;
             border-radius: 5px;
             margin-right: 20px;
         }
+
         .dish-info {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        }
-        
-        .center-container {
-            position: absolute;
-            top: 80%;
-            left: 45%;
-            transform: translate(-50%, -50%);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
+        .center-container {
+            position: relative;
+            top: -585px;
+            right: 50px;
+            text-align: center; /* Centrar el contenido */
+        }
 
         .title {
-            text-align: center;
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-        /* Estilos para el contenedor del cuadro de pedidos */
         .order-container {
             position: fixed;
             top: 208px;
@@ -139,10 +139,8 @@
             height: 300px; /* Reducir el alto del cuadro */
             display: flex;
             flex-direction: column;
-           
         }
 
-        
         .order-text {
             text-align: center;
             font-size: 16px;
@@ -150,7 +148,6 @@
             margin-top: 5px;
         }
 
-        
         .order-button {
             display: block;
             width: 50%;
@@ -162,75 +159,76 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
+            margin-left: auto; /* Mover el botón al extremo derecho */
+            margin-right: auto; /* Mover el botón al extremo derecho */
         }
 
         .button-container {
             display: flex;
-            justify-content: center; 
+            justify-content: center;
             text-align: center;
-    
-}
+        }
 
-            .order-container .dish-container {
-                width: 80%; 
-                margin: 10px auto;  
-            }
+        .order-container .dish-container {
+            width: 80%;
+            margin: 10px auto;
+        }
+        
+        .order-dish-image{
+            width: 80px; /* Ajusta el ancho de la imagen según lo necesites */
+            height: auto; /* Para mantener la proporción */
+        }
 
-            .dish-description {
+        .dish-description {
             position: absolute;
             bottom: 0;
             right: 0;
             padding: 5px;
             background-color: rgba(255, 255, 255, 0.7); /* Ajusta el fondo del precio */
             border-top-left-radius: 5px; /* Ajusta la esquina superior izquierda del fondo del precio */
-}
+        }
 
-            .dish-description p {
-                margin: 0;
-            }
+        .dish-description p {
+            margin: 0;
+        }
 
-            .price {
-                
-                color: #333;
-                font-weight: bold;
-                font-size: 16px;
-            }
+        .price {
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
 
+        .quantity {
+            position: absolute;
+            top: 20px;
+            left: -38px;
+            background-color: rgba(255, 255, 255, 0.7); /* Ajusta el fondo del texto */
+            padding: 5px;
+            border-bottom-right-radius: 5px; /* Ajusta la esquina inferior derecha del fondo del texto */
+        }
 
-            .quantity {
-                position: absolute;
-                top: 20px;
-                left: -38px;
-                background-color: rgba(255, 255, 255, 0.7); /* Ajusta el fondo del texto */
-                padding: 5px;
-                
-                border-bottom-right-radius: 5px; /* Ajusta la esquina inferior derecha del fondo del texto */
-            }
+        .remove-item {
+            position: absolute;
+            top: 20px;
+            right: -25px;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 0;
+        }
 
-            .remove-item {
-                position: absolute;
-                
-                top: 20px;
-                right: -25px;
-                cursor: pointer;
-                font-size: 20px;
-                margin: 0;
-            }
-
-            /* Estilos para el botón "Agregar" */
-            .add-button {
-                position: absolute;
-                bottom: 10px;
-                right: 10px;
-                background-color: #301F14;
-                color: white;
-                border: none;
-                padding: 5px 10px;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-
-            /* Media query para dispositivos Samsung (360x740) */
+        /* Estilos para el botón "Agregar" */
+        .add-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #301F14;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+         /* Media query para dispositivos Samsung (360x740) */
             @media only screen and (max-width: 360px) and (max-height: 740px) {
         .body {
             font-size: 8px; /* Ajusta el tamaño de la fuente */
@@ -373,8 +371,7 @@
             font-size: 6px;
         }
     }
-    
-    </style> 
+    </style>
 </head>
 <body>
   <!--Barra de navegacion-->
@@ -430,56 +427,79 @@
         </div>
         <div class="center-container">
         <div class="title">Platillos</div>
-         <div class="col-md-6 col-12">
-            <div class="dish-container">
-                <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-                <div class="dish-info">
-                    <h5>Caviar</h5>
-                    <p>Caviar con lorem ipsum.</p>
+        <div class="dish-container">
+            <img class="dish-image" src="/NeoRestaurante/public/img/platillo1.jpg" alt="Imagen del Platillo">
+            <div class="dish-info">
+                <h5>Platillo 1</h5>
+                <p>Descripción del Platillo 1.</p>
                     <span>$15.99</span>
-                </div>
-                <button class="add-button">Agregar Pedido</button> <!-- Botón Agregar -->
             </div>
-         </div>
-            <div class="col-md-6 col-12">
-                <div class="dish-container">
-                    <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-                    <div class="dish-info">
-                        <h5>Caviar</h5>
-                        <p>Caviar con lorem ipsum.</p>
-                        <span>$15.99</span>
-                    </div>
-                    <button class="add-button">Agregar Pedido</button> <!-- Botón Agregar -->
-                </div>
+            <button class="add-button">Agregar Pedido</button>
+        </div>
+
+        <div class="dish-container">
+            <img class="dish-image" src="/NeoRestaurante/public/img/platillo2.jpg" alt="Imagen del Platillo">
+            <div class="dish-info">
+                <h5>Platillo 2</h5>
+                <p>Descripción del Platillo 2.</p>
+                <span>$12.99</span>
             </div>
-            <div class="col-md-6 col-12">
-                <div class="dish-container">
-                    <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-                    <div class="dish-info">
-                        <h5>Caviar</h5>
-                        <p>Caviar con lorem ipsum.</p>
-                        <span>$15.99</span>
-                    </div>
-                    <button class="add-button">Agregar Pedido</button> <!-- Botón Agregar -->
-                </div>
+            <button class="add-button">Agregar Pedido</button>
+        </div>
+
+        <div class="dish-container">
+            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+            <div class="dish-info">
+                <h5>Platillo 3</h5>
+                <p>Descripción del Platillo 3.</p>
+                <span>$17.99</span>
             </div>
-                <div class="col-md-6 col-12">
-                    <div class="dish-container">
-                        <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-                        <div class="dish-info">
-                            <h5>Caviar</h5>
-                            <p>Caviar con lorem ipsum.</p>
-                            <span >$15.99</span>
-                        </div>
-                        <button class="add-button">Agregar Pedido</button> <!-- Botón Agregar -->
-                <!-- Agrega más columnas según sea necesario para los demás platillos -->
-                    </div>
-                </div>
-          </div>
-<div class="order-container">
-    <p class="order-text">Mis Pedidos</p>
-    <hr>
-<div class="dish-container">
+            <button class="add-button">Agregar Pedido</button>
+        </div>
+
+       <div class="dish-container">
+            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+            <div class="dish-info">
+                <h5>Platillo 3</h5>
+                <p>Descripción del Platillo 3.</p>
+                <span>$17.99</span>
+            </div>
+            <button class="add-button">Agregar Pedido</button>
+        </div>
+        <div class="dish-container">
+            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+            <div class="dish-info">
+                <h5>Platillo 3</h5>
+                <p>Descripción del Platillo 3.</p>
+                <span>$17.99</span>
+            </div>
+            <button class="add-button">Agregar Pedido</button>
+        </div>
+        <div class="dish-container">
+            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+            <div class="dish-info">
+                <h5>Platillo 3</h5>
+                <p>Descripción del Platillo 3.</p>
+                <span>$17.99</span>
+            </div>
+            <button class="add-button">Agregar Pedido</button>
+        </div>
+        <div class="dish-container">
+            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
+            <div class="dish-info">
+                <h5>Platillo 3</h5>
+                <p>Descripción del Platillo 55.</p>
+                <span>$17.99</span>
+            </div>
+            <button class="add-button">Agregar Pedido</button>
+        </div>
+
+    </div>
+
+    <div class="order-container">
+        <p class="order-text">Mis Pedidos</p>
+        <hr>
+        <div class="dish-container">
             <div class="quantity">1x - </div>
             <img class="dish-image order-dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
             <div class="dish-info">
@@ -490,10 +510,12 @@
             </div>
             <p class="remove-item">x</p>
         </div>
-    <div class="button-container">
-        <button class="order-button">Continuar</button>
+        <div class="button-container">
+            <button class="order-button">Continuar</button>
+        </div>
     </div>
-</div>
+
+
 </form>
 <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
 </body>

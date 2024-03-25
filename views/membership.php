@@ -52,6 +52,92 @@
       
       
       }
+      .separator {
+        font-weight: bold;
+        border-left: 2px solid black;
+        height: 5.5rem; /* Ajusta la altura de la barra según sea necesario */
+        margin-top: 0.5rem; /* Ajusta el margen superior según sea necesario */
+        margin-bottom: 0.5rem; /* Ajusta el margen inferior según sea necesario */
+      }
+
+            /* Estilos del botón */
+      .btn-pagar {
+          background-color: #301f14;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          margin-top: 20px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+
+      /* Estilos del hover del botón */
+      .btn-pagar:hover {
+          background-color: #4a3529;
+      }
+
+
+         @media (max-width: 360px) and (max-height: 740px) {
+
+    body {
+        font-family: 'montserrat';
+        background-position: center;
+    }
+            
+
+
+            #item {
+                margin-left: 3%;
+                padding-left: 5%;
+
+            }
+              
+
+            
+
+        .mb-8, .mb-4, .mb-0, .mt-4 {
+            margin-bottom: 15px !important;
+            margin-top: 15px !important; /* Agregado margen superior */
+        }
+        #formulario {
+            margin-top: 50px !important;
+        }
+        #Contenedor {
+            padding: 10px !important;
+        }
+        .separator {
+            height: 3.5rem !important;
+            margin-top: 0.3rem !important;
+            margin-bottom: 0.3rem !important;
+        }
+        .btn-pagar {
+            margin-top: 10px !important;
+        }
+        .mb-4 {
+            margin: 15px auto !important; /* Agregado margen superior e inferior */
+            padding: 0 5px !important;
+            font-size: 85% !important;
+        }
+        /* Textos separados por líneas verticales */
+        .mb-0 {
+            margin-left: 10px !important; /* Margen izquierdo ajustado */
+            margin-right: 5px !important; /* Margen derecho reducido */
+        }
+        .mx-2 {
+
+            padding-left: 5px;
+            margin-left: 5px !important; /* Margen izquierdo reducido */
+            margin-right: 5px !important; /* Margen derecho reducido */
+        }
+        
+        .ml-2:last-child {
+            margin-left: 8px !important;
+            padding-right: 5px !important; /* Ajuste en el margen derecho del último elemento */
+        }
+    }
+
+
     
     </style> 
 </head>
@@ -60,7 +146,7 @@
   <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
-              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%; cursor:pointer" onclick="location.href='../index'"  >
+              <div class="navbar-brand d-flex"  style="align-items: center; margin-left: 3%; cursor:pointer" onclick="location.href='../'"  >
                 <img src="../public/img/neo-favicon-white.svg" alt="Logo" width="85" height="85" class="d-inline-block align-top">
                 <span class="ms-2 fs-6 fw-bold text-uppercase">Neo Restaurant</span>
               </div>
@@ -90,17 +176,42 @@
   </nav>
   </div>
 
-      <!-- Proximamente -->
-    <form class="container col-md-9" id="formulario" style= "margin-top:20%";>
-    <div class="row justify-content-center">
-      <div class="col-md-10 mx-auto row-8" id="cont"> 
-            <div class="card bg-light rounded-3 card-body shadow-lg p-3 bg-body rounded" style="border-color: #dedede;" id="Contenedor">
-            <h1 class="text-center mb-8" style="font-size:500%"> ¡PROXIMAMENTE! </h1>
+            <!-- Proximamente -->
+<form class="container col-md-8" id="formulario" style="margin-top: 170px;">
+    <div class="card bg-light rounded-1 card-body shadow-lg p-3 bg-body rounded text-center" style="border-color: #dedede; padding: 20px;" id="Contenedor">
+        <div style="border: 2px solid black; padding: 20px; padding-left: 30px;">
+            <p class="mb-4" style="font-size: 100%;"><b>Neo Restaurante </b></p>
+            <h2 class="mb-4" style="font-size: 200%;"><b>Membresía</b></h2> 
+            <p class="mb-4" style="margin: 50px 150px; font-size: 90%;">Disfruta de los beneficios otorgados al volverte un miembro de Neo Restaurante por $44.99 al año.</p> 
+
+            <!-- Textos separados por líneas verticales -->
+            <div class="d-flex align-items-center justify-content-center">
+                <p class="mb-0 mr-2" style="margin: 0px 30px; font-size: 70%;">Acceso a la zona de miembros del restaurante</p> <!-- Se redujo el tamaño de fuente -->
+                <span class="separator mx-2"></span>
+                <p class="mb-0 mx-2" style="margin: 0px 40px; font-size: 70%;">Ser parte de nuestra celebración anual en aniversario del restaurante</p> <!-- Se redujo el tamaño de fuente -->
+                <span class="separator mx-2"></span>
+                <p class="mb-0 ml-2" style="margin: 5px ; font-size: 70%;">Acceso al menú degustación de toda la carta solo para miembros</p> <!-- Se redujo el tamaño de fuente -->
             </div>
-      </div>
+
+            <!-- Botón "Pagar ahora" -->
+            <div class="text-center mt-4">
+                <button class="btn-pagar">Pagar ahora</button>
+            </div>
+        </div>
     </div>
-    
 </form>
+
+
+
+
+
+
+
+
+
+    
+    
+
 <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
 </body>
 </html>

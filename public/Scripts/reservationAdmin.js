@@ -27,9 +27,15 @@ const reservationsList = async()=> {
             const datas = await response.json();
             let body=''
             let reservationId=0
+            let classSpan
             console.log(datas.data)
             for (let i=0; i< Object.keys(datas.data).length;i++){
                 if (datas.data[i]) {
+                    if (datas.data[i].status === 'Activa'){
+                        classSpan='class="badge bg-label-success me-1"'
+                    }else{
+                        classSpan='class="badge bg-label-warning me-1"'
+                    }
                     reservationId=datas.data[i].id
                     body += `<tr id="${reservationId}">
                         <td>
@@ -39,7 +45,10 @@ const reservationsList = async()=> {
                             ${datas.data[i].table}
                         </td>
                         <td>
+                        <span ${classSpan}>
                             ${datas.data[i].status}
+                        </span>
+                            
                         </td>
                         <td>
                             ${datas.data[i].date}
@@ -246,7 +255,7 @@ const sendReservationDelete = async()=> {
         if (response.ok) {
             const data =  await response.json();
             Swal.fire({
-                title: '¡Persona Eliminada!',
+                title: '¡Reservación Eliminada!',
                 text: data.title,
                 icon: 'success',
                 confirmButtonText: 'Entendido'

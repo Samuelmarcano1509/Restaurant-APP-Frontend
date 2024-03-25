@@ -4,7 +4,7 @@ function getPersons(){
     }else {
         Swal.fire({
           title: 'Ha expirado la sesión',
-          type: 'warning',
+          icon: 'warning',
           confirmButtonText: 'Entendido',
         }).then(() => {
           window.location.href = '/NeoRestaurante/views/Auth/login.php';

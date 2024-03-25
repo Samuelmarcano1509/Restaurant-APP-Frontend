@@ -149,18 +149,18 @@
                     <thead>
                       <tr>
                         <th>Nombre y Apellido</th>
-                        <th>Numero de pedido</th>
                         <th>Estatus de pedido</th>
-                        <th>Hora del pedido</th>
+                        <th>Fecha del pedido</th>
+                        <th>Monto</th>
                         <th>Acciones</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                       <tr>
                         <td><strong>Nombre_apellido</strong></td>
-                        <td>#Numero_pedido</td>
                         <td><span class="badge bg-label-primary me-1">Active</span></td>
                         <td>#hora de pedido</td>
+                        <td>#monto</td>
                         <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -177,9 +177,9 @@
                       </tr>
                       <tr>
                         <td> <strong>Nombre_apellido</strong></td>
-                        <td>#Numero_pedido</td>
                         <td><span class="badge bg-label-success me-1">Completed</span></td>
                         <td>#hora de pedido</td>
+                        <td>#monto</td>
                         <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -196,9 +196,9 @@
                       </tr>
                       <tr>
                         <td> <strong>Nombre_apellido</strong></td>
-                        <td>#Numero_pedido</td>
                         <td><span class="badge bg-label-info me-1">Scheduled</span></td>
                         <td>#hora de pedido</td>
+                        <td>#monto</td>
                         <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -215,9 +215,9 @@
                       </tr>
                       <tr>
                         <td> <strong>Nombre_apellido</strong> </td>
-                        <td>#Numero_pedido</td>
                         <td><span class="badge bg-label-warning me-1">Pending</span></td>
                         <td>#hora de pedido</td>
+                        <td>#monto</td>
                         <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -242,29 +242,69 @@
 
       <div class="layout-overlay layout-menu-toggle"></div>
     </div> 
+        <!--Modal-->
+        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Advertencia</b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Esta seguro que desea eliminar este producto?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="borrar" onclick="sendPersonDelete();">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Modal-->
     <!--Modal-->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Detalles</b></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!----><div class="card">
+        <!----><div class="card" style="width: 90%;">
         <h5 class="card-header">Lista de productos pedidos</h5>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>
                       <tr>
                         <th>Nombre del producto</th>
+                        <th>cantidad</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                       <tr>
                         <td><strong>Nombre_producto</strong></td>
+                        <td>cantidad_producto</td>
+                        <td><strong>Precio_producto</strong></td>
+                        <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
+                            </button>
+                            <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-outline-secondary"  id="delete" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" href="javascript:void(0);" >
+                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/trash.svg" style="width: 15px; heigth: 15px;" alt="" > Eliminar </button>
+                            </div>
+                          </div>
+                      </td>
                       </tr>
                     </tbody>
+                    <tfoot>
+                      <td></td>
+                      <td>#total_productos</td>
+                      <td>Total a pagar</td>
+                    </tfoot>
                   </table>
                 </div>
       </div>
@@ -330,13 +370,21 @@
                                         <option value="">usuario3 (nombre y apellido)</option>
                                     </select>
                                     </div>
-                                    <div class="col mb-3">
-                                    <label for="numero" class="form-label">Numero de orden</label>
-                                    <input type="text" id="norder"  name="numero" class="form-control"  placeholder="Ingresa el numero de la orden"/>
-                                  </div>
                                   </div>
                                   <div class="row">
-                                  <div class="col mb-3" style="margin-left:1%;">
+                                  <div class="col mb-3">
+                                      <label for="fecha">Fecha del pedido:</label>
+                                      <input type="date" class="form-control"  name="fecha" id="fecha1" placeholder="fecha de nacimiento">
+                                      <script>
+                                          const fechaInput = document.getElementById('fecha');
+                                          fechaInput.addEventListener('change', () => {
+                                              const fechaSeleccionada = fechaInput.value;
+                                              const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                                              fechaInput.value = fechaFormateada;
+                                          });
+                                      </script>
+                                  </div>
+                                  <div class="col mb-3" style="margin-left:8%;">
                                       <label for="hora1" class="form-label" >Hora de pedido</label><br>
                                       <input type="time" name="hora1" style="margin-top:2%;">
                                     </div>
@@ -379,23 +427,24 @@
                                         <option value="">usuario3 (nombre y apellido)</option>
                                     </select>
                                     </div>
-                                    <div class="col mb-3">
-                                      <label for="numero" class="form-label">Numero de orden</label>
-                                      <input type="text" id="norder"  name="numero" class="form-control"  placeholder="Ingresa el numero de la orden"/>
-                                  </div>
                                   </div>
                                   <div class="row">
-                                    <div class="col mb-3" style="margin-left:1%;">
+                                    <div class="col mb-3" style="margin-left:8%;">
+                                      <label for="fecha">Fecha del pedido:</label>
+                                      <input type="date" class="form-control"  name="fecha" id="fecha1" placeholder="fecha de nacimiento">
+                                      <script>
+                                          const fechaInput = document.getElementById('fecha');
+                                          fechaInput.addEventListener('change', () => {
+                                              const fechaSeleccionada = fechaInput.value;
+                                              const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                                              fechaInput.value = fechaFormateada;
+                                          });
+                                      </script>
+                                  </div>
+                                  <div class="col mb-3" style="margin-left:10%;">
                                       <label for="hora1" class="form-label" >Hora de pedido</label><br>
                                       <input type="time" name="hora1" style="margin-top:2%;">
                                     </div>
-                                    <div class="col mb-3">
-                                    <label for="estado" style="margin-bottom: 8px">Estado</label>
-                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option><a>Disponible</a></option>
-                                        <option><a>No disponible</a></option>
-                                    </select>
-                                  </div>
                                   </div>
                                 <div class="row g-2"></div>
                                 <!--aqui-->

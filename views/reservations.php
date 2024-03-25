@@ -20,10 +20,14 @@
     <script src="/NeoRestaurante/public/vendor/js/config.js"></script>
     
     <style>
-      .card{
+        .card{
         margin-top: 5%;
-        margin-left: 7%;
-        margin-right: 7%;
+        margin-left: 6%;
+        margin-right: 6%;
+      }
+      .tablita{
+        margin-left:2%;
+        margin-right:2%;
       }
     </style>
 
@@ -140,7 +144,8 @@
             <!-- Content -->
             <div class="card">
             <h5 class="card-header">Listado de Reservaciones <button type="button" class="btn btn-secondary" style="margin-left:54%;" data-bs-toggle="modal" data-bs-target="#modalCenter2" onclick="getUsers()" >Agregar reservación</button></h5>
-                <div class="table-responsive text-nowrap">
+            <div class="tablita">
+            <div class="table-responsive text-nowrap">
                   <table class="table" id="table_reservation">
                     <thead>
                       <tr>
@@ -155,8 +160,8 @@
                     </tbody>
                   </table>
                 </div>
-              </div>
-         
+            </div>
+           </div> 
         </div>
        
       </div>
@@ -276,17 +281,10 @@
                                           });
                                       </script>
                                   </div>
-                                    <div class="col mb-3" >
-                                      <label for="hora2" class="form-label">Hora de Reservación</label>
-                                      <input type="time" name="hora2"  id="hora2" style="margin-left: 20%;">
+                                    <div class="col mb-5" >
+                                      <label for="hora2" class="form-label" style="margin-top:13%; margin-left:3%;" >Hora de Reservación</label>
+                                      <input type="time" name="hora2"  id="hora2" >
                                     </div>
-                                    <div class="col mb-3">
-                                    <label for="estado" style="margin-bottom: 8px">Estado</label>
-                                    <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
-                                        <option value="1"> Disponible</option>
-                                        <option value="2">No disponible</option>
-                                    </select>
-                                  </div>
                                   </div>
                                 <div class="row g-2"></div>
                                 <!--aqui-->

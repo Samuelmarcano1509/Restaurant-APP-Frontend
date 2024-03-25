@@ -11,12 +11,22 @@ const validacion = (e) =>{
       pass2.addEventListener('input', () => {
         checkPasswords();
       });
+      password1.addEventListener('input', () => {
+        checkPasswords2();
+      });
+      
+      password2.addEventListener('input', () => {
+        checkPasswords2();
+      });
+      
+
 }
 
 inputs.forEach((input) => {
     input.addEventListener('keyup',validacion);
     input.addEventListener('blur',validacion);
 });
+
 
 
 
@@ -37,3 +47,25 @@ inputs.forEach((input) => {
       pass2.classList.add('pass-incorrecta');
     }
   }
+
+  function checkPasswords2() {
+    const pass3 = document.getElementById('password1');
+    const pass4 = document.getElementById('password2');
+
+    if (pass3.value === pass4.value) {
+      pass3.classList.remove('pass-incorrecta');
+      pass4.classList.remove('pass-incorrecta');
+      pass3.classList.add('pass');
+      pass4.classList.add('pass');
+    } else {
+      pass3.classList.remove('pass');
+      pass4.classList.remove('pass');
+      pass3.classList.add('pass-incorrecta');
+      pass4.classList.add('pass-incorrecta');
+    }
+  }
+
+
+
+
+  

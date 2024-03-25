@@ -29,11 +29,11 @@
         margin-right:2%;
       }
       .formulario .pass{
-        border: 1px solid #00BFFF;
+        border: 1px solid #DEDEDE;
         
       }
       .formulario .pass-incorrecta{
-        border: 1px solid #DEDEDE;
+        border: 1px solid #bb2929;
       }
     </style>
       <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
@@ -376,11 +376,11 @@
                                 <div class="row" id="contraseñas">
                                 <div class="col mb-3">
                                     <label for="password" class="form-label">Contraseña</label>
-                                    <input class="form-control pass" type="password" id="pass1" name="password1" value="" placeholder="Ingresa la contraseña"/>
+                                    <input class="form-control pass" type="password" id="password1" name="password1" value="" placeholder="Ingresa la contraseña"/>
                                   </div>
                                   <div class="col mb-3">
                                     <label for="password" class="form-label"> Confirmar contraseña</label>
-                                    <input class="form-control pass" type="password" id="pass2" name="password2" value="" placeholder="Repita la contraseña"/>
+                                    <input class="form-control pass" type="password" id="password2" name="password2" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
 
@@ -391,7 +391,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendAdminRegister()">Guardar cambios</button>
+                                <button type="button" id="btn-1" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendAdminRegister()" >Guardar cambios</button>
                               </div>
                             </div>
                           </form> 

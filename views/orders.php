@@ -29,6 +29,9 @@
         margin-left:2%;
         margin-right:2%;
       }
+      #table_products{
+       
+      }
     </style>
       <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
       <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
@@ -194,10 +197,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!----><div class="card" style="width: 90%;">
+        <!----><div class="card">
         <h5 class="card-header">Lista de productos pedidos</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table" id="table_products">
+                <div class="table-responsive text-nowrap" style="margin-left: 5%; margin-right:5%;">
+                  <table class="table" id="table_products" >
                     <thead>
                       <tr>
                         <th>Nombre del producto</th>

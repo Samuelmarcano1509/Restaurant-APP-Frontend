@@ -143,6 +143,7 @@ const getProduct = async(id)=> {
             document.getElementById('categoria').value=datas.data.category
             document.getElementById('dropdownMenuButton').value = datas.data.status
             document.getElementById('send').name =  datas.data.id
+            document.getElementById('uploadedAvatar').src = '../../../restaurantApp/public/archivos/'+datas.data.image_name
         }
     } catch (error){
         console.log(error)

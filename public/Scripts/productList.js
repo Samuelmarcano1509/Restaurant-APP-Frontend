@@ -156,11 +156,6 @@ const sendEditProduct = async()=> {
     try{
         var formulario = document.getElementById('formulario')
         var data = new FormData(formulario);
-        const foto = document.getElementById('upload').files[0]
-        const formdata= new FormData()
-        formdata.append('image',foto,foto.name)
-        const file = URL.createObjectURL(foto)
-        document.getElementById('uploadedAvatar').setAttribute('src',file)
         let status =0;
         if (data.get('estado')==='Disponible'){
             status=1
@@ -183,39 +178,56 @@ const sendEditProduct = async()=> {
             body: JSON.stringify(inf)
         })
         if (response.ok) {
-            const upfile = await fetch('http://127.0.0.1:8000/api/image/product/'+document.getElementById('send').name, {
-                method: 'POST',
-                headers:{
-                    "Authorization": "Bearer " + localStorage.getItem('token'),
-                },
-                body: formdata
-            })
-            if (upfile.ok) {
-                const datas2 = await upfile.json();
+            const foto = document.getElementById('upload').files[0]
+            if (!foto)
+            {
+                const datas1 = await response.json();
                 Swal.fire({
-                  title: 'Archivo Cargado',
-                  text: datas2.title,
-                  type: 'success',
-                  confirmButtonText: 'Entendido'
-                }).then(() => {
-                  location.reload();
-                });
-              } else if (upfile.status === 413) {
-                Swal.fire({
-                  title: 'Error',
-                  text: 'El archivo es muy pesado',
-                  type: 'error',
-                  confirmButtonText: 'Cerrar'
-                });
-              } else {
-                const datas2 = await upfile.text(); 
-                Swal.fire({
-                  title: 'Error',
-                  text: datas2,
-                  type: 'error',
-                  confirmButtonText: 'Cerrar'
-                });
-              }
+                    title: 'Producto Editado Exitosamente',
+                    text: datas1.title,
+                    type:'success',
+                    confirmButtonText:'Aceptar'
+                })
+            }else {
+                const formdata= new FormData()
+                formdata.append('image',foto,foto.name)
+                const file = URL.createObjectURL(foto)
+                document.getElementById('uploadedAvatar').setAttribute('src',file)
+                const upfile = await fetch('http://127.0.0.1:8000/api/image/product/'+document.getElementById('send').name, {
+                    method: 'POST',
+                    headers:{
+                        "Authorization": "Bearer " + localStorage.getItem('token'),
+                    },
+                    body: formdata
+                })
+                if (upfile.ok) {
+                    const datas2 = await upfile.json();
+                    Swal.fire({
+                        title: 'Archivo Cargado',
+                        text: datas2.title,
+                        type: 'success',
+                        confirmButtonText: 'Entendido'
+                    }).then(() => {
+                        location.reload();
+                    });
+                } else if (upfile.status === 413) {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'El archivo es muy pesado',
+                        type: 'error',
+                        confirmButtonText: 'Cerrar'
+                    });
+                } else {
+                    const datas2 = await upfile.text();
+                    Swal.fire({
+                        title: 'Error',
+                        text: datas2,
+                        type: 'error',
+                        confirmButtonText: 'Cerrar'
+                    });
+                }
+            }
+
         }else {
             const datas1 = await response.json();
             Swal.fire({
@@ -224,7 +236,6 @@ const sendEditProduct = async()=> {
                 type:'warning',
                 confirmButtonText:'Aceptar'
             })
-            alert(datas1.title)
         }
     } catch (error){
         console.log(error)

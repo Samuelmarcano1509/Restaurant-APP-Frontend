@@ -276,6 +276,9 @@
                                     <input class="form-control pass" type="password" id="pass2" name="password2" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
+                                <p style="text-align:center; margin-rigth:1%; color:#838EE9;">Nota: Si dejas los campos vacios, se asignara de contraseña
+                                  123456789
+                                </p>
                                 <hr>
                                 <div class="row">
                                   <div class="col mb-3">
@@ -303,7 +306,7 @@
                               
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button  type="button" id="send" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendPersonEdit()">Guardar cambios</button>
+                                <button  type="button" id="send" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendPersonEdit()" disabled>Guardar cambios</button>
                               </div>
                             </div>
                           </form> 
@@ -383,6 +386,9 @@
                                     <input class="form-control pass" type="password" id="password2" name="password2" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
+                                <p style="text-align:center; color:#838EE9;">Nota: Si dejas el campo en blanco, se asignara de contraseña
+                                  123456789
+                                </p>
 
                                 
                                 <div class="row g-2"></div>
@@ -391,7 +397,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" id="btn-1" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendAdminRegister()" >Guardar cambios</button>
+                                <button type="button" id="btn-1" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendAdminRegister()" disabled>Guardar cambios</button>
                               </div>
                             </div>
                           </form> 

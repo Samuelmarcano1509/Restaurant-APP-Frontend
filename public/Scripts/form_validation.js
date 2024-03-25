@@ -31,6 +31,24 @@ function validateForm() {
         }
     }
 
+    // Función para mostrar el mensaje de éxito
+    function showSuccessMessage() {
+        const successElement = document.querySelector('.success-message');
+        if (successElement) {
+            successElement.textContent = '¡Formulario enviado con éxito!';
+            successElement.style.display = 'block';
+        }
+    }
+
+    // Función para ocultar el mensaje de éxito
+    function hideSuccessMessage() {
+        const successElement = document.querySelector('.success-message');
+        if (successElement) {
+            successElement.textContent = '';
+            successElement.style.display = 'none';
+        }
+    }
+
     // Validar nombre (no vacío)
     if (nombre === '') {
         showErrorMessage(document.querySelector('input[name="nombre"]'), 'Debe ingresar su nombre');
@@ -103,6 +121,11 @@ function validateForm() {
 function disableRegisterButton() {
     const registerButton = document.querySelector('button[data-bs-target="#modal_msg"]');
     registerButton.disabled = !validateForm();
+
+    // Ocultar el mensaje de éxito si se muestran errores nuevamente
+    if (!registerButton.disabled) {
+        hideSuccessMessage();
+    }
 }
 
 // Agregar listeners para validar el formulario y deshabilitar el botón de registro

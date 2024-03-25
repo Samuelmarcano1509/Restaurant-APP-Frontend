@@ -81,6 +81,7 @@
 
         @media only screen and (max-width: 360px) and (max-height: 740px) {
             body {
+                
                 font-family: 'montserrat';
                 background-image: url('/NeoRestaurante/public/img/OIG1.cggt.MuVdud2vmc.jpeg');
                 background-size: 110%;

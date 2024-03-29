@@ -125,7 +125,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item"  onclick="closeSesion()">
+                      <a class="dropdown-item"  onclick="closeSesion();">
                       <span id="casocerrado"  >Cerrar sesion</span>
                      
                       </a>
@@ -308,12 +308,9 @@
                                 </div>
                                 
                                 <!--aqui-->
-                                
-                                
-                               
+                              
                                 </div>
                                
-                              
                                 <!--acaba-->
                               <!--termina-->  
                               <div class="modal-footer">
@@ -331,9 +328,9 @@
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
-    <script src="/NeoRestaurante/public/Scripts/reservationAdmin.js"></script>
-    <script src="../public/Scripts/closeSesion.js"></script>
+    <script src="../public/Scripts/closeSesionAdmin.js"></script>
+    <script src="../public/Scripts/productList.js"></script>
+
   </body>
 </html>

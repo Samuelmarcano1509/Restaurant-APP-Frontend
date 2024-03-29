@@ -306,6 +306,17 @@ tableBody.addEventListener("input", (event) => {
     document.getElementById("borrar").name = idElemento;
   }
 });
+const tableBody3 = document.getElementById("inf-body");
+
+tableBody.addEventListener("click", (event) => {
+  const objetivo = event.target;
+  const fila = objetivo.closest("tr");
+  const idElemento = fila.getAttribute("id");
+  // Modificación para click en "delete" (mantenido del código original)
+  if (objetivo.getAttribute("id") === "delete") {
+    document.getElementById("borrar").name = idElemento;
+  }
+});
 
 
 const tableBod2 = document.getElementById("cont");

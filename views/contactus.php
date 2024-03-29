@@ -14,6 +14,7 @@
         }
 
         body {
+            background-color: black;
             font-family: 'montserrat';
             margin: 0;
             padding: 0;

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pedidos</title>
+    <link rel="shortcut icon" href="../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/fonts/boxicons.css" />
 
 
@@ -11,6 +12,8 @@
     <link rel="stylesheet" href="/NeoRestaurante/public/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.css">  
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css">  
 
   
     
@@ -49,9 +52,9 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo d-flex align-items-center">
         <span class="app-brand-logo demo">
-          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px;">
+          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px; cursor: pointer;" onclick="location.href='/NeoRestaurante/index.php'">
         </span>
-        <span class="ms-2 fs-7 fw-bold text-uppercase">Neo Restaurant</span>
+        <span class="ms-2 fs-7 fw-bold text-uppercase" style="cursor:pointer" onclick="location.href='/NeoRestaurante/index.php'">Neo Restaurant</span>
         </div> 
 
           <ul class="menu-inner py-1">
@@ -127,8 +130,8 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item">
-                      <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
+                      <a class="dropdown-item" onclick="closeSesion()">
+                      <span id="casocerrado"   >Cerrar sesion</span>
                      
                       </a>
                     </li>
@@ -367,12 +370,13 @@
                       </div>
                     </div>
  <!--/Modal-->
+    <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
+    <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
     <script src="/NeoRestaurante/public/Scripts/ordersAdmin.js"></script>
-    <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
+    <script src="../public/Scripts/closeSesion.js"></script>
   </body>
 </html>

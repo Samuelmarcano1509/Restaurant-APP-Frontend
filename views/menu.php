@@ -6,6 +6,17 @@
     <title>Menu</title>
     <link rel="shortcut icon" href="../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
+    <script src="/NeoRestaurante/public/vendor/js/jquery.js"></script>
+      <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
+      <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
+      <link rel="stylesheet" href="/NeoRestaurante/public/css/demo.css" />
+      <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.css">  
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css">  
+    <script src="https://www.paypal.com/sdk/js?client-id=AcQc7_I42C9Is5eCf-SuOGX0kNA1J5ODVTIc5I-eIGsTdqkqsHf41XHqxF2_M3V6NNnBVoxltzT5sAhJ&currency=USD"></script>
+    
+
+
+
     
     <style>
         @font-face {
@@ -33,6 +44,10 @@
             margin-left: 3%;
             padding-left: 5%;
         }
+        #item-user{
+        margin-left: 3%;
+        padding-left: 5%;
+      }
 
         #cont {
             margin-top: 20%;
@@ -116,51 +131,60 @@
 
         .center-container {
             position: relative;
-            top: -585px;
-            right: 50px;
-            text-align: center; /* Centrar el contenido */
+            top: -1080px;
+            right: 45px;
+            text-align: start; /* Centrar el contenido */
         }
 
         .title {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
+            margin-left: 580px;
         }
 
         .order-container {
             position: fixed;
             top: 208px;
-            right: 50px;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            right: 45px;
             padding: 10px;
-            width: 350px; /* Ancho del cuadro */
-            height: 300px; /* Reducir el alto del cuadro */
             display: flex;
             flex-direction: column;
+            background-color: #f9f9f9;
+            height: 250px;
+            width: 280px;
+            border-radius: 5px
         }
 
         .order-text {
-            text-align: center;
+            text-align: start;
             font-size: 16px;
-            margin-bottom: 5px;
-            margin-top: 5px;
+            margin-top: 20px;
+            
         }
+        #paypal-button-container{
+        width: 120px;
+        margin-right: 75px
+        
+      }
 
-        .order-button {
+        #order-button {
+            margin-top: 60px;
             display: block;
-            width: 50%;
-            margin-top: 65px;
-            padding: 8px 0;
             text-align: center;
             background-color: #301F14;
             color: white;
             border: none;
-            border-radius: 10px;
             cursor: pointer;
             margin-left: auto; /* Mover el botón al extremo derecho */
             margin-right: auto; /* Mover el botón al extremo derecho */
+        }
+        input[type="number"] {
+        width: 100px;
+        height: 40px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        padding: 5px;
         }
 
         .button-container {
@@ -373,7 +397,7 @@
     }
     </style>
 </head>
-<body>
+<body onload="productList(); userData();">
   <!--Barra de navegacion-->
   <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
@@ -399,8 +423,8 @@
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./contactus">Contacto</a>
                   </li>
-                  <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link" href="./Auth/login">Iniciar Sesión</a>
+                  <li class="nav-item" id="item-user"  style="white-space: nowrap;">
+                    <a id="titleusers" class="nav-link" href="./Auth/login.php">Iniciar Sesión</a>
                 </li>
                </ul>
               </div> 
@@ -425,98 +449,86 @@
         </ul>
         <!--Platillos-->
         </div>
-        <div class="center-container">
-        <div class="title">Platillos</div>
-        <div class="dish-container">
-            <img class="dish-image" src="/NeoRestaurante/public/img/platillo1.jpg" alt="Imagen del Platillo">
-            <div class="dish-info">
-                <h5>Platillo 1</h5>
-                <p>Descripción del Platillo 1.</p>
-                    <span>$15.99</span>
-            </div>
-            <button class="add-button">Agregar Pedido</button>
-        </div>
+        <div class="center-container" id="cont">
 
-        <div class="dish-container">
-            <img class="dish-image" src="/NeoRestaurante/public/img/platillo2.jpg" alt="Imagen del Platillo">
-            <div class="dish-info">
-                <h5>Platillo 2</h5>
-                <p>Descripción del Platillo 2.</p>
-                <span>$12.99</span>
-            </div>
-            <button class="add-button">Agregar Pedido</button>
-        </div>
-
-        <div class="dish-container">
-            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-            <div class="dish-info">
-                <h5>Platillo 3</h5>
-                <p>Descripción del Platillo 3.</p>
-                <span>$17.99</span>
-            </div>
-            <button class="add-button">Agregar Pedido</button>
-        </div>
-
-       <div class="dish-container">
-            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-            <div class="dish-info">
-                <h5>Platillo 3</h5>
-                <p>Descripción del Platillo 3.</p>
-                <span>$17.99</span>
-            </div>
-            <button class="add-button">Agregar Pedido</button>
-        </div>
-        <div class="dish-container">
-            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-            <div class="dish-info">
-                <h5>Platillo 3</h5>
-                <p>Descripción del Platillo 3.</p>
-                <span>$17.99</span>
-            </div>
-            <button class="add-button">Agregar Pedido</button>
-        </div>
-        <div class="dish-container">
-            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-            <div class="dish-info">
-                <h5>Platillo 3</h5>
-                <p>Descripción del Platillo 3.</p>
-                <span>$17.99</span>
-            </div>
-            <button class="add-button">Agregar Pedido</button>
-        </div>
-        <div class="dish-container">
-            <img class="dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-            <div class="dish-info">
-                <h5>Platillo 3</h5>
-                <p>Descripción del Platillo 55.</p>
-                <span>$17.99</span>
-            </div>
-            <button class="add-button">Agregar Pedido</button>
-        </div>
-
-    </div>
+        </div> 
 
     <div class="order-container">
-        <p class="order-text">Mis Pedidos</p>
-        <hr>
-        <div class="dish-container">
-            <div class="quantity">1x - </div>
-            <img class="dish-image order-dish-image" src="/NeoRestaurante/public/img/platillo3.jpg" alt="Imagen del Platillo">
-            <div class="dish-info">
-                <h5>Caviar</h5>
-            </div>
-            <div class="dish-description">
-                <p class="price">$15.99</p>
-            </div>
-            <p class="remove-item">x</p>
-        </div>
-        <div class="button-container">
-            <button class="order-button">Continuar</button>
-        </div>
+    <p class="order-text"><b id="msg-cant">Cantidad de productos:</b> </p>
+    <p class="order-text"><b id="msg-total">Total a pagar:</b> </p>
+    <button type="button" class="btn btn-secondary" id="order-button" style="background-color:"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="shoppingCart();">Ver Carrito de compras</button>
     </div>
 
 
-</form>
-<script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Carrito de compras</b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!----><div class="card">
+        <h5 class="card-header">Lista de productos pedidos</h5>
+                <div class="table-responsive text-nowrap" style="margin-left: 5%; margin-right:5%;">
+                  <table class="table" id="carrito" >
+                    <thead>
+                      <tr>
+                        <th>Nombre del producto</th>
+                        <th>cantidad</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0" id="inf-body">
+                    </tbody>
+                    <tfoot>
+                      <td></td>
+                      <td id="cant-ord">Cantidad de productos</td>
+                      <td id="total">Total a pagar</td>
+                    </tfoot>
+                  </table> 
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" id="cerrar">Cerrar</button>
+        <div id= 'paypal-button-container' style="margin-left: 20px;">
+        <!--<button type="button" class="btn btn-primary" style="background-color: #301F14; color: white; border: none;">Realizar pago</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!--modal-->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Advertencia</b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Esta seguro que desea eliminar este producto?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="ocultar2();">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="borrar" onclick="deleteproductcar();">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/modal-->
+    <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
+    
+    <script src="../public/Scripts/public_menu.js"></script>           
+    <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
+    <script src="../public/Scripts/auth.js"></script>
+    <script src="/NeoRestaurante/public/Scripts/reservationAdmin.js"></script>
+    <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
+    <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
+    <script src= "../public/Scripts/paypalmenu-order.js"></script>
+    
 </body>
 </html>

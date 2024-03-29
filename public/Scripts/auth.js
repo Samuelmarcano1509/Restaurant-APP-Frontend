@@ -39,7 +39,7 @@ const authRegister = async()=> {
                             document.getElementById('spinner-hide').style.display='none'
                             document.getElementById('redirect').textContent='continuar'
                             document.getElementById('redirect').addEventListener('click',() => {
-                                window.location.href = '/NeoRestaurante/views/statistics.php';
+                                window.location.href = '/NeoRestaurante/';
                             })
                             localStorage.setItem('token', datas.token);
                             const statusCode = response.status;
@@ -47,7 +47,12 @@ const authRegister = async()=> {
                 } catch (error){
                     document.getElementById('response').textContent='Ha ocurrido un error inesperado'
                     // document.getElementById('spinner').style.display='none'
-                    console.log(error)
+                    Swal.fire({
+                        title: 'Error!',
+                        type: 'error',
+                        text: error,
+                        confirmButtonText: 'Aceptar'
+                    })
     
                 
         }
@@ -80,46 +85,106 @@ const authLogin = async()=> {
                             document.getElementById('spinner-hide').style.display='none'
                             document.getElementById('redirect').textContent='continuar'
                             document.getElementById('redirect').addEventListener('click',() => {
-                                window.location.href = '/NeoRestaurante/views/statistics.php';
+                                window.location.href = '/NeoRestaurante/';
                             })
                             localStorage.setItem('token', datas.token);
                             const statusCode = response.status;
                         }
                 } catch (error){ 
                     document.getElementById('response').textContent='Ha ocurrido un error'
-                    console.log(error)
+                    Swal.fire({
+                        title: 'Error!',
+                        type: 'error',
+                        text: error,
+                        confirmButtonText: 'Aceptar'
+                    })
                    
         }
 }
-   function closeSesion(){
-    console.log('aqui')
-        authClose();
-       }
+  
    
-   document.getElementById('casocerrado').addEventListener("click", function(e){
-    e.preventDefault()
-    authClose();
-   })
-   
-   const authClose = async()=> {
-                try{
-                    const response = await fetch('http://127.0.0.1:8000/api/logout', {
-                        method: 'POST',
-                        headers:{
-                            "Authorization": "Bearer " + localStorage.getItem('token')
-                        }
-                        })
-                        if (response.ok) {
-                            localStorage.removeItem('token');
-                            location.href = "/NeoRestaurante/";
-                        }
-                } catch (error){ 
-                    console.log(error)
-        }
+  
+
+function userData(){
+    if(localStorage.getItem('token'))
+    {
+        userSesion();
+    }
+    
 }
 
 
 
+const userSesion = async() => {
+    try{
+        const response= await fetch('http://127.0.0.1:8000/api/user/data', {
+            method: 'GET',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok){
+            document.getElementById('titleusers').removeAttribute('href');
+            const datas = await response.json();
+            console.log(datas)
+            let trukito=''
+           if(datas.data.rol ===1){
+            trukito = `<div class="dropdown" id="dropdown">
+            <span class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                ${datas.data.username}
+            </span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/NeoRestaurante/views/statistics.php">Panel</a></li>
+              <li><a class="dropdown-item" onclick="closeSesion()">Cerrar sesión</a></li>
+            </ul>
+          </div>`
+           }  else{
+            trukito = `<div class="dropdown" id="dropdown">
+            <span class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                ${datas.data.username}
+            </span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/NeoRestaurante/views/user-view.php">Perfil</a></li>
+              <li><a class="dropdown-item" onclick="closeSesion()">Cerrar sesión</a></li>
+            </ul>
+          </div>`
+           }
+           const styles = "margin-top: 9px;"
+           document.getElementById('item-user').innerHTML = trukito;
+           document.getElementById('dropdown').setAttribute("style", styles );
+        }
+    }catch (error){
+        localStorage.removeItem('token')
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
+    }
+}
 
-
-
+function closeSesion(){
+    authClose();
+   }
+   const authClose = async()=> {
+    try{
+        const response = await fetch('http://127.0.0.1:8000/api/logout', {
+            method: 'POST',
+            headers:{
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+            })
+            if (response.ok) {
+                localStorage.removeItem('token');
+                location.href = "/NeoRestaurante/";
+            }
+    } catch (error){ 
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
+}
+}

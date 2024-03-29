@@ -88,7 +88,12 @@ const getProductList = async()=> {
             });
           }
     } catch (error) {
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 const tableBody = document.getElementById("inf-body");
@@ -124,7 +129,12 @@ const productDelete = async()=> {
             });
           }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 const getProduct = async(id)=> {
@@ -146,7 +156,12 @@ const getProduct = async(id)=> {
             document.getElementById('uploadedAvatar').src = '../../../restaurantApp/public/archivos/'+datas.data.image_name
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
     
 }
@@ -239,7 +254,12 @@ const sendEditProduct = async()=> {
             })
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 function createProduct(){
@@ -281,7 +301,12 @@ const sendCreateProduct = async()=> {
               });
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 function subirArchivo(){

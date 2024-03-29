@@ -53,9 +53,9 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo d-flex align-items-center">
         <span class="app-brand-logo demo">
-          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px;">
+          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px; cursor: pointer;" onclick="location.href='/NeoRestaurante/index.php'">
         </span>
-        <span class="ms-2 fs-7 fw-bold text-uppercase">Neo Restaurant</span>
+        <span class="ms-2 fs-7 fw-bold text-uppercase" style="cursor:pointer" onclick="location.href='/NeoRestaurante/index.php'">Neo Restaurant</span>
         </div> 
 
           <ul class="menu-inner py-1">
@@ -129,8 +129,8 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" >
-                      <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
+                      <a class="dropdown-item"onclick="closeSesion()" >
+                      <span id="casocerrado"   >Cerrar sesion</span>
                      
                       </a>
                     </li>
@@ -277,9 +277,7 @@
                                     <input class="form-control pass" type="password" id="pass2" name="password2" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
-                                <p style="text-align:center; margin-rigth:1%; color:#838EE9;">Nota: Si dejas los campos vacios, se asignara de contraseña
-                                  123456789
-                                </p>
+                                
                                 <hr>
                                 <div class="row">
                                   <div class="col mb-3">
@@ -416,5 +414,6 @@
     <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
     <script src="../public/Scripts/pass_validation.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+    <script src="../public/Scripts/closeSesion.js"></script>
   </body>
 </html>

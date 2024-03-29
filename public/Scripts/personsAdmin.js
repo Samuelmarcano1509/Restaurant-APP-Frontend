@@ -79,7 +79,12 @@ const personList = async()=> {
             });
           }
     } catch (error){ 
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
  }
 }
 const tableBody = document.getElementById("inf-body");
@@ -120,7 +125,12 @@ const getPerson = async(id)=> {
             document.getElementById('dropdownMenuButton').value = datas.data.gender
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 function sendAdminRegister(){
@@ -220,7 +230,12 @@ const personEdit = async()=> {
             });
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 function sendPersonDelete(){
@@ -245,6 +260,11 @@ const personDelete = async()=> {
             });
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }

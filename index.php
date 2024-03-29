@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
     <link rel="stylesheet" href="public/vendor/libs/js/Glider.js-master/glider.min.css">
-    
+    <script src="./public/vendor/js/jquery.js"></script>
     <style>
        @font-face {
       font-family: montserrat;
@@ -48,6 +48,10 @@
         margin-left: 3%;
         padding-left: 5%;
         
+      }
+      #item-user{
+        margin-left: 3%;
+        padding-left: 5%;
       }
 
 
@@ -125,7 +129,7 @@
    
     </style>
 </head>
-<body >
+<body onload="userData();">
   <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
@@ -150,7 +154,7 @@
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./views/contactus">Contacto</a>
                   </li>
-                  <li class="nav-item" id="item"  style="white-space: nowrap;">
+                  <li class="nav-item" id="item-user"  style="white-space: nowrap;">
                     <a id="titleusers" class="nav-link" href="./views/Auth/login">Iniciar Sesión</a>
                 </li>
                 </ul>
@@ -227,12 +231,12 @@
 </div>
   
 
- 
- 
 <script src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/js/fontawesome.js"></script>
 <script src="/NeoRestaurante/public/vendor/libs/js/Glider.js-master/glider.min.js"></script>
-<script src="/NeoRestaurante/public/js/bootstrap.js"></script>
+<script src="/NeoRestaurante/public/js/bootstrap.bundle.js"></script>
 <script src="/NeoRestaurante/public/Scripts/slider.js"></script>
+<script src="./public/Scripts/auth.js"></script>
+
 
 </body>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 </html>

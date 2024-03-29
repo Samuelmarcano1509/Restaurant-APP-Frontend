@@ -73,7 +73,12 @@ const orderList = async()=> {
             });
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 function userList()
@@ -210,7 +215,12 @@ const productOrderDelete = async()=> {
             });
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 const userList2 = async(elementId)=> {
@@ -305,7 +315,12 @@ const sendEditOrder = async()=> {
             }
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 const orderDetails = async(elementId)=> {
@@ -419,7 +434,12 @@ const productListOrder = async()=> {
             });
         }
     } catch (error) {
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 function sendProductOrder(){
@@ -462,6 +482,11 @@ const productOrder = async()=> {
             }
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }

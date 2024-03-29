@@ -1,5 +1,6 @@
 function productList(){
         getProductList();
+        getTotalShoppingCart();
 }
 const getProductList = async()=> {
     try {
@@ -182,13 +183,22 @@ const aggProduct = async(productId,quantity,option)=>{
         confirmButtonText: 'Aceptar'
       })
     }
-    getShoppingCart()
+    getTotalShoppingCart()
+  }else if(response.status===500){
+      Swal.fire({
+          title: 'Inicie Sesión',
+          type: 'information',
+          text: 'Para Poder añadir productos al carrito inicie sesión',
+          confirmButtonText: 'Aceptar'
+      }).then(()=>{
+          window.location.href='../views/Auth/login.php'
+      })
   }
-  }catch{
+  }catch(error){
     Swal.fire({
       title: 'Error',
       type: 'error',
-      text: datas.title,
+      text: error,
       confirmButtonText: 'Aceptar'
     }).then(()=>{
       location.reload();
@@ -263,6 +273,28 @@ const getShoppingCart = async()=> {
       confirmButtonText: 'Aceptar'
   })
   }
+}
+const getTotalShoppingCart = async()=> {
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/shopping/cart', {
+            method: 'GET',
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            const datas = await response.json();
+            document.getElementById('msg-cant').textContent = "Cantidad de productos: " +datas.totalProducts
+            document.getElementById('msg-total').textContent="Total a pagar:" +datas.total + '$'
+            }
+    } catch (error) {
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
+    }
 }
 
 const tableBody = document.getElementById("inf-body");

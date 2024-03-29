@@ -23,7 +23,11 @@
 
     <!-- Helpers -->
     <script src="public/vendor/js/helpers.js"></script>
+    <style>
+   
+ 
 
+    </style>
    
   </head>
 
@@ -157,6 +161,12 @@
        
       </div>
       <button onclick="closeSesion()" >Cerrar sesion</button>
+
+      <div class="input-numero">
+      
+      </div>
+
+</td>
 
       <div class="layout-overlay layout-menu-toggle"></div>
     </div> 

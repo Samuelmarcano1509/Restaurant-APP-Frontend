@@ -6,7 +6,9 @@
     <title>Obtener Membresía</title>
     <link rel="shortcut icon" href="../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
-    
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css"> 
+    <script src="https://www.paypal.com/sdk/js?client-id=AcQc7_I42C9Is5eCf-SuOGX0kNA1J5ODVTIc5I-eIGsTdqkqsHf41XHqxF2_M3V6NNnBVoxltzT5sAhJ&currency=USD"></script>
     <style>
         @font-face {
             font-family: montserrat;
@@ -46,6 +48,10 @@
         padding-left: 5%;
         
       }
+      #item-user{
+        margin-left: 3%;
+        padding-left: 5%;
+      }
 
       #cont{
      
@@ -61,7 +67,7 @@
       }
 
             /* Estilos del botón */
-      .btn-pagar {
+      .btn-paypal {
           background-color: #301f14;
           color: #fff;
           border: none;
@@ -70,6 +76,11 @@
           margin-top: 20px;
           cursor: pointer;
           transition: background-color 0.3s ease;
+          width: 180px;
+      }
+      #paypal-button-container{
+        width: 210px;
+        margin-left: 260px;
       }
 
       /* Estilos del hover del botón */
@@ -141,7 +152,7 @@
     
     </style> 
 </head>
-<body>
+<body onload="userData();">
   <!--Barra de navegacion-->
   <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
@@ -167,8 +178,8 @@
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./contactus">Contacto</a>
                   </li>
-                  <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a id="titleusers" class="nav-link" href="./Auth/login">Iniciar Sesión</a>
+                  <li class="nav-item" id="item-user"  style="white-space: nowrap;">
+                    <a id="titleusers" class="nav-link" href="./Auth/login.php">Iniciar Sesión</a>
                 </li>
                 </ul>
               </div> 
@@ -194,9 +205,11 @@
             </div>
 
             <!-- Botón "Pagar ahora" -->
-            <div class="text-center mt-4">
-                <button class="btn-pagar">Pagar ahora</button>
+            <div class="text-center mt-4" id="prueba">
+                <input type="button" value="Iniciar sesión" id="button" class="btn-paypal" onclick="window.location.href='./Auth/login.php'">
+                <p  id="info" style= "font-size: 15px; color: #301f14; margin-top: 5px; ">Inicie sesion para poder comprar una membresia</p>
             </div>
+            
         </div>
     </div>
 </form>
@@ -210,8 +223,11 @@
 
 
     
-    
-
+<script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
+<script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>   
+<script src="../public/Scripts/paypal-membership.js"></script>
 <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
+<script src="../public/Scripts/auth.js"></script>
+<script src="/NeoRestaurante/public/js/bootstrap.bundle.js"></script>
 </body>
 </html>

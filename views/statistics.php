@@ -55,9 +55,9 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo d-flex align-items-center">
         <span class="app-brand-logo demo">
-          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px;">
+          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px; cursor: pointer;" onclick="location.href='/NeoRestaurante/index.php'">
         </span>
-        <span class="ms-2 fs-7 fw-bold text-uppercase">Neo Restaurant</span>
+        <span class="ms-2 fs-7 fw-bold text-uppercase" style="cursor:pointer" onclick="location.href='/NeoRestaurante/index.php'">Neo Restaurant</span>
         </div> 
 
           <ul class="menu-inner py-1">
@@ -131,8 +131,8 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" >
-                      <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
+                      <a class="dropdown-item" onclick="closeSesion()">
+                      <span id="casocerrado"   >Cerrar sesion</span>
                      
                       </a>
                     </li>
@@ -270,7 +270,7 @@
 
       <!-- Page JS -->
       <script src="../assets/js/dashboards-analytics.js"></script>
-    
+      <script src="../public/Scripts/closeSesion.js"></script>
    
   </body>
 </html>

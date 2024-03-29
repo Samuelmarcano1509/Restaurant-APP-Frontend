@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="../public/img/icon.ico">
     <link rel="stylesheet" href="/NeoRestaurante/public/css/bootstrap.css">
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="/NeoRestaurante/vendors/animate.css/animate.min.css"> 
     <style>
         @font-face {
             font-family: montserrat;
@@ -31,6 +33,10 @@
         padding-left: 5%;
         
       }
+      #item-user{
+        margin-left: 3%;
+        padding-left: 5%;
+      }
 
       #cont{
       margin-top: 20%;
@@ -54,24 +60,32 @@
         }
 
         .formulario {
-          background-color: #DEDEDE;
+          background-color: white;
           border: 2px solid black;
           padding: 20px;
           border-radius: 10px;
           text-align: center; /* Centrar el texto */
         }
         .form-select,
-        .form-control {
+        .form-control
+         {
           border-color: black; /* Borde negro para todos los campos */
           margin-left: 50px;
           margin-top: 80px;
           
+    }
+    .form{
+          border: 1px solid black;
+          margin-left: 50px;
+          margin-top: 80px;
+          border-radius: 5px;
     }
     
         .btn-reservar {
           margin-top: 80px;
           background-color: #301F14;
           border-color: #301F14;
+          color:white;
     }
         .btn-reservar:hover {
           background-color: #301F14; 
@@ -124,7 +138,7 @@
             .formulario {
                 flex-direction: column;
                 align-items: center;
-                background-color: #DEDEDE;
+                background-color: white;
                 text-align: center;
                 /* Centrar el texto */
             }
@@ -146,11 +160,18 @@
                 
 
             }
+            .form{
+                margin: 15px 0; 
+                border: 1px solid black;
+                margin-left: 50px; 
+                border-radius: 5px;
+            }
 
             .btn-reservar {
                 margin-top: 50px;
                 background-color: #301F14;
                 border-color: #301F14;
+                color: white
             }
 
 
@@ -158,9 +179,9 @@
 
 
 
-    </style> 
+    </style>
 </head>
-<body>
+<body onload="userData(); reservationData();">
   <!--Barra de navegacion-->
   <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
@@ -186,8 +207,8 @@
                   <li class="nav-item" id="item">
                       <a class="nav-link" href="./contactus">Contacto</a>
                   </li>
-                  <li class="nav-item" id="item"  style="white-space: nowrap;">
-                    <a class="nav-link" href="./Auth/login">Iniciar Sesión</a>
+                  <li class="nav-item" id="item-user"  style="white-space: nowrap;">
+                    <a id="titleusers" class="nav-link" href="./Auth/login.php">Iniciar Sesión</a>
                 </li>
                </ul>
               </div> 
@@ -199,46 +220,18 @@
         <div class="col-md-8 formulario">
             <h2 class="text-center mb-4">Reservar una Mesa</h2>
             <h5 class="text-center mb-3" style="padding-top:5%">Para reservar una mesa en Neo Restaurante</h5>
-            <p class="text-center mb-3">seleccione el número de personas, la fecha y la hora para su reservación.</p>
+            <p class="text-center mb-3">seleccione una mesa, la fecha y la hora para su reservación.</p>
             <form>
                 <div class="mb-2 d-flex">
-                    <select class="form-select me-2 mb-2" id="numPersonas" name="numPersonas" style="font-size: 15px; width: 200px;">
-                        <option value="" disabled selected hidden>N° de Personas</option>
-                        <option value="1">2 Persona</option>
-                        <option value="2">4 Personas</option>
-                        <option value="3">6 Personas</option>
-                        <option value="4">8 Personas</option>
-                        <option value="5">10 Personas</option>
-                        <option value="6">12 Personas</option>
-                    </select>
-                    <input type="date" class="form-control me-2 mb-2" id="fecha" name="fecha" style="width: 200px;">
-                    <select class="form-select me-2 mb-2" id="numPersonas" name="numPersonas" style="font-size: 15px; width: 200px;">
-                        <option value="" disabled selected hidden>Hora</option>
-                        <option value="1">11:00 am</option>
-                        <option value="2">11:30 am</option>
-                        <option value="3">12:00 pm</option>
-                        <option value="4">12:30 pm</option>
-                        <option value="5">01:00 pm</option>
-                        <option value="6">01:30 pm</option>
-                        <option value="7">02:00 pm</option>
-                        <option value="8">02:30 pm</option>
-                        <option value="9">03:00 pm</option>
-                        <option value="10">03:30 pm</option>
-                        <option value="11">04:00 pm</option>
-                        <option value="12">04:30 pm</option>
-                        <option value="13">05:00 pm</option>
-                        <option value="14">05:30 pm</option>
-                        <option value="15">06:00 pm</option>
-                        <option value="16">06:30 pm</option>
-                        <option value="17">07:00 pm</option>
-                        <option value="18">07:30 pm</option>
-                        <option value="19">08:30 pm</option>
-                        <option value="20">09:00 pm</option>
-                        <option value="21">09:30 pm</option>
-                        <option value="22">10:00 pm</option>
-                    </select>
+                    <select class="form-select me-2 mb-2" name="mesas"  id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 15px; width: 200px;" >
+                    </select>          
+                    <div class="mb-2">
+                    <input type="date" class="form-control me-2 mb2" name="fecha" id="fecha20" placeholder="fecha de reservacion" style="width: 200px;" min="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    <input type="time" id="hora" class="form me-2 mb-2" min="12:00 PM" max="11:00 PM" value="<?php date_default_timezone_set('America/Caracas'); echo date('H:i'); ?>" name="hora4" id="hora4" style="font-size: 15px; width: 200px;">    
+                    
                 </div>
-                <button type="submit" class="btn btn-primary btn-reservar" style="width:200px; font-size: 25px;">Reservar</button>
+                <input type="button" value="Realizar reservación" class="btn btn-reservar" id="btn-res" style="font-size: 20px;" onclick="createReservation();">
             </form>
         </div>
     </div>
@@ -246,6 +239,10 @@
 
 
 </form>
-<script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+<script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
+<script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
+<script src="../public/Scripts/auth.js"></script>
+<script src="../public/Scripts/userReservation.js"></script>
+<script src="/NeoRestaurante/public/js/bootstrap.bundle.js"></script>
 </body>
 </html>

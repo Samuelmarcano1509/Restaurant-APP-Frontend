@@ -27,10 +27,17 @@
         margin-left: 7%;
         margin-right: 7%;
       }
+      .formulario .pass{
+        border: 1px solid #DEDEDE;
+        
+      }
+      .formulario .pass-incorrecta{
+        border: 1px solid #bb2929;
+      }
     </style>
 
 </head>
-<body>
+<body onload="personsNormal();">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -41,9 +48,9 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo d-flex align-items-center">
         <span class="app-brand-logo demo">
-          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px;">
+          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px; cursor:pointer;" onclick="location.href='/NeoRestaurante/index.php'">
         </span>
-        <span class="ms-2 fs-7 fw-bold text-uppercase">Neo Restaurant</span>
+        <span class="ms-2 fs-7 fw-bold text-uppercase" style="cursor:pointer" onclick="location.href='/NeoRestaurante/index.php'">Neo Restaurant</span>
         </div> 
 
           <ul class="menu-inner py-1">
@@ -101,8 +108,8 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" >
-                      <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
+                      <a class="dropdown-item" onclick="closeSesion()">
+                      <span id="casocerrado"   >Cerrar sesion</span>
                      
                       </a>
                     </li>
@@ -120,59 +127,111 @@
             <!-- Content -->
             <div class="card mb-4">
               <div class="card-body"><!---->
-                      <form id="formAccountSettings">
-                        <div class="row">
-                          <div class="mb-3 col-md-6">
-                            <label for="firstName" class="form-label">Nombre</label>
-                            <input class="form-control" type="text" id="firstName"  name="firstName" value="John" autofocus/>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="lastName" class="form-label">Apellido</label>
-                            <input class="form-control" type="text" name="lastName" id="lastName" value="Doe"/>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input class="form-control" type="text" id="email" name="email" value="john.doe@example.com" placeholder="john.doe@example.com"/>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label class="form-label" for="phoneNumber">Numero de telefono</label>
-                            <div class="input-group input-group-merge">
-                              <span class="input-group-text">US (+1)</span>
-                              <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="202 555 0111" />
-                            </div>
-                          </div> 
-                          <div class="mb-3 col-md-6">
-                            <label class="form-label" for="cedula">Número de cedula</label>
-                            <div class="input-group input-group-merge">
-                              <span class="input-group-text"></span>
-                              <input type="text" id="cedula" name="cedula" class="form-control" placeholder="30654853" />
-                            </div>
-                          </div> 
-                          <div class="mb-3 col-md-6">
-                            <label for="direccion" class="form-label">Dirección</label>
-                            <input class="form-control" type="text" name="direccion" id="addres" value=""/>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="user" class="form-label">Usuario</label>
-                            <input class="form-control" type="text" id="user" name="user" value="Usuario" placeholder="john.doe"/>
-                          </div>
-                          <div class="col mb-3">
+              <form id="formulario" class="formulario">
+                              <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Nombre</label>
+                                    <input type="text" id="nombre"  name="nombre" class="form-control"  placeholder="Ingresa nombre"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="apellido" class="form-label">Apellido</label>
+                                    <input type="text" id="apellido"  name="apellido" class="form-control"  placeholder="Ingresa  apellido"/>
+                                  </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col mb-3">
+                                      <label for="descripcion" class="form-label">Identificación</label>
+                                      <input type="text" id="cedula"  name="cedula" class="form-control"  placeholder="Ingresa N° cedula"/>
+                                    </div>
+                                    <div class="col mb-3">
+                                      <label for="fecha">Fecha de nacimiento:</label>
+                                      <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de nacimiento">
+                                      <script>
+                                          const fechaInput = document.getElementById('fecha');
+                                          fechaInput.addEventListener('change', () => {
+                                              const fechaSeleccionada = fechaInput.value;
+                                              const fechaFormateada = new Date(fechaSeleccionada).toISOString().split('T')[0];
+                                              fechaInput.value = fechaFormateada;
+                                          });
+                                      </script>
+                                  </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col mb-3">
+                                    <label for="estado" style="margin-bottom: 8px">Género</label>
+                                      <select class="btn btn-light bg-white" name="estado"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" >
+                                          <option value="No especificado">No especificado</option>
+                                          <option value="Masculino">Masculino</option>
+                                          <option value="Femenino">Femenino</option>
+                                      </select>
+                                      </div>
+                                      <div class="col mb-3">
+                                        <label for="descripcion" class="form-label">N° telefónico</label>
+                                        <input type="text" id="telefono"  name="descripcion" class="form-control"  placeholder="Ingresa N° telefono"/>
+                                      </div> 
+                                  </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="descripcion" class="form-label">Usuario</label>
+                                    <input type="text" id="user"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                  </div>
+                                  <div class="col mb-3">
                                   <label for="membresia" style="margin-bottom: 8px">Tipo de membresia</label>
-                                    <select class="btn btn-light bg-white" name="membresia"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" disabled>
-                                        <option value="Disponible">membresia_tipo1</option>
-                                        <option value="No disponible">membresia_tipo2</option>
+                                    <select class="btn btn-light bg-white" name="membresia"  id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; text-align:left;  border-color: #DEDEDE;" disabled>
+                                        <option value="Normal">Normal</option>
+                                        <option value="VIP">VIP</option>
                                     </select>
                                   </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="password" class="form-label">contraseña</label>
-                            <input class="form-control" type="password" id="password" name="password" value="" placeholder=""/>
-                          </div>
-                        </div><!--termina-->
-                        <div class="mt-2">
-                          <button type="submit" class="btn btn-primary me-2">Guardar cambios</button>
-                          <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
-                        </div>
-                      </form>
+                                </div>
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input class="form-control" type="text" id="email" name="email" value="" placeholder="Ingresa tu correo"/>
+                                </div>
+                                </div>
+                                <div class="row" id="contraseñas">
+                                <div class="col mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input class="form-control pass" type="password" id="pass1" name="password1" value="" placeholder="Ingresa la contraseña"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="password" class="form-label"> Confirmar contraseña</label>
+                                    <input class="form-control pass" type="password" id="pass2" name="password2" value="" placeholder="Repita la contraseña"/>
+                                  </div>
+                                </div>
+                                
+                                <hr>
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="direccion" class="form-label">Dirección del usuario</label>
+                                    <input type="text" id="address"  name="adress" class="form-control"  placeholder="Ingresa una dirección"/>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="municipio" class="form-label">Municipio</label>
+                                    <input type="text" id="municipio"  name="municipio" class="form-control"  placeholder="Ingresa un municipio"/>
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="referencia" class="form-label">Punto de referencia</label>
+                                    <input type="text" id="referencia"  name="referencia" class="form-control"  placeholder="Referencia de tu vivienda"/>
+                                  </div>
+                                  
+                                </div>
+                                <hr>
+                                <div class="row g-2"></div>
+                                
+                                <!--aqui-->
+                                <!--acaba-->
+                              </div><!--termina-->
+                              
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button  type="button" id="send" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendPersonEdit()" disabled>Guardar cambios</button>
+                              </div>
+                            </div>
+                          </form> 
+                          
                     </div><!--/-->
               </div>
               <!--/content-->
@@ -186,16 +245,12 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div> 
 
-    
-    <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>     
     <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
     <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
-    <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
-    <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
+    <script src="../public/Scripts/persons.js"></script>
   </body>
 </html>

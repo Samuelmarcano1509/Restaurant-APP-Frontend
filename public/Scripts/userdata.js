@@ -18,6 +18,11 @@ const getUserdata = async()=> {
             titleUser.href='';
         }
     } catch (error) {
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }

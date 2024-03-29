@@ -32,6 +32,10 @@
             margin-left: 3%;
             padding-left: 5%;
         }
+        #item-user{
+        margin-left: 3%;
+        padding-left: 5%;
+      }
 
         .nav-link.active {
             font-weight: bold;
@@ -149,7 +153,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="userData();">
 <!--Barra de navegacion-->
 <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -175,9 +179,9 @@
                     <li class="nav-item" id="item">
                         <a class="nav-link active" href="#contactus">Contacto</a>
                     </li>
-                    <li class="nav-item" id="item"  style="white-space: nowrap;">
-                        <a class="nav-link" href="./Auth/login">Iniciar Sesión</a>
-                    </li>
+                    <li class="nav-item" id="item-user"  style="white-space: nowrap;">
+                    <a id="titleusers" class="nav-link" href="./Auth/login.php">Iniciar Sesión</a>
+                </li>
                 </ul>
             </div>
         </div>
@@ -222,5 +226,8 @@
         </div>
         </div>
     </div>
+
+    <script src="../public/Scripts/auth.js"></script>
+    <script src="/NeoRestaurante/public/js/bootstrap.bundle.js"></script>
 </body>
 </html>

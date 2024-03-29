@@ -93,7 +93,12 @@ const reservationsList = async()=> {
             });
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
     }
 }
 const userList = async()=> {
@@ -175,9 +180,9 @@ const sendReservation = async()=> {
         }
         if (response.status===201) {
             Swal.fire({
-                title: '¡Registro Realizado!',
+                title: '¡Reservación Realizada!',
                 text: datas.title,
-                icon: 'success',
+                type: 'success',
                 confirmButtonText: 'Entendido'
             }).then(() => {
                 location.reload();
@@ -257,7 +262,7 @@ const sendReservationDelete = async()=> {
             Swal.fire({
                 title: '¡Reservación Eliminada!',
                 text: data.title,
-                icon: 'success',
+                type: 'success',
                 confirmButtonText: 'Entendido'
             }).then(() => {
                 location.reload();
@@ -267,7 +272,7 @@ const sendReservationDelete = async()=> {
         Swal.fire({
             title: '¡Ha Ocurrido un Error!',
             text: error,
-            icon: 'warning',
+            type: 'warning',
             confirmButtonText: 'Entendido'
         }).then(() => {
             location.reload();
@@ -379,6 +384,12 @@ const sendEditReservation = async()=> {
             }
         }
     } catch (error){
-        console.log(error)
+        Swal.fire({
+            title: 'Error!',
+            type: 'error',
+            text: error,
+            confirmButtonText: 'Aceptar'
+        })
+        
     }
 }

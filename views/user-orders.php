@@ -37,7 +37,7 @@
       <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
 
 </head>
-<body>
+<body onload="orderUser();">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -48,9 +48,9 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo d-flex align-items-center">
         <span class="app-brand-logo demo">
-          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px;">
+          <img src="/NeoRestaurante/public/img/neo-favicon-white.svg" alt="" style="width: 70px; height:70px; cursor:pointer;" onclick="location.href='/NeoRestaurante/index.php'">
         </span>
-        <span class="ms-2 fs-7 fw-bold text-uppercase">Neo Restaurant</span>
+        <span class="ms-2 fs-7 fw-bold text-uppercase" |>Neo Restaurant</span>
         </div> 
 
           <ul class="menu-inner py-1">
@@ -108,8 +108,8 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" >
-                      <span id="casocerrado"  onclick="closeSesion()" >Cerrar sesion</span>
+                      <a class="dropdown-item"  onclick="closeSesion()">
+                      <span id="casocerrado"  >Cerrar sesion</span>
                      
                       </a>
                     </li>
@@ -132,92 +132,16 @@
                   <table class="table" id="table_orders">
                     <thead>
                       <tr>
-                        <th>Nombre y Apellido</th>
+                        <th>Numero de orden</th>
                         <th>Estatus de pedido</th>
                         <th>Fecha del pedido</th>
                         <th>Monto</th>
                         <th>Acciones</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0">
-                      <tr>
-                        <td><strong>Nombre_apellido</strong></td>
-                        <td><span class="badge bg-label-primary me-1">Active</span></td>
-                        <td>#hora de pedido</td>
-                        <td>#monto</td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/circle-info.svg" style="width: 15px; heigth: 15px;" alt="" > Ver detalles  </button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td> <strong>Nombre_apellido</strong></td>
-                        <td><span class="badge bg-label-success me-1">Completed</span></td>
-                        <td>#hora de pedido</td>
-                        <td>#monto</td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/circle-info.svg" style="width: 15px; heigth: 15px;" alt="" > Ver detalles  </button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td> <strong>Nombre_apellido</strong></td>
-                        <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                        <td>#hora de pedido</td>
-                        <td>#monto</td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/circle-info.svg" style="width: 15px; heigth: 15px;" alt="" > Ver detalles  </button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td> <strong>Nombre_apellido</strong> </td>
-                        <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                        <td>#hora de pedido</td>
-                        <td>#monto</td>
-                        <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
-                            </button>
-                            <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary"  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalCenter" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt="" > Editar</button>
-                              <button class="dropdown-item btn btn-outline-secondary"  id="pruebamodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
-                                <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/circle-info.svg" style="width: 15px; heigth: 15px;" alt="" > Ver detalles </button>
-                            </div>
-                          </div>
-                      </tr>
+                    <tbody class="table-border-bottom-0" id="inf-body">
                     </tbody>
                   </table>
-                  <script>$('#table_orders').DataTable();</script>
                 </div>
                 </div>
               </div>
@@ -270,8 +194,8 @@
       <div class="modal-body">
         <!----><div class="card" style="width: 90%;">
         <h5 class="card-header">Lista de productos pedidos</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table">
+                <div class="table-responsive text-nowrap" style="margin-left: 5%; margin-right:5%;">
+                  <table class="table" id="table_products">
                     <thead>
                       <tr>
                         <th>Nombre del producto</th>
@@ -279,17 +203,12 @@
                         <th>Precio</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0">
-                      <tr>
-                        <td><strong>Nombre_producto</strong></td>
-                        <td>cantidad_producto</td>
-                        <td><strong>Precio_producto</strong></td>
-                      </tr>
+                    <tbody class="table-border-bottom-0" id="inf-body2">
                     </tbody>
                     <tfoot>
                       <td></td>
-                      <td>#total_productos</td>
-                      <td>Total pagado</td>
+                      <td id="totalProductos"></td>
+                      <td id="totalPagar"></td>
                     </tfoot>
                   </table>
                 </div>
@@ -305,15 +224,12 @@
       
 
    
-    <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>     
     <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
     <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/menu.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/main.js"></script>
-    <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
-    <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
-    <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
+    <script src="../public/Scripts/user-orders.js"></script>
   </body>
 </html>

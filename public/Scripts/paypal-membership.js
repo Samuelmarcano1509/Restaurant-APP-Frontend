@@ -22,13 +22,7 @@
         },
         onApprove: function(data, actions){
             actions.order.capture().then(function (detalles){
-                console.log(detalles)
-                Swal.fire({
-                    title:'Información',
-                    type: 'success',
-                    text: 'Pago realizado',
-                    confirmButtonText: 'Aceptar' 
-                });
+                payMembership();
             });
         },
     
@@ -43,5 +37,42 @@
         }
     }).render(boton); 
  }
+ const payMembership = async()=> {
+     try {
+         const response = await fetch('http://127.0.0.1:8000/api/profile/membership/pay', {
+             method: 'POST',
+             headers: {
+                 'Content-Type': 'application/json',
+                 "Authorization": "Bearer " + localStorage.getItem('token')
+             }
+         })
+         if (response.ok) {
+             const datas = await response.json();
+             Swal.fire({
+                 title: 'Membresía Obtenida',
+                 text:  '!Muchas Gracias Por tu Compra!',
+                 type:  'success',
+                 confirmButtonText: 'Entendido'
+             });
+         }else if (response.status === 500) {
+             localStorage.removeItem('token');
+             Swal.fire({
+                 title: 'Ha expirado la sesión',
+                 type: 'error',
+                 confirmButtonText: 'Ir a Login'
+             }).then(() => {
+                 window.location.href = '/NeoRestaurante/views/Auth/login.php';
+             });
+         }
+     } catch (error) {
+         Swal.fire({
+             title: 'Error!',
+             type: 'error',
+             text: error,
+             confirmButtonText: 'Aceptar'
+         })
+     }
+ }
+
  
 

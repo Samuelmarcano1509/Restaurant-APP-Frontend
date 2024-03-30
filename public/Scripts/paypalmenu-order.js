@@ -90,7 +90,7 @@ const invoiceOrder = async(invoice,person)=> {
             anchor.href = objectURL;
             anchor.download = person;
             anchor.click();
-
+            location.reload()
         }else if (response.status === 500) {
             localStorage.removeItem('token');
             Swal.fire({

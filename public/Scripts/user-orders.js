@@ -27,10 +27,12 @@ const orderList = async()=> {
             console.log(datas)
             let body=''
             let orderId=0
+            let invoiceId=0
             for (let i=0; i< Object.keys(datas.data).length;i++){
                 if (datas.data[i]) {
                     orderId=datas.data[i].id
-                    body += `<tr id="${orderId}">
+                    invoiceId=datas.data[i].invoice
+                    body += `<tr id="${orderId}" name="${invoiceId}">
                         <td><strong>${orderId}</strong></td>
                         <td>
                         <span class="badge bg-label-primary me-1">
@@ -45,7 +47,7 @@ const orderList = async()=> {
                               <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/ellipsis-vertical.svg" alt="" style="width: 20px; height:20px;">
                             </button>
                             <div class="dropdown-menu">
-                            <button class="dropdown-item btn btn-outline-secondary" id="edit" href="javascript:void(0);" data-bs-toggle="modal">
+                            <button class="dropdown-item btn btn-outline-secondary" id="print" href="javascript:void(0);" data-bs-toggle="modal">
                                 <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/file-pen.svg" style="width: 15px; heigth: 15px;" alt=""> Imprimir Factura</button>
                               <button class="dropdown-item btn btn-outline-secondary"  id="see details" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0);" >
                                 <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/circle-info.svg" style="width: 15px; heigth: 15px;" alt="" > Ver detalles  </button>
@@ -89,8 +91,11 @@ tableBody.addEventListener("click", (event) => {
     const target = event.target;
     const row = target.closest("tr");
     const elementId = row.getAttribute("id");
+    const invoiceId = row.getAttribute("name")
     if(target.getAttribute('id')==='see details'){
         orderDetails(elementId)
+    }else if (target.getAttribute('id')==='print'){
+        invoiceOrder(invoiceId,'Orden: '+elementId)
     }
 });
 const orderDetails = async(elementId)=> {
@@ -144,5 +149,37 @@ const orderDetails = async(elementId)=> {
         }).then(() => {
             window.location.href = '/NeoRestaurante/views/Auth/login.php';
         });
+    }
+}
+const invoiceOrder = async(invoice,person)=> {
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/invoices/pdf/'+invoice, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+        })
+        if (response.ok) {
+            const datas = await response.blob();
+            console.log(response)
+            const objectURL = window.URL.createObjectURL(datas);
+            const anchor = document.createElement('a');
+            anchor.href = objectURL;
+            anchor.download = person;
+            anchor.click();
+            location.reload()
+        }else if (response.status === 500) {
+            localStorage.removeItem('token');
+            Swal.fire({
+                title: 'Ha expirado la sesión',
+                type: 'error',
+                confirmButtonText: 'Ir a Login'
+            }).then(() => {
+                window.location.href = '/NeoRestaurante/views/Auth/login.php';
+            });
+        }
+    } catch (error) {
+        console.log(error)
     }
 }

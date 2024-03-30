@@ -53,6 +53,8 @@
                  text:  '!Muchas Gracias Por tu Compra!',
                  type:  'success',
                  confirmButtonText: 'Entendido'
+             }).then(()=>{
+                 invoiceMembership(datas.data,datas.person);
              });
          }else if (response.status === 500) {
              localStorage.removeItem('token');
@@ -73,6 +75,37 @@
          })
      }
  }
-
+ const invoiceMembership = async(invoice,person)=> {
+     try {
+         const response = await fetch('http://127.0.0.1:8000/api/invoices/membership/pdf/'+invoice, {
+             method: 'GET',
+             headers: {
+                 'Content-Type': 'application/json',
+                 "Authorization": "Bearer " + localStorage.getItem('token')
+             }
+         })
+         if (response.ok) {
+             const datas = await response.blob();
+             console.log(response)
+             const objectURL = window.URL.createObjectURL(datas);
+             const anchor = document.createElement('a');
+             anchor.href = objectURL;
+             anchor.download = person;
+             anchor.click();
+             location.reload()
+         }else if (response.status === 500) {
+             localStorage.removeItem('token');
+             Swal.fire({
+                 title: 'Ha expirado la sesión',
+                 type: 'error',
+                 confirmButtonText: 'Ir a Login'
+             }).then(() => {
+                 window.location.href = '/NeoRestaurante/views/Auth/login.php';
+             });
+         }
+     } catch (error) {
+         console.log(error)
+     }
+ }
  
 

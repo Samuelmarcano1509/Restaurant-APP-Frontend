@@ -4,7 +4,31 @@
 
 'use strict';
 
-(function () {
+(async function () {
+  const response =  await fetch('http://127.0.0.1:8000/api/stadistics/total', {
+    method: 'GET',
+    headers:{
+      "Authorization": "Bearer " + localStorage.getItem('token')
+    }
+  })
+  let year=''
+  const montos =[]
+  let total =0
+  let totalM=0
+  const bestMonth=[]
+  const bestMonthAmount=[]
+  if (response.ok) {
+    const data = await  response.json()
+    year=data.data[1].year
+    total=data.total
+    totalM=data.percentage
+    for (let i=0; i< Object.keys(data.data).length;i++){
+      montos.push(parseFloat(data.data[i].total))
+      bestMonth.push(data.data[i].month)
+      bestMonthAmount.push(parseFloat(data.data[i].total))
+      }
+    document.getElementById('bestMonth').textContent=data.bestMonth
+  }
   let cardColor, headingColor, axisColor, shadeColor, borderColor;
 
   cardColor = config.colors.white;
@@ -18,13 +42,9 @@
     totalRevenueChartOptions = {
       series: [
         {
-          name: '2021',
-          data: [18, 7, 15, 29, 18, 12]       //datos promedio semestral
+          name: year,
+          data: montos       //datos promedio semestral
         },
-        {
-          name: '2020',
-          data: [-13, -18, -9, -14, -5, -17] //datos promedio semestral
-        }
       ],
       chart: {
         height: 300,
@@ -278,8 +298,8 @@
   // --------------------------------------------------------------------
   const growthChartEl = document.querySelector('#growthChart'),
     growthChartOptions = {
-      series: [70],   //datos promedio anual
-      labels: ['#Año'],
+      series: [totalM],   //datos promedio anual //actualizar a % representativo de membresías en dicho año
+      labels: [year],
       chart: {
         height: 240,
         type: 'radialBar'
@@ -427,8 +447,8 @@
         width: 130,
         type: 'donut'
       },
-      labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
-      series: [85, 15, 50, 50],  //datos promedio mensual(4 semanas)
+      labels: [bestMonth[0],bestMonth[1],bestMonth[2],bestMonth[3]],
+      series: [bestMonthAmount[0],bestMonthAmount[1],bestMonthAmount[2],bestMonthAmount[3]],  //datos promedio mensual(4 semanas)
       colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
       stroke: {
         width: 5,
@@ -494,7 +514,7 @@
     incomeChartConfig = {
       series: [
         {
-          data: [24, 21, 30]  //datos promedio trimestral
+          data: [((bestMonthAmount[0]*100)/total).toFixed(2), ((bestMonthAmount[1]*100)/total).toFixed(2), ((bestMonthAmount[2]*100)/total).toFixed(2),'']  //datos promedio trimestral
         }
       ],
       chart: {
@@ -558,7 +578,7 @@
         }
       },
       xaxis: {
-        categories: ['', 'Jan', 'Feb', 'Mar'],
+        categories: ['Jan', 'Feb', 'Mar', ''],
         axisBorder: {
           show: false
         },

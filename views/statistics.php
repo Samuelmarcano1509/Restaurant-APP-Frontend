@@ -191,14 +191,14 @@
                   <div class="card">
                     <div class="row row-bordered g-0">
                       <div class="col-md-8">
-                        <h5 class="card-header m-0 me-2 pb-3">Promedio de ventas Semestral</h5>
+                        <h5 class="card-header m-0 me-2 pb-3">Ventas Periodo Semestral</h5>
                         <div id="totalRevenueChart" class="px-2"></div>
                       </div>
                       <div class="col-md-4">
                         <div class="card-body">
                         </div>
                         <div id="growthChart" style="margin-top: 15%;"></div>
-                        <div class="text-center fw-semibold pt-3 mb-2">Promedio de ventas anual</div>
+                        <div class="text-center fw-semibold pt-3 mb-2">Porcentaje de Membresía </div>
 
                         <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
                           <div class="d-flex">
@@ -215,11 +215,11 @@
                   <div class="card">
                     <div class="card-header d-flex align-items-center pb-0">
                       <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Promedio de ventas semanal</h5>
+                        <h5 class="m-0 me-2">Ventas Por Mes</h5>
                          <div class="d-flex  align-items-center mb-3">
                           <div class="row">
                           <div id="orderStatisticsChart" class="col mb-3"></div>
-                          <p style="font-size:220%; margin-top: 20%;" class="col mb-3"><b>Mes</b></p>
+                          <p style="font-size:220%; margin-top: 20%;" class="col mb-3"><b id="bestMonth"></b></p>
                           </div>
                       </div> 
                       </div>
@@ -234,7 +234,7 @@
                         <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
                           <div class="d-flex p-4 pt-3">
                             <div style="font-size: 200%">
-                              <b>Promedio de ventas trimestral</b>
+                              <b>Porcentaje de ventas trimestral</b>
                             </div>
                           </div>
                           <div id="incomeChart"></div>

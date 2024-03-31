@@ -1,8 +1,3 @@
-
-
-
-
-
 window.addEventListener('load', async function(){
   const response = await fetch('http://127.0.0.1:8000/api/menu/list', {
     method: 'GET',

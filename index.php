@@ -182,40 +182,12 @@
 
 <!--el slider-->
 
-<div class="slider" style="background-color:  rgb(0, 0, 0)">
+<div class="slider" style="background-color:  rgb(0, 0, 0)" >
   <div class="slider-contenedor ">
     <button aria-label="prueba" class="left" style="padding-top: 20%;">
       <img src="/NeoRestaurante/public/vendor/libs/js/fontawesome-free-6.5.1-web/svgs/solid/chevron-left.svg" alt="">
     </button>
-      <div class="slider-contenido" style="padding-top: 3%;">
-        <div class="slider-elemento">
-          <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
-          <p style="color: #dedede; text-align: center;"><b>Platillo 1</b></p>
-        </div>
-        <div class="slider-elemento">
-          <img src="/NeoRestaurante/public/img/platillo2.jpg" alt="">
-          <p style="color: #dedede; text-align: center;"><b>Platillo 2</b></p>
-        </div>
-        <div class="slider-elemento">
-          <img src="/NeoRestaurante/public/img/platillo3.jpg" alt="">
-          <p style="color: #dedede; text-align: center;"><b>Platillo 3</b></p>
-        </div>
-        <div class="slider-elemento">
-          <img src="/NeoRestaurante/public/img/platillo4.jpg" alt="">
-          <p style="color: #dedede; text-align: center;"><b>Platillo 4</b></p>
-        </div>
-        <div class="slider-elemento">
-          <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
-          <p style="color: #dedede; text-align: center;">prueba</p>
-        </div>
-        <div class="slider-elemento">
-          <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
-          <p style="color: #dedede; text-align: center;">prueba</p>
-        </div>
-        <div class="slider-elemento">
-          <img src="/NeoRestaurante/public/img/platillo1.jpg" alt="">
-          <p style="color: #dedede; text-align: center;">prueba</p>
-          </div>
+      <div class="slider-contenido" style="padding-top: 3%;" id="elementos">
         </div>
         
         <button aria-label="prueba" class="right" style="padding-top: 20%">

@@ -71,22 +71,7 @@
         }
 
         /* Estilos para la barra lateral */
-        .sidebar {
-            background-color: #170E09;
-            color: white;
-            padding-top: 20px;
-            width: 250px;
-            height: 100vh;
-            position: sticky;
-            top: 0; /* Fija la barra lateral en la parte superior */
-        }
-
-        /* Estilos para los elementos de la barra lateral */
-        .sidebar-heading {
-            padding: 10px;
-            font-size: 20px;
-            text-align: center;
-        }
+    
 
         .list-group-item {
             background-color: #170E09;
@@ -104,7 +89,7 @@
         .dish-container {
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 600px; /* Ancho total de los platillos */
+            width: 680px; /* Ancho total de los platillos */
             height: 150px;
             margin: 10px auto;
             background-color: #f9f9f9;
@@ -131,8 +116,8 @@
 
         .center-container {
             position: relative;
-            top: -1080px;
-            right: 45px;
+            top: -212px;
+            right: 180px;
             text-align: start; /* Centrar el contenido */
         }
 
@@ -151,8 +136,8 @@
             display: flex;
             flex-direction: column;
             background-color: #f9f9f9;
-            height: 250px;
-            width: 280px;
+            height: 280px;
+            width: 300px;
             border-radius: 5px
         }
 
@@ -433,22 +418,7 @@
   </div>
 
         <!--Barra Lateral-->
-        <div class="col-md-3 col-12 sidebar" >
-        <h2 class="sidebar-heading"><b>Menú</b></h2>
-        <ul class="list-group">
-          <li class="list-group-item">Platos Principales</li>
-          <li class="list-group-item">Especialidades de la casa</li>
-          <li class="list-group-item">Selección de Carnes</li>
-          <li class="list-group-item">Delicias del Mar</li>
-          <li class="list-group-item">Selección de Mariscos</li>
-          <li class="list-group-item">Platos Vegetarianos</li>
-          <li class="list-group-item">Aperitivos</li>
-          <li class="list-group-item">Acompañamientos</li>
-          <li class="list-group-item">Postres</li>
-          <li class="list-group-item">Bebidas</li>
-        </ul>
-        <!--Platillos-->
-        </div>
+        
         <div class="center-container" id="cont">
 
         </div> 

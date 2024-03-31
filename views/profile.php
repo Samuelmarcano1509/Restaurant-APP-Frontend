@@ -305,7 +305,7 @@
                               
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button  type="button" id="send" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendPersonEdit()" disabled>Guardar cambios</button>
+                                <button  type="button" id="send" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendPersonEdit()">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 
@@ -396,7 +396,7 @@
                               </div><!--termina-->  
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" id="btn-1" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendAdminRegister()" disabled>Guardar cambios</button>
+                                <button type="button" id="btn-1" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendAdminRegister()">Guardar cambios</button>
                               </div>
                             </div>
                           </form> 

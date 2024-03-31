@@ -152,6 +152,7 @@ const userSesion = async() => {
            const styles = "margin-top: 9px;"
            document.getElementById('item-user').innerHTML = trukito;
            document.getElementById('dropdown').setAttribute("style", styles );
+           
         }
     }catch (error){
         localStorage.removeItem('token')

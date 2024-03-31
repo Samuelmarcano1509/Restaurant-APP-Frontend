@@ -44,7 +44,7 @@
       }
     </style>
 </head>
-<body onload="authValidation()">
+<body onload="dataAdmin()">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -121,7 +121,7 @@
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
-
+                <div style="margin-top: 5px" id="user">User</div>
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -148,25 +148,7 @@
           <!-- Content wrapper -->
           <div class="" role="main">
               <!-- top tiles -->
-              <div class="row" style="display: inline-block; margin-left:12%; width: 80%;" >
-                <div class="tile_count">
-                  <div class="col-md-4 col-sm-6  tile_stats_count">
-                    <span class="count_top"><i class="fa fa-user"></i> Total de ventas</span>
-                    <div class="count">0</div>
-                    <span class="count_bottom"><i class=""> </i> </span>
-                  </div>
-                  <div class="col-md-4 col-sm-6  tile_stats_count">
-                    <span class="count_top"><i class="fa fa-clock-o"></i> Total de pedidos</span>
-                    <div class="count">0</div>
-                    <span class="count_bottom"><i class=""><i class="fa fa-sort-asc"></i> </i> </span>
-                  </div>
-                  <div class="col-md-4 col-sm-6  tile_stats_count">
-                    <span class="count_top"><i class="fa fa-user"></i> Total de reservaciones</span>
-                    <div class="count ">0</div>
-                    <span class="count_bottom"><i class=""><i class="fa fa-sort-asc"></i></i> </span>
-                  </div>
-                </div>
-            </div>
+             
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="row">
                 <div class="col-lg-8 mb-4 order-0">
@@ -175,13 +157,16 @@
                       <div class="col-sm-7">
                         <div class="card-body"><!--primer modal-->
                           <h5 class="card-title text-primary">Bienvenido "ADMIN"! 🎉</h5>
-                          <p class="mb-4">
+                          <p class="mb-3" style="font-size: 18px">
                             Aca tienes <span class="fw-bold">Todos</span> los datos indispensables para administrar las ventas en los
                              distintos periodos
-                            
                           </p>
-                         
                         </div>
+                        <div class="tile_count" style="font-size: 15px">
+                              <div class="col tile_stats_count">
+                                <span style="font-size: 18px">Total de ventas<div class="count" id="ventasT" style="font-size: 14px;">0</div> </span>
+                              </div>
+                            </div>
                       </div>
                     </div>
                   </div>
@@ -250,6 +235,7 @@
     </div>                   
           
     <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
+    <script src="../public/Scripts/datosadmin.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>     
     <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
     <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>

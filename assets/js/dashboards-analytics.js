@@ -28,6 +28,16 @@
       bestMonthAmount.push(parseFloat(data.data[i].total))
       }
     document.getElementById('bestMonth').textContent=data.bestMonth
+    document.getElementById('ventasT').textContent = total 
+  }else if (response.status === 500){
+    Swal.fire({
+      title: 'Error',
+      type: 'error',
+      text: 'Ha expirado la sesion',
+      confirmButtonText: 'Aceptar'
+    }).then(()=>{
+      window.location.href="/NeoRestaurante/"
+    })
   }
   let cardColor, headingColor, axisColor, shadeColor, borderColor;
 
@@ -493,7 +503,7 @@
                 show: true,
                 fontSize: '0.8125rem',
                 color: axisColor,
-                label: 'Semana',
+                label: 'Mes',
                 formatter: function (w) {
                   return 'Datos';
                 }

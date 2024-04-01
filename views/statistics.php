@@ -121,7 +121,7 @@
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
-                <div style="margin-top: 5px" id="user">User</div>
+                <div style="margin-top: 5px" id="user"></div>
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -232,7 +232,10 @@
              </div>
              
              <div class="layout-overlay layout-menu-toggle"></div>
-    </div>                   
+    </div>
+
+    </div>
+
           
     <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="../public/Scripts/datosadmin.js"></script>
@@ -257,6 +260,8 @@
       <!-- Page JS -->
       <script src="../assets/js/dashboards-analytics.js"></script>
       <script src="../public/Scripts/closeSesion.js"></script>
-   
+ 
+
+      
   </body>
 </html>

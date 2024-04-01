@@ -32,7 +32,7 @@
         }
 
         #navbarNav {
-            padding-left: 28.5%;
+            padding-left: 35%;
             font-size: 95%;
         }
 
@@ -89,7 +89,7 @@
         .dish-container {
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 680px; /* Ancho total de los platillos */
+            width: 820px; /* Ancho total de los platillos */
             height: 150px;
             margin: 10px auto;
             background-color: #f9f9f9;
@@ -101,7 +101,7 @@
         }
 
         .dish-image {
-            width: 100px;
+            width: 120px;
             height: auto;
             border-radius: 5px;
             margin-right: 20px;
@@ -116,8 +116,8 @@
 
         .center-container {
             position: relative;
-            top: -212px;
-            right: 180px;
+            top: -265px;
+            right: 225px;
             text-align: start; /* Centrar el contenido */
         }
 
@@ -125,7 +125,7 @@
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
-            margin-left: 580px;
+            margin-left: 720px;
         }
 
         .order-container {
@@ -136,15 +136,15 @@
             display: flex;
             flex-direction: column;
             background-color: #f9f9f9;
-            height: 280px;
-            width: 300px;
+            height: 350px;
+            width: 400px;
             border-radius: 5px
         }
 
         .order-text {
             text-align: start;
-            font-size: 16px;
-            margin-top: 20px;
+            font-size: 20px;
+            margin-top: 30px;
             
         }
         #paypal-button-container{
@@ -154,7 +154,7 @@
       }
 
         #order-button {
-            margin-top: 60px;
+            margin-top: 100px;
             display: block;
             text-align: center;
             background-color: #301F14;
@@ -163,6 +163,7 @@
             cursor: pointer;
             margin-left: auto; /* Mover el botón al extremo derecho */
             margin-right: auto; /* Mover el botón al extremo derecho */
+            height: 60px;
         }
         input[type="number"] {
         width: 100px;
@@ -489,6 +490,28 @@
     </div>
   </div>
 </div>
+
+  <!--  Footer -->
+  <footer class="text-light pt-3 pb-2" style="background-color: #000000;">
+    <div class="container text-center text-md-start" style="background-color: #000000;">
+      <div class="text-center mb-2" style="background-color: #000000;">
+        <p style="margin-bottom: 2px;">
+        © 2024 Neo Restaurante - Todos los derechos reservados
+        </p>
+        <p style="margin-bottom: 2px;">Nueva Esparta, Pampatar 6316 Calle Nueva Cadiz</p>
+      </div>
+      <div class="text-center">
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/instagram-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/facebook-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+        </ul>
+      </div>
+    </div>
+</footer>
 <!--/modal-->
     <script src="/NeoRestaurante/public/js/bootstrap.min.js"></script>
     

@@ -99,12 +99,12 @@
         opacity: 0;
       }
 
-      .form-group-incorrect{
+      .formulario .pass{
+        border: 1px solid #DEDEDE;
         
       }
-
-      .form-group-correct{
-        
+      .formulario .pass-incorrecta{
+        border: 1px solid #bb2929;
       }
 
     </style> 
@@ -143,16 +143,17 @@
       </div>
   </nav>
   </div>
-<div class="RForm_cont d-flex flex-column align-items-center mt-5">
+  
+<div class="RForm_cont d-flex flex-column align-items-center mt-5" style="margin-bottom: 70px;">
     <div class="card bg-light rounded-3 col-md-8 col-lg-6 card-body mx-3 shadow-lg p-3 bg-body rounded" style="border-color: #DEDEDE;">
         <h1 class="text-center mb-2"><b>Registro de Usuario</b></h1>
-        <form id="formulario">
+        <form id="formulario" class="formulario">
             <div id="campos">
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="nombre">Nombres:</label>
                         <div>
-                        <input type="text" class="form-control" name="nombre" placeholder="Ingrese sus nombres">
+                        <input type="text" class="form-control" name="nombre" >
                         <!-- style="top: 19.5%; left: 44.4%" -->
                         <i class="form-validation-icon fa-regular fa-circle-question"></i>
                         </div>
@@ -160,13 +161,13 @@
                     <div class="form-group col-md-6">
                         <label for="apellido">Apellidos:</label>
                         <div>
-                        <input type="text" class="form-control"  name="apellido"  placeholder="Ingrese su apellido">
+                        <input type="text" class="form-control"  name="apellido"  >
                         <i class="form-validation-icon fa-regular fa-circle-question"></i>
                         </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="fecha">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control"  name="fecha" id="fecha" placeholder="fecha de nacimiento">
+                        <input type="date" class="form-control"  name="fecha" id="fecha" >
                         <script>
                             const fechaInput = document.getElementById('fecha');
                             fechaInput.addEventListener('change', () => {
@@ -179,14 +180,14 @@
                     <div class="form-group col-md-6">
                             <label for="cedula">Cedula:</label>
                             <div>
-                            <input type="text" class="form-control" name="cedula" placeholder="Ingrese su cedula">
+                            <input type="text" class="form-control" name="cedula">
                             <i class="form-validation-icon fa-regular fa-circle-question"></i>
                         </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="telefono">Número de Teléfono:</label>
                         <div>
-                        <input type="tel" class="form-control" name="telefono" placeholder="N° Teléfono">
+                        <input type="tel" class="form-control" name="telefono" >
                         <i class="form-validation-icon fa-regular fa-circle-question"></i>
                         </div>
                     </div>
@@ -218,7 +219,7 @@
           <div class="form-group">
               <label for="correo">Correo electrónico:</label>
               <div>
-              <input type="email" class="form-control" name="correo" placeholder="Ingrese su correo electrónico">
+              <input type="email" class="form-control" name="correo" placeholder= "ejemplo@dominio.extension">
               <i class="form-validation-icon fa-regular fa-circle-question"></i>
               </div>
           </div>
@@ -226,30 +227,34 @@
            <div class="form-group col-12">
                     <label for="usuario">Nombre de Usuario:</label>
                     <div>
-                    <input type="text" class="form-control"  name="usuario" placeholder="Ingrese su nombre de usuario">
+                    <input type="text" class="form-control"  name="usuario" >
                     <i class="form-validation-icon fa-regular fa-circle-question"></i>
                     </div>
                 </div>
-            <div class="row">
+                <div id="contraseñas">
+                <div class="row">
                 <div class="form-group col-12">
                     <label for="contraseña">Contraseña:</label>
                     <div>
-                    <input type="password" class="form-control" name="contraseña" placeholder="Ingrese su contraseña">
+                    <input type="password" class="form-control pass" name="contraseña"  id="pass1">
                     <i class="form-validation-icon fa-regular fa-circle-question"></i>
                     </div>
                 </div>
                 <div class="form-group col-12">
                     <label for="confirm">Confirmar contraseña:</label>
                     <div>
-                    <input type="password" class="form-control" name="confirm" placeholder="Repita la contraseña">
+                    <input type="password" class="form-control pass" name="confirm"  id="pass2">
                     <i class="form-validation-icon fa-regular fa-circle-question"></i>
                     </div>
                 </div>
             </div>
+                </div>
+            
                  <br>
                 <div class="form-group col-md-9 d-flex justify-content-center" style="margin-left: 12.5%;">
-                    <button type="button" onclick="register()"class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#modal_msg" style="background-color:#301f14; width: 100%; border-radius: 0; color:white; font-size: 80%;"><b>Registrarse</b></button>
+                    <button id="send"type="button" onclick="register()"class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#modal_msg" style="background-color:#301f14; width: 100%; border-radius: 6px; color:white; font-size: 80%;"><b>Registrarse</b></button>
                 </div>
+                <p id="errorM" style="display:none; text-align:center; margin-top:15px; color:red">Las contraseñas no son iguales</p>
                 <div class="text-center">
                         <p class="link-text" onclick="location.href='../../'" style="cursor: pointer; font-size: 60%; padding-top:20px">Volver al inicio</p>
                     </div>
@@ -282,10 +287,29 @@
   </div>
 </div>
 
-
+  <!--  Footer -->
+  <footer class="text-light pt-3 pb-2" style="background-color: #000000;">
+    <div class="container text-center text-md-start" style="background-color: #000000;">
+      <div class="text-center mb-2" style="background-color: #000000;">
+        <p style="margin-bottom: 2px;">
+        © 2024 Neo Restaurante - Todos los derechos reservados
+        </p>
+        <p style="margin-bottom: 2px;">Nueva Esparta, Pampatar 6316 Calle Nueva Cadiz</p>
+      </div>
+      <div class="text-center">
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/instagram-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/facebook-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+        </ul>
+      </div>
+    </div>
+</footer>
 
 <script src="/NeoRestaurante/public/Scripts/form_validation.js"></script>
-<script src="/NeoRestaurante/public/Scripts/validation.js"></script>
 <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
 
 </body>

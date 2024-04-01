@@ -41,12 +41,14 @@ inputs.forEach((input) => {
       pass2.classList.remove('pass-incorrecta');
       pass1.classList.add('pass');
       pass2.classList.add('pass');
+      document.getElementById('errorM').style.display="none"
       document.getElementById('send').disabled = false;
     } else {
       pass1.classList.remove('pass');
       pass2.classList.remove('pass');
       pass1.classList.add('pass-incorrecta');
       pass2.classList.add('pass-incorrecta');
+      document.getElementById('errorM').style.display="block"
       document.getElementById('send').disabled = true; 
     }
   }
@@ -60,12 +62,14 @@ inputs.forEach((input) => {
       pass4.classList.remove('pass-incorrecta');
       pass3.classList.add('pass');
       pass4.classList.add('pass');
+      document.getElementById('errorM2').style.display="none"
       document.getElementById('btn-1').disabled = false;
     } else {
       pass3.classList.remove('pass');
       pass4.classList.remove('pass');
       pass3.classList.add('pass-incorrecta');
       pass4.classList.add('pass-incorrecta');
+      document.getElementById('errorM2').style.display="block"
       document.getElementById('btn-1').disabled = true;
     }
   }

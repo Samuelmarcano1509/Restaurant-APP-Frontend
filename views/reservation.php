@@ -215,7 +215,7 @@
       </div>
   </nav>
   </div>
-<div class="container"> 
+<div class="container" style="margin-bottom: 30px;"> 
     <div class="row justify-content-center mt-4">
         <div class="col-md-8 formulario">
             <h2 class="text-center mb-4">Reservar una Mesa</h2>
@@ -239,6 +239,29 @@
 
 
 </form>
+
+  <!--  Footer -->
+  <footer class="text-light pt-3 pb-2" style="background-color: #000000;">
+    <div class="container text-center text-md-start" style="background-color: #000000;">
+      <div class="text-center mb-2" style="background-color: #000000;">
+        <p style="margin-bottom: 2px;">
+        © 2024 Neo Restaurante - Todos los derechos reservados
+        </p>
+        <p style="margin-bottom: 2px;">Nueva Esparta, Pampatar 6316 Calle Nueva Cadiz</p>
+      </div>
+      <div class="text-center">
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/instagram-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/facebook-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+        </ul>
+      </div>
+    </div>
+</footer>
+
 <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
 <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
 <script src="../public/Scripts/auth.js"></script>

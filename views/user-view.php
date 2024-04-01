@@ -245,6 +245,9 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div> 
 
+
+
+
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>     
     <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
     <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>

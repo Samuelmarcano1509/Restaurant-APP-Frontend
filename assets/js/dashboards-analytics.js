@@ -28,7 +28,7 @@
       bestMonthAmount.push(parseFloat(data.data[i].total))
       }
     document.getElementById('bestMonth').textContent=data.bestMonth
-    document.getElementById('ventasT').textContent = total 
+    document.getElementById('ventasT').textContent = total.toFixed(2) +"$"
   }else if (response.status === 500){
     Swal.fire({
       title: 'Error',

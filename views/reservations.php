@@ -36,7 +36,7 @@
       <link rel="stylesheet" href="/NeoRestaurante/public/vendor/css/css.css">
       <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
 </head>
-<body onload="getReservations();">
+<body onload="getReservations(); dataAdmin();">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -115,7 +115,7 @@
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
-
+                <div style="margin-top: 5px" id="user"></div>
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -300,7 +300,10 @@
                         </div>
                       </div>
                     </div>
+
+
  <!--/Modal-->
+ <script src="../public/Scripts/datosadmin.js"></script>
  <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
     <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>               
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
@@ -310,5 +313,6 @@
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
     <script src="/NeoRestaurante/public/Scripts/reservationAdmin.js"></script>
     <script src="../public/Scripts/closeSesion.js"></script>
+    
   </body>
 </html>

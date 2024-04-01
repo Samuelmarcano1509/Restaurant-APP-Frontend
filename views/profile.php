@@ -42,7 +42,7 @@
       <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
 
 </head>
-<body onload="getPersons()">
+<body onload="getPersons(); dataAdmin();">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -119,7 +119,7 @@
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
-
+                <div style="margin-top: 5px" id="user"></div>
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -277,6 +277,7 @@
                                     <input class="form-control pass" type="password" id="pass2" name="password2" value="" placeholder="Repita la contraseña"/>
                                   </div>
                                 </div>
+                                <p id="errorM" style="display:none; text-align:center; margin-top:15px; color:red">Las contraseñas no son iguales</p>
                                 
                                 <hr>
                                 <div class="row">
@@ -306,6 +307,7 @@
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 <button  type="button" id="send" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendPersonEdit()">Guardar cambios</button>
+                                
                               </div>
                             </div>
                           </form> 
@@ -388,6 +390,7 @@
                                 <p style="text-align:center; color:#838EE9;">Nota: Si dejas el campo en blanco, se asignara de contraseña
                                   123456789
                                 </p>
+                                <p id="errorM2" style="display:none; text-align:center; margin-top:15px; color:red">Las contraseñas no son iguales</p>
 
                                 
                                 <div class="row g-2"></div>
@@ -397,6 +400,7 @@
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 <button type="button" id="btn-1" class="btn btn-primary" data-bs-dismiss="modal" onclick="sendAdminRegister()">Guardar cambios</button>
+                                
                               </div>
                             </div>
                           </form> 
@@ -404,6 +408,30 @@
                         </div>
                       </div>
                     </div>
+
+                      <!--  Footer -->
+<footer class="text-light pt-3 pb-2" style="background-color: #000000;">
+    <div class="container text-center text-md-start" style="background-color: #000000;">
+      <div class="text-center mb-2" style="background-color: #000000;">
+        <p style="margin-bottom: 2px;">
+        © 2024 Neo Restaurante - Todos los derechos reservados
+        </p>
+        <p style="margin-bottom: 2px;">Nueva Esparta, Pampatar 6316 Calle Nueva Cadiz</p>
+      </div>
+      <div class="text-center">
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/instagram-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/facebook-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+        </ul>
+      </div>
+    </div>
+</footer>
+
+    <script src="../public/Scripts/datosadmin.js"></script>
     <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
     <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>
     <script src="/NeoRestaurante/public/vendor/js/bootstrap copy.js"></script>
@@ -412,8 +440,10 @@
     <script src="/NeoRestaurante/public/vendor/js/dashboards-analytics.js"></script>
     <script src="/NeoRestaurante/public/Scripts/personsAdmin.js"></script>
     <script src="/NeoRestaurante/public/vendor/libs/js/apex-charts/apexcharts.js"></script>
+   
     <script src="../public/Scripts/pass_validation.js"></script>
-    <script src="/NeoRestaurante/public/Scripts/auth.js"></script>
+  
     <script src="../public/Scripts/closeSesion.js"></script>
+   
   </body>
 </html>

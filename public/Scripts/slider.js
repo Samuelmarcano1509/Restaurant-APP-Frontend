@@ -17,9 +17,9 @@ if (response.ok) {
            direct='src="../../restaurantApp/public/archivos/'
            classSpan=direct + datas.data[i].image_name+ '"'
            console.log(classSpan)
-            body+=` <div class="slider-elemento">
-            <img ${classSpan} alt="">
-            <p style="color: #dedede; text-align: center;" onclick= window.location.href="'../../views/menu.php'"><b>${datas.data[i].name}</b></p>
+            body+=` <div class="slider-elemento" style="cursor: pointer;" onclick= window.location.href="'../../views/menu.php">
+            <img ${classSpan} alt="" style="height:220px; border-radius: 5px; ">
+            <div><p style="color: #dedede; text-align: left; font-size: 18px; text-overflow: ellipsis;"><b>${datas.data[i].name}</b></p></div>
           </div>` 
       } 
     }

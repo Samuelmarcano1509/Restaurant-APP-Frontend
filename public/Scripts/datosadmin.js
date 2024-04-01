@@ -20,7 +20,7 @@ const userSesion = async() => {
             const datas = await response.json();
             console.log(datas)
            const styles = "margin-top: 9px;"
-           document.getElementById('user').textContent = datas.data.username
+           document.getElementById('user').innerHTML =`<b>${datas.data.username}</b>`
            
         }
     }catch (error){

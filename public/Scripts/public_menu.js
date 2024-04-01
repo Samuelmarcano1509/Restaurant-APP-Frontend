@@ -187,7 +187,7 @@ const aggProduct = async(productId,quantity,option)=>{
   }else if(response.status===500){
       Swal.fire({
           title: 'Inicie Sesión',
-          type: 'information',
+          type: 'info',
           text: 'Para Poder añadir productos al carrito inicie sesión',
           confirmButtonText: 'Aceptar'
       }).then(()=>{

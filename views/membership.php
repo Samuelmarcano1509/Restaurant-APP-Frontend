@@ -35,7 +35,7 @@
 
       
         #navbarNav{
-        padding-left: 28.5%;
+            padding-left: 35%;
         font-size: 95%;
         
       }
@@ -188,12 +188,12 @@
   </div>
 
             <!-- Proximamente -->
-<form class="container col-md-8" id="formulario" style="margin-top: 170px;">
+<form class="container col-md-8" id="formulario" style="margin-top: 170px; margin-bottom: 140px;">
     <div class="card bg-light rounded-1 card-body shadow-lg p-3 bg-body rounded text-center" style="border-color: #dedede; padding: 20px;" id="Contenedor">
         <div style="border: 2px solid black; padding: 20px; padding-left: 30px;">
             <p class="mb-4" style="font-size: 100%;"><b>Neo Restaurante </b></p>
             <h2 class="mb-4" style="font-size: 200%;"><b>Membresía</b></h2> 
-            <p class="mb-4" style="margin: 50px 150px; font-size: 90%;">Disfruta de los beneficios otorgados al volverte un miembro de Neo Restaurante por $44.99 al año.</p> 
+            <p class="mb-4" style="margin: 50px 150px; font-size: 90%;">Disfruta de los beneficios otorgados al volverte un miembro de Neo Restaurante al pagar $44.99 una unica vez.</p> 
 
             <!-- Textos separados por líneas verticales -->
             <div class="d-flex align-items-center justify-content-center">
@@ -219,7 +219,27 @@
 
 
 
-
+  <!--  Footer -->
+  <footer class="text-light pt-3 pb-2" style="background-color: #000000;">
+    <div class="container text-center text-md-start" style="background-color: #000000;">
+      <div class="text-center mb-2" style="background-color: #000000;">
+        <p style="margin-bottom: 2px;">
+        © 2024 Neo Restaurante - Todos los derechos reservados
+        </p>
+        <p style="margin-bottom: 2px;">Nueva Esparta, Pampatar 6316 Calle Nueva Cadiz</p>
+      </div>
+      <div class="text-center">
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/instagram-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+          <li class="list-inline-item">
+          <img src="/NeoRestaurante/public/img/facebook-w.svg" alt="Imagen1" style="cursor: pointer;width: 25px; height: 25px;" onclick="location.href='../'" >
+          </li>
+        </ul>
+      </div>
+    </div>
+</footer>
 
 
     

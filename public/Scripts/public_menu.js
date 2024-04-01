@@ -358,7 +358,18 @@ tableBod2.addEventListener("click", (event) => {
   {
     var name = 'quantity'+target.name
     var quantity = document.getElementById(name).value
-    aggProduct(target.name,quantity,1)
+      if (isNaN(parseInt(quantity)) || quantity < 0) {
+          Swal.fire({
+              title: 'Atención',
+              type: 'warning',
+              text: "Por favor ingrese una cantidad valida",
+              toast: true,
+              position: 'bottom-end',
+              confirmButtonText: 'Aceptar'
+          })
+      }else {
+          aggProduct(target.name,quantity,1)
+      }
   }
 
 });

@@ -120,7 +120,7 @@ const productDelete = async()=> {
         })
         if (response.ok) {
             Swal.fire({
-              title: '¡Producto Eliminado!',
+              title: '¡Producto eliminado!',
               text: 'El producto ha sido eliminado satisfactoriamente.',
               type: 'success',
               confirmButtonText: 'Entendido'
@@ -199,7 +199,7 @@ const sendEditProduct = async()=> {
             {
                 const datas1 = await response.json();
                 Swal.fire({
-                    title: 'Producto Editado Exitosamente',
+                    title: 'Producto editado exitosamente',
                     text: datas1.title,
                     type:'success',
                     confirmButtonText:'Aceptar'
@@ -245,10 +245,9 @@ const sendEditProduct = async()=> {
             }
 
         }else {
-            const datas1 = await response.json();
             Swal.fire({
                 title: 'Error',
-                text: 'Ha ocurrido un error inesperado',
+                text: 'Ha ocurrido un error inesperado, verifique los campos',
                 type:'warning',
                 confirmButtonText:'Aceptar'
             })
@@ -299,6 +298,16 @@ const sendCreateProduct = async()=> {
             }).then(() => {
                 location.reload();
               });
+        }
+        else if (response.status===400){
+            Swal.fire({
+                title:'Aviso',
+                text:'Por favor llene todos los campos',
+                type: 'warning',
+                confirmButtonText: 'aceptar'
+            }).then(() => {
+                location.reload();
+            });
         }
     } catch (error){
         Swal.fire({

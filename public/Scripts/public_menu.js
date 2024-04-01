@@ -253,7 +253,7 @@ const getShoppingCart = async()=> {
         document.getElementById('cant-ord').textContent = "total de productos: " + datas.totalProducts
         document.getElementById('total').textContent = "Monto total: " + datas.total+'$'
         document.getElementById('msg-cant').textContent = "Cantidad de productos: " +datas.totalProducts
-        document.getElementById('msg-total').textContent="Total a pagar:" +datas.total + '$'
+        document.getElementById('msg-total').textContent="Total a pagar: " +datas.total + '$'
         document.getElementById('cerrar').name=datas.total
       } else if (response.status === 500) {
           localStorage.removeItem('token');
@@ -285,7 +285,7 @@ const getTotalShoppingCart = async()=> {
         if (response.ok) {
             const datas = await response.json();
             document.getElementById('msg-cant').textContent = "Cantidad de productos: " +datas.totalProducts
-            document.getElementById('msg-total').textContent="Total a pagar:" +datas.total + '$'
+            document.getElementById('msg-total').textContent="Total a pagar: " +datas.total + '$'
             }
     } catch (error) {
         Swal.fire({

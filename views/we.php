@@ -18,7 +18,7 @@
             background-position: top;
         }
         #navbarNav {
-            padding-left: 35%;
+            padding-left: 28.5%;
             font-size: 95%;
         }
         #navbar {
@@ -58,10 +58,9 @@
         /* Media query para dimensiones de 360 x 740 */
         @media only screen and (max-width: 360px) and (max-height: 740px) {
     /* Ajustes generales */
-    body {
-                font-family: 'montserrat';
-
-                background-position: center;
+        .body {
+            font-family: 'montserrat';
+            background-position: center;
     }
 
          .nav-link.active {
@@ -81,11 +80,7 @@
             background-color: #301f14; /* Color de la línea */
         }  
 
-    /* Ajustes para los ítems de navegación */
-    #item {
-        margin-left: 0;
-        padding-left: 0;
-    }
+
 
     /* Ajustes para el encabezado */
     .display-4 {
@@ -108,7 +103,7 @@
 
     /* Ajustes para las imágenes */
      .col-md-3 img {
-        max-width: 30%; /* Reducir el ancho de la imagen */
+        max-width: 20%; /* Reducir el ancho de la imagen */
         height: auto; /* Ajustar la altura automáticamente para mantener la proporción */
         margin-left: -150px;
         margin-right: -165px;

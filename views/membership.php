@@ -35,7 +35,7 @@
 
       
         #navbarNav{
-            padding-left: 35%;
+         padding-left: 28.5%;
         font-size: 95%;
         
       }
@@ -91,21 +91,17 @@
 
          @media (max-width: 360px) and (max-height: 740px) {
 
-    body {
-        font-family: 'montserrat';
-        background-position: center;
-    }
+        body {
+            font-family: 'montserrat';
+            background-position: center;
+        }
             
 
+        #item {
+            margin-left: 3%;
+            padding-left: 5%;
 
-            #item {
-                margin-left: 3%;
-                padding-left: 5%;
-
-            }
-              
-
-            
+        }             
 
         .mb-8, .mb-4, .mb-0, .mt-4 {
             margin-bottom: 15px !important;
@@ -146,6 +142,11 @@
             margin-left: 8px !important;
             padding-right: 5px !important; /* Ajuste en el margen derecho del último elemento */
         }
+        #info {
+            font-size: 12px; 
+            color: #301f14; 
+            margin-top: 5px; 
+    }
     }
 
 

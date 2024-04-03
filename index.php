@@ -36,7 +36,7 @@
     }
 
     #navbarNav{
-        padding-left: 35%;
+        padding-left: 28.5%;
         font-size: 95%;
         
       }
@@ -128,6 +128,25 @@
       opacity: 100%;
       background-color: #FFFF;
       opacity: 65%;
+    }
+    @media only screen and (max-width: 360px) and (max-height: 740px) {
+
+        #modal {
+            margin-top: 20%;
+            margin-left:10px;
+            margin-right: 0;
+            text-align: center;
+        }
+
+        .left {
+            top: 92%; 
+            
+    }
+
+        .right {
+            top: 92%; 
+             
+        }
     }
    
     </style>

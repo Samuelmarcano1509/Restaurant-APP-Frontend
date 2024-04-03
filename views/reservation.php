@@ -70,13 +70,13 @@
         .form-control
          {
           border-color: black; /* Borde negro para todos los campos */
-          margin-left: 50px;
-          margin-top: 80px;
+          margin-left: 5px;
+          margin-top: 10px;
           
     }
     .form{
           border: 1px solid black;
-          margin-left: 50px;
+          margin-left: 25px;
           margin-top: 80px;
           border-radius: 5px;
     }
@@ -95,27 +95,11 @@
 
         @media only screen and (max-width: 360px) and (max-height: 740px) {
             body {
-                
-                font-family: 'montserrat';
-                background-image: url('/NeoRestaurante/public/img/OIG1.cggt.MuVdud2vmc.jpeg');
-                background-size: 110%;
-                background-position: center;
+                font-size: 12px;
             }
+            
 
-            #navbarNav {
-                padding-left: 28.5%;
-                font-size: 95%;
-            }
-
-            #navbar {
-                width: 100%;
-            }
-
-            #item {
-                margin-left: 3%;
-                padding-left: 5%;
-
-            }
+            
 
             .nav-link.active {
                 font-weight: bold;
@@ -140,13 +124,24 @@
                 align-items: center;
                 background-color: white;
                 text-align: center;
-                /* Centrar el texto */
+                
             }
+                .formulario h2 {
+                    margin-bottom:0;
+                    font-size: 14px; /* Cambia el tamaño de la fuente del título dentro del formulario */
+                }
+                .formulario h5 {
+                    font-size: 12px; /* Cambia el tamaño de la fuente del título dentro del formulario */
+                }
+
+                .formulario p {
+                    font-size: 12px; /* Cambia el tamaño de la fuente de los párrafos dentro del formulario */
+                }
 
              .mb-2.d-flex {
                 flex-direction: column;
-                align-items: flex-start; /* Alinea los elementos a la izquierda */
-                margin-top: 10px; /* Agrega un espacio superior */
+                align-items: flex-start; 
+                margin-top: 10px; 
                 
                 }
 
@@ -156,15 +151,15 @@
             .form-control {
                 margin: 15px 0; 
                 border-color: black;
-                margin-left: 50px;
+                margin-left:40px;
+                margin-right: 40px;
                 
 
             }
             .form{
                 margin: 15px 0; 
-                border: 1px solid black;
-                margin-left: 50px; 
-                border-radius: 5px;
+                margin-left:40px;
+                margin-right: 40px; 
             }
 
             .btn-reservar {
@@ -219,23 +214,35 @@
     <div class="row justify-content-center mt-4">
         <div class="col-md-8 formulario">
             <h2 class="text-center mb-4">Reservar una Mesa</h2>
-            <h5 class="text-center mb-3" style="padding-top:5%">Para reservar una mesa en Neo Restaurante</h5>
-            <p class="text-center mb-3">seleccione una mesa, la fecha y la hora para su reservación.</p>
+            <h5 class="text-center" style="padding-top:5%">Para reservar una mesa en Neo Restaurante</h5>
+            <p class="text-center mb-3">Seleccione una mesa, la fecha y la hora para su reservación.</p>
             <form>
-                <div class="mb-2 d-flex">
-                    <select class="form-select me-2 mb-2" name="mesas"  id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 15px; width: 200px;" >
-                    </select>          
-                    <div class="mb-2">
-                    <input type="date" class="form-control me-2 mb2" name="fecha" id="fecha20" placeholder="fecha de reservacion" style="width: 200px;" min="<?php echo date('Y-m-d'); ?>">
+                <div class="mb-2 d-flex align-items-center justify-content-center">
+                    <!-- Campo para seleccionar la mesa -->
+                    <div class="me-2">
+                        <label for="dropdownMenuButton7" style="font-size: 15px;">Mesa</label>
+                        <select class="form-select" name="mesas" id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 15px; width: 200px;"></select>
                     </div>
-                    <input type="time" id="hora" class="form me-2 mb-2" min="12:00 PM" max="11:00 PM" value="<?php date_default_timezone_set('America/Caracas'); echo date('H:i'); ?>" name="hora4" id="hora4" style="font-size: 15px; width: 200px;">    
                     
+                    <!-- Campo para seleccionar la fecha -->
+                    <div class="me-2">
+                        <label for="fecha20" style="font-size: 15px;">Fecha</label>
+                        <input type="date" class="form-control" name="fecha" id="fecha20" placeholder="Fecha de reservación" style="width: 200px;" min="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    
+                    <!-- Campo para seleccionar la hora -->
+                    <div>
+                        <label for="hora4" style="font-size: 15px;">Hora</label>
+                        <input type="time" id="hora" class="form-control" min="12:00 PM" max="11:00 PM" value="<?php date_default_timezone_set('America/Caracas'); echo date('H:i'); ?>" name="hora4" id="hora4" style="font-size: 15px; width: 200px;">    
+                    </div>
                 </div>
+                <!-- Botón de reservación -->
                 <input type="button" value="Realizar reservación" class="btn btn-reservar" id="btn-res" style="font-size: 20px;" onclick="createReservation();">
             </form>
         </div>
     </div>
 </div>
+
 
 
 </form>

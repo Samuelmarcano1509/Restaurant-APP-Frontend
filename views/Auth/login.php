@@ -69,6 +69,60 @@
           
         }
     
+         @media only screen and (max-width: 360px) and (max-height: 740px) {
+          body {
+            background-size: auto; /* Cambiar el tamaño del fondo para adaptarse mejor a dispositivos más pequeños */
+          }
+
+          #navbarNav {
+            
+            font-size: 85%; /* Reducir el tamaño de fuente para adaptarse mejor a dispositivos más pequeños */
+          }
+
+          #item {
+            margin-left: 0; /* Ajustar el margen para adaptarse mejor a dispositivos más pequeños */
+            padding-left: 0; /* Ajustar el padding para adaptarse mejor a dispositivos más pequeños */
+          }
+
+          #formulario {
+            margin-bottom: 20%; /* Ajustar el margen inferior para adaptarse mejor a dispositivos más pequeños */
+          }
+
+          .modal-body {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+          }
+
+          .nav-link.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 40%;
+            height: 2px;
+            background-color: #301f14; /* Color de la línea */
+          }
+
+          #prueba1 {
+            font-size: 125%;
+
+          }
+   
+          
+        .form-group.col-md-8 {  
+          width:70%;
+        }
+        
+
+        .form-group.col-md-9 {
+          margin-right: 30px; 
+        }
+
+}
+       
+
     </style> 
 </head>
 <body>

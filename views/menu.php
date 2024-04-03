@@ -32,7 +32,7 @@
         }
 
         #navbarNav {
-            padding-left: 35%;
+            padding-left: 28.5%;
             font-size: 95%;
         }
 
@@ -89,9 +89,9 @@
         .dish-container {
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 820px; /* Ancho total de los platillos */
+            width: 60%; /* Ancho total de los platillos */
             height: 150px;
-            margin: 10px auto;
+            margin: 10px 100px auto;
             background-color: #f9f9f9;
             display: flex;
             flex-direction: row;
@@ -124,27 +124,28 @@
         .title {
             font-size: 24px;
             font-weight: bold;
-            margin-bottom: 20px;
-            margin-left: 720px;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            margin-left: 35%;
         }
 
         .order-container {
             position: fixed;
-            top: 208px;
+            top: 37%;
             right: 45px;
             padding: 10px;
             display: flex;
             flex-direction: column;
             background-color: #f9f9f9;
-            height: 350px;
-            width: 400px;
+            height: auto;
+            width: 25%;
             border-radius: 5px
         }
 
         .order-text {
             text-align: start;
             font-size: 20px;
-            margin-top: 30px;
+            margin-top: 10px;
             
         }
         #paypal-button-container{
@@ -155,6 +156,7 @@
 
         #order-button {
             margin-top: 100px;
+            margin-bottom:20px;
             display: block;
             text-align: center;
             background-color: #301F14;
@@ -281,7 +283,7 @@
         
 
         .title {
-            margin-left:135px;
+            margin-left:35%;
             
         }
         .center-container {
@@ -293,10 +295,10 @@
 
         /* Estilos para los cuadros de platillos en dispositivos Samsung */
         .dish-container {
-            width: 240px; /* Ancho del 90% */  
-            height: 20%; /* Reducción de la altura */
-            margin: 10px auto; /* Margen superior e inferior de 10px y centrado horizontal */
-            margin-left: 37%; /* Mover a la derecha */
+            width: 90%;  
+            height: 20%; 
+            margin: 10px auto;
+            margin-left: 5%; 
         }
 
         .order-dish-image {
@@ -315,11 +317,14 @@
 
         /* Estilos para el cuadro de pedidos en dispositivos Samsung */
         .order-container {
-            position:relative;
-            top: -1150px;
-            left: 35%;
-            height: 25%;
-            width: 60%; /* Ancho del 90% */
+             z-index: 9999;
+            margin-top: 10%;
+            margin-bottom: 10%;
+            position:sticky;
+            width: 90%;
+            height: 25%;  
+            top: 10%;
+            left: 5%;
             right: 5%; /* Alineación hacia la derecha */
         }
   
@@ -342,6 +347,7 @@
         }
 
         .quantity {
+            
             position: absolute;
             font-size: 8px;
             top: 15px;
@@ -419,16 +425,12 @@
   </div>
 
         <!--Barra Lateral-->
-        
+
         <div class="center-container" id="cont">
 
         </div> 
 
-    <div class="order-container">
-    <p class="order-text"><b id="msg-cant">Cantidad de productos:</b> </p>
-    <p class="order-text"><b id="msg-total">Total a pagar:</b> </p>
-    <button type="button" class="btn btn-secondary" id="order-button" style="background-color:"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="shoppingCart();">Ver Carrito de compras</button>
-    </div>
+
 
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

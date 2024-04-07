@@ -37,7 +37,7 @@
       <script src="/NeoRestaurante/public/vendor/js/js.js"></script>
 
 </head>
-<body onload="orderUser();">
+<body onload="orderUser(); dataAdmin();">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -98,6 +98,7 @@
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
+                <div style="margin-top: 5px" id="user"></div>
 
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -225,7 +226,7 @@
 
 
 
-   
+    <script src="../public/Scripts/datosadmin.js"></script>
     <script src="/NeoRestaurante/public/Scripts/auth.js"></script>     
     <script src="/NeoRestaurante/vendors/sweetAlert2/popper.min.js"></script>
     <script src="/NeoRestaurante/vendors/sweetAlert2/sweetalert2.all.min.js"></script>

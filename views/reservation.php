@@ -21,22 +21,37 @@
         background-position: center;
       }
       
-      #navbarNav{
-        padding-left: 28.5%;
-        font-size: 95%;
-      }
-      #navbar{
-        width: 100%;
-      }
-      #item{
-        margin-left: 3%;
-        padding-left: 5%;
-        
-      }
-      #item-user{
-        margin-left: 3%;
-        padding-left: 5%;
-      }
+      #Navbar {
+
+width: 100%; 
+margin: 0; 
+padding: 0; 
+position: sticky;
+top: 0;
+left: 0;
+z-index: 100;
+background-color: #fff; 
+}
+
+#navbarNav{
+  padding-left: 35%;
+  font-size: 95%;
+  
+}
+#navbar{
+  width: 100%;
+}
+
+#item{
+  margin-left: 3%;
+  padding-left: 5%;
+  
+}
+#item-user{
+  margin-left: 3%;
+  padding-left: 5%;
+}
+
 
       #cont{
       margin-top: 20%;
@@ -183,7 +198,7 @@
 </head>
 <body onload="userData(); reservationData();">
   <!--Barra de navegacion-->
-  <div id="navbar">
+  <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
               <div class="navbar-brand d-flex"  style="align-items: center; cursor: pointer; margin-left: 3%;"  onclick="location.href='../'"  >
@@ -241,7 +256,7 @@
 </form>
 
   <!--  Footer -->
-  <footer class="text-light pt-3 pb-2" style="background-color: #000000;">
+  <footer class="text-light pt-3 pb-2" style="background-color: #000000; margin-top:4.9%">
     <div class="container text-center text-md-start" style="background-color: #000000;">
       <div class="text-center mb-2" style="background-color: #000000;">
         <p style="margin-bottom: 2px;">

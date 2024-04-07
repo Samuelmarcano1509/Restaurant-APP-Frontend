@@ -4,7 +4,7 @@ function getOrders(){
     }else {
         Swal.fire({
             title: 'Ha expirado la sesión',
-            icon: 'warning',
+            type: 'warning',
             confirmButtonText: 'Entendido',
         }).then(() => {
             window.location.href = '/NeoRestaurante/views/Auth/login.php';
@@ -399,7 +399,7 @@ const sendOrderUser = async()=> {
             Swal.fire({
                 title: '¡Registro Realizado!',
                 text: datas.title,
-                icon: 'success',
+                type: 'success',
                 confirmButtonText: 'Entendido'
             }).then(() => {
                 location.reload();

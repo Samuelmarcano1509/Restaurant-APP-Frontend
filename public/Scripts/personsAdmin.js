@@ -359,7 +359,7 @@ const getPerson = async(id)=> {
             document.getElementById('nombre').value=datas.data.first_name
             document.getElementById('apellido').value=datas.data.last_name
             document.getElementById('cedula').value=datas.data.identification_value
-            document.getElementById('user').value=datas.data.username
+            document.getElementById('user2').value=datas.data.username
             document.getElementById('telefono').value=datas.data.phone
             document.getElementById('address').value=datas.data.address
             document.getElementById('municipio').value=datas.data.municipality
@@ -445,7 +445,7 @@ const personEdit = async()=> {
          first_name:            document.getElementById('nombre').value,
          last_name:             document.getElementById('apellido').value,
          identification_value:  document.getElementById('cedula').value,
-         username:              document.getElementById('user').value,
+         username:              document.getElementById('user2').value,
          phone_number:          document.getElementById('telefono').value,
          address:               document.getElementById('address').value,
          birth_date:            document.getElementById('fecha').value,

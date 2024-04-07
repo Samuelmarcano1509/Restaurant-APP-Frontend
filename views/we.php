@@ -17,13 +17,22 @@
             background-size: 110%;
             background-position: top;
         }
+        #Navbar {
+
+width: 100%; 
+margin: 0; 
+padding: 0; 
+position: sticky;
+top: 0;
+left: 0;
+z-index: 100;
+background-color: #fff; 
+}
         #navbarNav {
             padding-left: 35%;
             font-size: 95%;
         }
-        #navbar {
-            width: 100%;
-        }
+        
         #item {
             margin-left: 3%;
             padding-left: 5%;
@@ -137,7 +146,7 @@
 </head>
 <body onload="userData();">
   <!--Barra de navegacion-->
-  <div id="navbar">
+  <div id="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" >
       <div class="container-fluid" id="Nav-bar">
               <div class="navbar-brand d-flex"  style="align-items: center; cursor: pointer; margin-left: 3%;"  onclick="location.href='../'"  >

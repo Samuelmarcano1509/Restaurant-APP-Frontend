@@ -251,7 +251,7 @@
                                 <div class="row">
                                 <div class="col mb-3">
                                     <label for="descripcion" class="form-label">Usuario</label>
-                                    <input type="text" id="user"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
+                                    <input type="text" id="user2"  name="user" class="form-control"  placeholder="Ingresa el nombre de usuario"/>
                                   </div>
                                   <div class="col mb-3">
                                   <label for="membresia" style="margin-bottom: 8px">Tipo de membresia</label>

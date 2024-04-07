@@ -74,11 +74,12 @@
       margin-left: 10%;
       margin-right: 10%;
       overflow: hidden;
-      height: 310px;
+      height: 330px;
     }
     .slider-elemento{
       padding-left: 0.6%;
       margin-bottom: 0.8%;
+      
     }
 
     .left,

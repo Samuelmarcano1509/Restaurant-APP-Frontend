@@ -39,9 +39,17 @@
         font-size: 95%;
         
       }
-      #navbar{
-        width: 100%;
-      }
+      #Navbar {
+
+width: 100%; 
+margin: 0; 
+padding: 0; 
+position: sticky;
+top: 0;
+left: 0;
+z-index: 100;
+background-color: #fff; 
+}
       
       #item{
         margin-left: 3%;
@@ -80,7 +88,7 @@
       }
       #paypal-button-container{
         width: 210px;
-        margin-left: 260px;
+        margin-left: 365px;
       }
 
       /* Estilos del hover del botón */

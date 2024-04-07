@@ -18,8 +18,9 @@ if (response.ok) {
            classSpan=direct + datas.data[i].image_name+ '"'
            console.log(classSpan)
             body+=` <div class="slider-elemento" style="cursor: pointer;" onclick= window.location.href="'../../views/menu.php">
-            <img ${classSpan} alt="" style="height:220px; border-radius: 5px; ">
-            <div><p style="color: #dedede; text-align: left; font-size: 18px; text-overflow: ellipsis;"><b>${datas.data[i].name}</b></p></div>
+            <div style="text-align: center;">
+            <img ${classSpan} alt="" style="height:250px; border-radius: 5px; padding-bottom: 12px;">
+            <p style="color: #dedede; font-size: 18px;"><b>${datas.data[i].name}</b></p></div>
           </div>` 
       } 
     }
